@@ -62,6 +62,7 @@ module AresMUSH
         defense_mod = Global.read_config("spells", self.spell, "defense_mod")
         spell_mod = Global.read_config("spells", self.spell, "spell_mod")
         stance = Global.read_config("spells", self.spell, "stance")
+        roll = Global.read_config("spells", self.spell, "roll")
 
         if self.caster.combat
           if self.caster_combat.is_ko
@@ -78,6 +79,15 @@ module AresMUSH
               Custom.cast_multi_heal(self.caster, self.caster_combat, self.target_name, self.spell)
             end
 
+            #Reviving Multiple Targets
+            if is_revive
+              Custom.cast_multi_revive(self.caster, self.caster_combat, self.target_name, self.spell)
+            end
+
+            #Roll spell with Multiple Targets
+            if roll
+              Custom.cast_multi_roll_spell(self.caster, self.caster_combat, self.target_name, self.spell)
+            end
 
 
             self.caster_combat.update(has_cast: true)
@@ -85,12 +95,12 @@ module AresMUSH
           end
 
         else
-          if heal_points
-            if Custom.knows_spell?(caster, self.spell)
-              Custom.cast_non_combat_heal(self.caster, self.target, self.spell)
-            else
-              client.emit_failure t('custom.dont_know_spell')
-            end
+          if !Custom.knows_spell?(caster, self.spell)
+            client.emit_failure t('custom.dont_know_spell')
+          elsif heal_points
+            Custom.cast_non_combat_heal(self.caster, self.target, self.spell)
+          elsif roll
+            Custom.cast_multi_noncombat_roll_spell(self.caster, self.target_name, self.spell)
           else
             client.emit_failure t('custom.not_in_combat')
           end
