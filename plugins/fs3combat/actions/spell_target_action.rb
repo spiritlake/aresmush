@@ -18,6 +18,10 @@ module AresMUSH
         num = Global.read_config("spells", self.spell, "target_num")
 
         return t('custom.too_many_targets', :spell => self.spell, :num => num) if (self.targets.count > num)
+
+
+
+
       end
 
       def print_action
@@ -30,7 +34,11 @@ module AresMUSH
       end
 
       def resolve
-        succeeds = Custom.roll_combat_spell_success(self.combatant, self.spell)
+        if self.spell == "Phoenix's Healing Flames"
+          succeeds = "%xgSUCCEEDS%xn"
+        else
+          succeeds = Custom.roll_combat_spell_success(self.combatant, self.spell)
+        end
         messages = []
         if succeeds == "%xgSUCCEEDS%xn"
           weapon = Global.read_config("spells", self.spell, "weapon")

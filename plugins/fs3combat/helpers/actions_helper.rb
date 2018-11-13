@@ -145,8 +145,8 @@ module AresMUSH
         FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed', :name => combatant.name, :damaged_by => damaged_by), nil, true
         if (!combatant.is_npc? && Custom.knows_spell?(combatant.associated_model, "Phoenix's Healing Flames"))
           combatant.update(is_ko: false)
-          client = Login.find_client(combatant.associated_model)
-          FS3Combat.set_action(client, combatant.associated_model, combatant.associated_model.combat, combatant, FS3Combat::SpellTargetAction, "#{combatant}/Phoenix's Healing Flames")
+          combatant.update(action_klass: "AresMUSH::FS3Combat::SpellTargetAction")
+          combatant.update(action_args: "#{combatant.name}/Phoenix's Healing Flames")
         end
       end
     end
