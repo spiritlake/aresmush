@@ -18,6 +18,10 @@ module AresMUSH
         num = Global.read_config("spells", self.spell, "target_num")
 
         return t('custom.too_many_targets', :spell => self.spell, :num => num) if (self.targets.count > num)
+
+
+
+
       end
 
       def print_action
@@ -30,7 +34,11 @@ module AresMUSH
       end
 
       def resolve
-        succeeds = Custom.roll_combat_spell_success(self.combatant, self.spell)
+        if self.spell == "Phoenix's Healing Flames"
+          succeeds = "%xgSUCCEEDS%xn"
+        else
+          succeeds = Custom.roll_combat_spell_success(self.combatant, self.spell)
+        end
         messages = []
         if succeeds == "%xgSUCCEEDS%xn"
           weapon = Global.read_config("spells", self.spell, "weapon")
@@ -78,13 +86,12 @@ module AresMUSH
 
             #Equip Weapon Specials
             if weapon_specials_str
-              weapon_specials = weapon_specials_str ? weapon_specials_str.split('+') : nil
-              current_spell_specials = combatant.spell_weapon_specials
 
-              FS3Combat.set_weapon(combatant, target, target.weapon, weapon_specials)
+              Custom.spell_weapon_effects(target, self.spell)
 
-              new_spell_specials = current_spell_specials << weapon_specials_str
-              combatant.update(spell_weapon_specials: new_spell_specials)
+              weapon = target.weapon.before("+")
+
+              FS3Combat.set_weapon(nil, target, weapon, [weapon_specials_str])
 
               if heal_points
 
@@ -104,8 +111,13 @@ module AresMUSH
 
             #Equip Armor Specials
             if armor_specials_str
-              armor_specials = armor_specials_str ? armor_specials_str.split('+') : nil
-              FS3Combat.set_armor(combatant, target, target.armor, armor_specials)
+
+              Custom.spell_armor_effects(target, self.spell)
+
+              weapon = target.armor.before("+")
+
+              FS3Combat.set_armor(nil, target, armor, [armor_specials_str])
+
               messages.concat [t('custom.casts_spell', :name => self.name, :spell => self.spell, :succeeds => succeeds)]
             end
 

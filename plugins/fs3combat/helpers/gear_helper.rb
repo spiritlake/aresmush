@@ -156,6 +156,9 @@ module AresMUSH
     end
 
     def self.set_weapon(enactor, combatant, weapon, specials = nil)
+
+      Global.logger.debug "Specials:  #{specials}"
+      # Set weapon specials gained from equipped magical items
       if !combatant.npc
         item_specials = Custom.item_weapon_specials(combatant.associated_model)
       end
@@ -165,19 +168,24 @@ module AresMUSH
         specials = [item_specials]
       end
 
-      if specials && !combatant.spell_weapon_specials.empty?
-        specials.concat combatant.spell_weapon_specials
-      elsif !combatant.spell_weapon_specials.empty?
-        specials = combatant.spell_weapon_specials
+      # Set weapon specials gained from spells
+      if specials && combatant.spell_weapon_effects[weapon]
+        spell_specials = combatant.spell_weapon_effects[weapon].keys
+        specials = specials.concat spell_specials
+      elsif combatant.spell_weapon_effects[weapon]
+        specials = combatant.spell_weapon_effects[weapon].keys
       end
 
+      Global.logger.debug "Specials:  #{specials}"
       max_ammo = weapon ? FS3Combat.weapon_stat(weapon, "ammo") : 0
+
       combatant.update(weapon_name: weapon ? weapon.titlecase : "Unarmed")
       combatant.update(weapon_specials: specials ? specials.map { |s| s.titlecase }.uniq : [])
       combatant.update(ammo: max_ammo)
       combatant.update(max_ammo: max_ammo)
       combatant.update(action_klass: nil)
       combatant.update(action_args: nil)
+      Global.logger.debug "Real saved spell thingy post-updates:  #{Combatant[combatant.id].spell_weapon_effects}"
 
       message = t('fs3combat.weapon_changed', :name => combatant.name,
         :weapon => combatant.weapon)
@@ -185,6 +193,7 @@ module AresMUSH
     end
 
     def self.set_armor(enactor, combatant, armor, specials = nil)
+      # Set armor specials gained from equipped magical items
       if !combatant.npc &&
         item_specials = Custom.item_armor_specials(combatant.associated_model)
       end
@@ -193,6 +202,15 @@ module AresMUSH
       elsif !combatant.npc && combatant.associated_model.magic_item_equipped && item_specials
         specials = [item_specials]
       end
+
+      # Set armor specials gained from spells
+      if specials && combatant.spell_armor_effects[armor]
+        spell_specials = combatant.spell_armor_effects[armor].keys
+        specials = specials.concat spell_specials
+      elsif combatant.spell_armor_effects[armor]
+        specials = combatant.spell_armor_effects[armor].keys
+      end
+
       combatant.update(armor_name: armor ? armor.titlecase : nil)
       combatant.update(armor_specials: specials ? specials.map { |s| s.titlecase }.uniq : [])
       message = t('fs3combat.armor_changed', :name => combatant.name, :armor => combatant.armor)
