@@ -53,10 +53,6 @@ module AresMUSH
       if (!combatant.is_subdued?)
         combatant.update(subdued_by: nil)
       end
-      if combatant.action_klass = "AresMUSH::FS3Combat::SpellAction"
-        combatant.update(action_klass: nil)
-      end
-      combatant.update(has_cast: false)
 
       if combatant.lethal_mod_counter == 0 && combatant.damage_lethality_mod != 0
                 combatant.log "#{combatant.name} resetting lethality mod to #{combatant.damage_lethality_mod}."
@@ -145,8 +141,13 @@ module AresMUSH
         FS3Combat.emit_to_combat combatant.combat, t('fs3combat.is_koed', :name => combatant.name, :damaged_by => damaged_by), nil, true
         if (!combatant.is_npc? && Custom.knows_spell?(combatant.associated_model, "Phoenix's Healing Flames"))
           combatant.update(is_ko: false)
+          combatant.update(death_count: 0)
+          Global.logger.info "Phoenix's Healing Flames: Setting #{combatant.name}'s KO to #{combatant.is_ko}."
           combatant.update(action_klass: "AresMUSH::FS3Combat::SpellTargetAction")
           combatant.update(action_args: "#{combatant.name}/Phoenix's Healing Flames")
+          Global.logger.debug "Action: #{combatant.action_klass}"
+          Global.logger.debug "Args: #{combatant.action_args}"
+          Custom.delete_all_untreated_damage(combatant.associated_model)
         end
       end
     end

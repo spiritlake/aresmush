@@ -10,6 +10,7 @@ module AresMUSH
         else
           self.names = self.name
           self.spell = self.action_args
+          Global.logger.debug "SPELL: #{self.spell}"
         end
 
         error = self.parse_targets(self.names)
@@ -178,6 +179,8 @@ module AresMUSH
             end
 
           end
+        elsif self.spell == "Phoenix's Healing Flames"
+          messages.concat [t('custom.cast_phoenix_heal', :name => self.name, :spell => self.spell, :succeeds => "%xgSUCCEEDS%xn")]
         else
           messages.concat [t('custom.spell_target_resolution_msg', :name => self.name, :spell => spell, :target => print_target_names, :succeeds => succeeds)]
         end

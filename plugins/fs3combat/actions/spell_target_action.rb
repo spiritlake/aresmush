@@ -184,6 +184,8 @@ module AresMUSH
             end
 
           end
+        elsif self.spell == "Phoenix's Healing Flames"
+          messages.concat [t('custom.cast_phoenix_heal_target', :name => self.name, :spell => self.spell, :target => print_target_names, :succeeds => "%xgSUCCEEDS%xn")]
         else
           messages.concat [t('custom.spell_target_resolution_msg', :name => self.name, :spell => spell, :target => print_target_names, :succeeds => succeeds)]
         end
