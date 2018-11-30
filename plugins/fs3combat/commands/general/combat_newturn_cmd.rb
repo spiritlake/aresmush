@@ -18,6 +18,7 @@ module AresMUSH
         end
 
         combat.log "****** NEW COMBAT TURN ******"
+        Global.logger.info "Enactor Combatant's weapon effects at start of turn: #{enactor.combatant.spell_weapon_effects}"
 
         if (combat.first_turn)
           combat.active_combatants.select { |c| c.is_npc? && !c.action }.each_with_index do |c, i|
@@ -27,7 +28,7 @@ module AresMUSH
           combat.update(first_turn: false)
           return
         end
-
+        Global.logger.info "Enactor Combatant's weapon effects before starting resolutions: #{enactor.combatant.spell_weapon_effects}"
         FS3Combat.emit_to_combat combat, t('fs3combat.starting_turn_resolution', :name => enactor_name)
 
         combat.update(turn_in_progress: true)
@@ -41,6 +42,8 @@ module AresMUSH
               c = Combatant[id]
               next if !c.action
               next if c.is_noncombatant?
+
+              combat.log "Action #{c.name} #{c.action ? c.action.print_action_short : "-"} #{c.is_noncombatant?}"              
               combat.log "Action #{c.name} #{c.action ? c.action.print_action_short : "-"} #{c.is_noncombatant?}"
               messages = c.action.resolve
 
