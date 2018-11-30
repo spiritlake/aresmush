@@ -10,7 +10,6 @@ module AresMUSH
         else
           self.names = self.name
           self.spell = self.action_args
-          Global.logger.debug "SPELL: #{self.spell}"
         end
 
         error = self.parse_targets(self.names)

@@ -42,7 +42,9 @@ module AresMUSH
               c = Combatant[id]
               next if !c.action
               next if c.is_noncombatant?
+
               combat.log "Action #{c.name} #{c.action ? c.action.print_action_short : "-"} #{c.is_noncombatant?}"              
+              combat.log "Action #{c.name} #{c.action ? c.action.print_action_short : "-"} #{c.is_noncombatant?}"
               messages = c.action.resolve
 
               messages.each do |m|

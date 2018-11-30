@@ -48,8 +48,8 @@ en:
       spell_ko: "You cannot cast a spell while Knocked Out."
       casts_spell: "%{name} casts %xB%{spell}%xn and %{succeeds}."
       casts_spell_on_target: "%{name} casts %xB%{spell}%xn on %{target} and %{succeeds}."
-      casts_noncombat_spell: "%{name} casts %xB%{spell}%xn and %{succeeds}."
-      casts_noncombat_spell_with_target: "%{name} casts %xB%{spell}%xn on %{target} and %{succeeds}."
+      casts_noncombat_spell: "%{name} casts %xB%{spell}%xn%{mod} and %{succeeds}."
+      casts_noncombat_spell_with_target: "%{name} casts %xB%{spell}%xn%{mod} on %{target} and %{succeeds}."
       # will_cast_spell: "%{name} will cast %xB%{spell}%xn."
       will_cast_fs3_attack: "%{name} will cast %xB%{spell}%xn on %{target}."
       not_in_combat: "You must be in combat to cast this spell."
@@ -72,14 +72,17 @@ en:
       not_dead: "%{target} is not dead."
       cast_mod: "%{name} casts %xB%{spell}%xn on %{target} and %{succeeds}, giving %{target} a %xg%{mod} %{type} modification%xn."
       mod_wore_off: "%{name}'s %{mod} %{type} modification has worn off."
+      stance_wore_off: "%{name}'s %{stance} spell has worn off."
       cast_stance: "%{name} casts %xB%{spell}%xn on %{target} and %{succeeds}, changing %{target}'s stance to %{stance}."
       not_spell: "That is not a spell."
+      cant_cast_on_gear: "You cannot cast %{spell} on %{target}'s %{gear}."
       no_target: "This spell does not use a target. Do spell/cast <spell>."
       needs_multi_target: "This spell can take multiple targets. Do spell/castmulti <spell>=<target>."
       not_multi_target: "This spell can only take one target. Do spell/cast <spell>=<target>"
       needs_target: "You need to identify a target. Do spell/cast <spell>=<target>."
       caster_should_not_equal_target: "You cannot target yourself. Do spell/cast <spell> instead."
       cast_to_use: "You cannot use that equipment without casting a spell."
+      level_eight_fatigue: "%xb%{name} has cast a level 8 spell and is overcome by spell casting fatigue. They are unable to cast spells or fight until they have recovered.%xn"
 
       # ----------------------------
       # LEARNING SPELLS
@@ -112,9 +115,10 @@ en:
       # ----------------------------
       # FS3 COMBAT SPELL
       # ----------------------------
-      spell_action_msg_short: "Spell"
+      spell_target_action_msg_short: "Spell %{targets}"
       spell_target_action_msg_long: "%{name} will cast %xB%{spell}%xn on %{target} this turn."
       spell_target_resolution_msg: "%{name} casts %xB%{spell}%xn on %{target} and %{succeeds}."
+      spell_action_msg_short: "Spell"
       spell_action_msg_long: "%{name} will cast %xB%{spell}%xn."
       spell_resolution_msg: "%{name} casts %xB%{spell}%xn and %{succeeds}."
       too_many_targets: "%{spell} can only target %{num} target(s)."

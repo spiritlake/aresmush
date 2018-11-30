@@ -143,10 +143,8 @@ module AresMUSH
           combatant.update(is_ko: false)
           combatant.update(death_count: 0)
           Global.logger.info "Phoenix's Healing Flames: Setting #{combatant.name}'s KO to #{combatant.is_ko}."
-          combatant.update(action_klass: "AresMUSH::FS3Combat::SpellTargetAction")
+          combatant.update(action_klass: "AresMUSH::FS3Combat::SpellAction")
           combatant.update(action_args: "#{combatant.name}/Phoenix's Healing Flames")
-          Global.logger.debug "Action: #{combatant.action_klass}"
-          Global.logger.debug "Args: #{combatant.action_args}"
           Custom.delete_all_untreated_damage(combatant.associated_model)
         end
       end
