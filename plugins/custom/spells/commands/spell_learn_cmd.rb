@@ -46,6 +46,7 @@ module AresMUSH
               message = t('custom.xp_learned_spell', :name => enactor.name, :spell => self.spell, :level => self.spell_level, :school => self.school)
               category = Jobs.system_category
               Jobs.create_job(category, t('custom.xp_learned_spell_title', :name => enactor.name, :spell => self.spell), message, Game.master.system_character)
+              Custom.handle_spell_learn_achievement(enactor)
             end
           end
         else
@@ -54,7 +55,7 @@ module AresMUSH
           SpellsLearned.create(name: self.spell, last_learned: Time.now, level: self.spell_level, school: self.school, character: enactor, xp_needed: xp_needed, learning_complete: false)
           client.emit_success t('custom.start_learning', :spell => self.spell)
         end
-        Custom.handle_spell_learn_achievement(enactor)
+
       end
 
     end

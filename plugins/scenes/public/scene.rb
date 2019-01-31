@@ -26,7 +26,6 @@ module AresMUSH
     collection :scene_poses, "AresMUSH::ScenePose"
     reference :scene_log, "AresMUSH::SceneLog"
     reference :plot, "AresMUSH::Plot"
-
     set :invited, "AresMUSH::Character"
     set :watchers, "AresMUSH::Character"
     set :participants, "AresMUSH::Character"

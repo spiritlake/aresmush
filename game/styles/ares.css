@@ -804,6 +804,12 @@ JOBS SCREEN
 .job-category {
   background-color: gray; }
 
+.job-category-ACTIVE {
+  background-color: #3498DB; }
+
+.job-category-MINE {
+  background-color: #16A085; }
+
 .job-category-ALERT, .job-category-BUG {
   background-color: red;
   color: white; }
@@ -1158,9 +1164,28 @@ h2 {
   background-color: #3E7499; }
 
 .job-category-PLOT {
-  background-color: #345B5B; }
+  background-color: #477878; }
 
-/* Sidebar */
+.job-category-SECRET {
+  background-color: #3e5b5b; }
+
+.job-category-BUILD {
+  background-color: #640404;
+  color: white; }
+
+.job-category-CODE {
+  background-color: orange; }
+
+.job-category-SYS {
+  background-color: #5bc0de; }
+
+.job-category-PLAYER {
+  background-color: #fef64a; }
+
+.job-category-LUCK {
+  background-color: #068431; }
+
+#068431
 .sidebar-heading h2 {
   padding: 0px;
   color: #C2C1C2;
@@ -1262,17 +1287,25 @@ h2 {
   padding: 0px;
   margin: 10px 10px 20px 10px; }
 
-.scene-log p {
-  margin: 2px 10px 10px 10px; }
-
 .scene-ooc-pose {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: fit-content;
+  border-radius: 10px; }
+
+.scene-pose-header {
+  padding-top: 10px;
   margin-bottom: 10px; }
 
 .scene-journal {
   background-color: #DB5461; }
 
 .scene-log p {
-  margin: 25px 10px 25px 10px;
+  margin: 25px;
+  line-height: 1.6; }
+
+#live-scene-log p {
+  margin: 5px;
   line-height: 1.6; }
 
 .scene-log {
