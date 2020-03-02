@@ -1,6 +1,6 @@
 ---
 sites:
-  ban_proxies: false
+  ban_proxies: true
   banned:
   - 34.228.95.236
   - 173.170.161.255
