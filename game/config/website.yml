@@ -196,7 +196,7 @@ website:
   permissions:
     manage_theme: Edit web portal CSS and colors.
     manage_wiki: Create and delete restricted wiki pages.
-  story: "[Tremors of Earth](https://spiritlakemu.com/plot/42)\nThe Heritor, in possession of the Earth Gem, stirs again from the Diyu - and this time, his sights are set on Feixuzicheng and all its kingdoms.\n\n[Be As The Scales Of Justice](https://spiritlakemu.com/plot/52)\nWith the assistance of Grand Lake's mages, the sentinel jackals are working to restore the Temple of the Sky to its former glory and retake it from deadly serpents. "
+  story: "Spirit Lake's story is concluded. Thanks for telling it with us."
   auto_wiki_export: true
   wiki_export_cron:
     hour:
