@@ -52,7 +52,7 @@ module AresMUSH
           name: room.name,
           descs: edit_mode ? Describe.get_web_descs_for_edit(room) : Describe.get_web_descs_for_display(room),
           weather: Website.format_markdown_for_html(weather),
-          weather_icon: Openweather.weather_icon(room.area.name),
+          # weather_icon: Openweather.weather_icon(room.area.name),
           owners: owners,
           area: area,
           name_and_area: room.name_and_area,
