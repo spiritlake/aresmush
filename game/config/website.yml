@@ -197,7 +197,7 @@ website:
     manage_theme: Edit web portal CSS and colors.
     manage_wiki: Create and delete restricted wiki pages.
   story: "Spirit Lake's story is concluded. Thanks for telling it with us."
-  auto_wiki_export: true
+  auto_wiki_export: false
   wiki_export_cron:
     hour:
     - 3
