@@ -1,8 +1,4 @@
 ---
 sites:
-  ban_proxies: false
-  banned:
-  - 34.228.95.236
-  - 173.170.161.255
-  - 69.145.236.165
   suspect: []
+  ban_proxies: false
