@@ -407,13 +407,17 @@ fs3combat:
       lethality: 5
       penetration: 1
       init_mod: 2
+    Death-Touched:
+      description: Level 4 Entropy Spell
+      is_magic: true
+      lethality: 25
     Fire:
       description: Level 4 Aether spell
       is_magic: true
       lethality: 10
       accuracy: 1
     Ice:
-      description: Level 4 Ice spell
+      description: Level 4 Entropy spell
       is_magic: true
       lethality: 10
       penetration: 1

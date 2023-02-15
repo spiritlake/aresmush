@@ -110,6 +110,21 @@ spells:
 #---------------
 # LEVEL 4
 #---------------
+  Death-Touched Weapon:
+    available: true
+    casting_time: 1 round
+    desc: Imbue an existing weapon with the draining touch of death, increasing the damage against living opponents.
+    effect: Buff
+    duration: 3 hours
+    is_potion: true
+    level: 4
+    name: Death-Touched Weapon
+    range: Touch
+    rounds: 100
+    school: Entropy
+    target_num: 1
+    weapon_specials: Death-Touched
+    weapon: Spell
   Earth Shudder:
     area: 10 yard radius
     available: true
@@ -186,7 +201,7 @@ spells:
     available: true
     casting_time: 1 round
     damage_type: Bypass
-    desc: Weaken a weapon by blunting sharp edges or weakening it's structural integrity.
+    desc: Weaken a weapon by blunting sharp edges or weakening it's structural integrity. This can include man-made weapons or natural animal and cryptids weapons like teeth and claws.
     duration: 3 hours
     effect: Debuff
     level: 4
@@ -201,7 +216,7 @@ spells:
     armor_specials: Weaken
     casting_time: 1 round
     damage_type: Bypass
-    desc: Make a target's armor less protective by weakening it's structural integrity.
+    desc: Make a target's armor less protective by softening it or weakening its structural integrity. This can include man-made armors or natural animal and cryptids hides.
     duration: 30 seconds
     effect: Debuff
     level: 4
