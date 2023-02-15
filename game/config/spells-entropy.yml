@@ -105,6 +105,19 @@ spells:
     rounds: 3
     school: Entropy
     target_num: 1
+  Shadowmancy:
+    area: 2 cubic feet
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: "For the duration of the spell, the caster can influence up to 2 cubic feet of darkness, creating and forming shadows into simple non-weaponized shapes that animate at their direction. The darkness can hide small objects from view. When the spell ends, the shadows fade or return to their natural state in their current location."
+    duration: 30 minutes
+    effect: Manipulation
+    level: 3
+    name: Shadowmancy
+    range: Short
+    roll: true
+    school: Aether
 
 
 #---------------
@@ -146,7 +159,7 @@ spells:
     damage_desc: Flesh Wound Spell
     damage_inflicted: FLESH
     damage_type: Bypass
-    desc: "Inflict a flesh wound. \n\nSpell ignores target's armor."
+    desc: "Cause a target's body to slice open, inflicting a flesh wound. \n\nSpell ignores target's armor."
     effect: Damage
     level: 4
     line_of_sight: true
@@ -228,6 +241,19 @@ spells:
 #---------------
 # LEVEL 5
 #---------------
+  Gravity Crush:
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: "Concentrate the forces of gravity on a single target, crushing them and doing damage. "
+    effect: Damage
+    fs3_attack: true
+    level: 5
+    name: 'Gravity Crush '
+    range: Long
+    school: Entropy
+    weapon: Gravity Crush
+    target_num: 1
   Paralyze:
     available: true
     casting_time: 1 round
@@ -244,6 +270,22 @@ spells:
     target_num: 2
     school: Entropy
     weapon: Stun (Entropy)
+  Heavy:
+    attack_mod: -1
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    defense_mod: -1
+    desc: "Increase the pull of gravity on a target, making it more difficult for them to act, react, or cast magic. Flying targets find it more difficult to stay aloft."
+    duration: 3 rounds
+    effect: Debuff
+    level: 5
+    line_of_sight: true
+    name: Heavy
+    range: Long
+    rounds: 3
+    school: Entropy
+    target_num: 1
   Ice Block:
     available: true
     area: 5 yard length
@@ -280,13 +322,29 @@ spells:
     school: Entropy
     target_num: 3
     weapon: Cone Of Cold
+  Deep Freeze:
+    attack_mod: -2
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    defense_mod: -2
+    desc: "Dramatically drop the surrounding temperature around three targets, making it difficult for them to move or react. "
+    duration: 2 rounds
+    effect: Debuff
+    level: 6
+    line_of_sight: true
+    name: Deep Freeze
+    range: Long
+    rounds: 2
+    school: Entropy
+    target_num: 3
   Impair:
     available: true
     casting_time: 1 round
     damage_desc: Impair Spell
     damage_inflicted: IMPAIR
     damage_type: Bypass
-    desc: "Inflict an impaired wound, making it difficult for an enemy to use the affected body part. \n\nSpell ignores target's armor."
+    desc: "Cause a target's body to rip itself apart, inflicting an impaired wound and making it difficult for them to use the affected body part. \n\nSpell ignores target's armor."
     effect: Damage
     level: 6
     line_of_sight: true
