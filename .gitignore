@@ -5,6 +5,7 @@ real_database.yml
 packer_vars.json
 server.yml
 
+
 # Logs and errors
 # -----------------------------
 *.log
