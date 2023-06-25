@@ -1,4 +1,4 @@
-require 'byebug'
+# require 'byebug'
 module AresMUSH
   module ExpandedMounts
 
@@ -87,6 +87,7 @@ module AresMUSH
         FS3Combat.check_for_ko(m)
         Magic.death_new_turn(m)
         m.update(freshly_damaged: false)
+        m.update(damaged_by: [])
       end
     end
 
