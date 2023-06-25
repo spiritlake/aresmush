@@ -1,5 +1,5 @@
 
-require 'byebug'
+# require 'byebug'
 module AresMUSH
   module Magic
 
