@@ -2429,17 +2429,17 @@ h1+p+table~span+hr+h2~div>p:last-of-type:not(:first-of-type) {
 
 //TOC, BLOCKQUOTE AND BREADCRUMBS
 blockquote {
-	background: $darkest-slate;
-	border-left: 5px solid $dark-rose;
+	background: $dark-slate;
+	border-left: 5px solid $rose;
 	color: $light-grey;
 }
 
 blockquote a {
-	color: $secondary-color;
+	color: $secondary-color!important;
 }
 
 blockquote a:hover {
-	color: $rust;
+	color: $rust!important;
 }
 
 .toc {
@@ -2716,7 +2716,11 @@ th,
 }
 
 .cg-tip a {
-	color: $lightest-greyish-green;
+	color: $dark-slate;
+}
+
+.cg-tip a:hover {
+	color: $rust;
 }
 
 #fs3abilities > .tab-content {
@@ -3109,12 +3113,6 @@ ALERTIFY DIALOGS & ALERTS
 .alertify-notifier .ajs-message.ajs-success {
   background-color: $darkest-slate;
   color: $primary-words-color;
-}
-
-.alert p,
-.alert-warning p {
-    line-height: 1;
-    margin: 0;
 }
 
 @media screen and (min-width: 768px) {
