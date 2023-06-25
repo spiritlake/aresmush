@@ -82,19 +82,21 @@ module AresMUSH
       end
     end
 
-    def self.get_potion_message(caster, target_name, spell)
-      target = Character.named(target_name)
-      heal_points = Global.read_config("spells", spell, "heal_points")
-      is_shield = Global.read_config("spells", spell, "is_shield")
-      type = Global.read_config("spells", spell, "shields_against")
-      if heal_points
-        message = t('magic.potion_heal', :name => caster.name, :target => target.name, :potion => spell, :points => heal_points)
-      elsif is_shield
-        message = t('magic.potion_shield', :name => caster.name, :target => target.name, :potion => spell, :type => type)
+    def self.get_potion_message(caster, target_name, spell_name)
+      puts "GETTING POTION MESSAGE"
+      target = Character.named(target_name) || Mount.named(target_name)
+      puts "Target: #{target} #{target.name} #{target.class}"
+      spell = Global.read_config("spells", spell_name)
+      if spell['heal_points']
+        message = t('magic.potion_heal', :name => caster.name, :target => target.name, :potion => spell_name, :points => spell['heal_points'])
+      elsif spell['is_shield']
+        message = t('magic.potion_shield', :name => caster.name, :target => target.name, :potion => spell_name, :type => spell['shields_against'])
+      elsif spell['energy_points']
+        message = t('magic.potion_fatigue_heal', :name => caster.name, :target => target.name, :potion => spell_name, :points => spell['energy_points'])
       elsif caster == target
-        message = t('magic.potion', :name => caster.name, :potion => spell)
+        message = t('magic.potion', :name => caster.name, :potion => spell_name)
       else
-        message = t('magic.potion_target', :name => caster.name, :target => target.name, :potion => spell)
+        message = t('magic.potion_target', :name => caster.name, :target => target.name, :potion => spell_name)
       end
       return message
     end

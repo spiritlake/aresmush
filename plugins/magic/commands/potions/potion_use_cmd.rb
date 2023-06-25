@@ -13,7 +13,7 @@ module AresMUSH
          self.potion = Magic.find_potion_has(caster, self.potion_name)
          self.target_name_arg = titlecase_arg(args.arg2)
          if target_name_arg
-           self.target = Character.named(target_name_arg)
+           self.target = Character.named(target_name_arg) || Mount.named(target_name_arg)
          else
            self.target = enactor
            self.target_name_arg = enactor.name

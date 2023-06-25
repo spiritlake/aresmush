@@ -86,8 +86,10 @@ module AresMUSH
       end
 
       if using_potion
-        message = [Magic.get_potion_message(caster, names[0], spell_name)]
-        messages.concat message
+
+        messages = [Magic.get_potion_message(caster, names[0], spell_name)]
+        # puts message
+        # messages.concat message
       else
         if (!names.empty? && names.all?(caster_name))
           if !spell['heal_points'] && !spell['is_shield'] && !spell['energy_points']
