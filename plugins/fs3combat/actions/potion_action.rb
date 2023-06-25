@@ -15,7 +15,8 @@ module AresMUSH
         end
 
         self.spell = self.spell.titlecase
-        self.potion = Magic.find_potion_has(combatant.associated_model, self.spell)
+
+        self.potion = Magic.find_potion_has(combatant.associated_model, self.spell) if !combatant.is_npc?
 
         error = self.parse_targets(self.names)
         return error if error
