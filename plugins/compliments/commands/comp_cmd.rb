@@ -59,7 +59,7 @@ module AresMUSH
                   FS3Skills.modify_luck(enactor, comper_luck_amount)
                 end
                 message = t('compliments.has_left_comp', :from => enactor.name)
-                Login.emit_if_logged_in target, message
+                Login.emit_if_logged_in target, "%xc#{message}%xn"
                 self.target_names << target.name
               end
             end
@@ -76,7 +76,7 @@ module AresMUSH
               FS3Skills.modify_luck(enactor, comper_luck_amount)
             end
             message = t('compliments.has_left_comp', :from => enactor.name)
-            Login.emit_if_logged_in target, message
+            Login.emit_if_logged_in target, "%xc#{message}%xn"
             Login.notify(target, :comp, message, nil)
           end
           client.emit_success t('compliments.left_comp', :name =>  self.target_names.join(", "))
