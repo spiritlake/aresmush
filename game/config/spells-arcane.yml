@@ -81,7 +81,7 @@ spells:
     available: true
     casting_time: 1 round
     damage_type: Psionic
-    desc: "Up to 6 targets, including the caster, are able to hold a telepathic conversation together. All targets are part of a single conversation for the duration of the spell. Conversation is limited to words and brief, simple images. A bonded mage/mythic pair counts as one target. "
+    desc: "Up to 6 targets, including the caster, are able to hold a telepathic conversation together. All targets are part of a single conversation for the duration of the spell. Conversation is limited to words and brief, simple images. A bonded mage/mythic pair counts as one target. Multiple casts of the spell can link conversations to form larger groups as long as one target overlaps."
     duration: 1 hour
     effect: Communication
     level: 2
