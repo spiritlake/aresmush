@@ -4,6 +4,7 @@ jobs:
   - NEW
   - OPEN
   - WAITING
+  - PENDING
   archive_cron:
     hour:
     - 4
@@ -43,6 +44,8 @@ jobs:
       color: "%xb"
     WAITING:
       color: "%x61"
+    PENDING:
+      color: "%x87"
     HOLD:
       color: "%xx%xh"
     DONE:
@@ -58,3 +61,5 @@ jobs:
   responses:
   - name: Received
     text: Your job has been received. We'll get to it soon.
+  - name: Spell Pending
+    text: Thanks for your spell request! We work through spells at a rate of one per week, so your job has been moved to pending. Keep an eye on this space for feedback or questions when we get to your request.
