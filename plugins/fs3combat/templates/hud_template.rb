@@ -103,7 +103,7 @@ module AresMUSH
         if (name)
           "#{team} (#{name})"
         else
-          name
+          team
         end
       end
     end
