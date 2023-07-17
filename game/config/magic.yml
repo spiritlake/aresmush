@@ -56,6 +56,7 @@ magic:
     mana: spell/fatigue
     spell/mana: spell/fatigue
     combat/spellmod: spell/mod
+    manarestore: fatigueheal
   achievements:
     potions_made:
       type: potion
