@@ -270,7 +270,7 @@ fs3combat:
         Chest: 8
         Abdomen: 7
     Chainmail:
-      description: Chainmail shirt & gambeson
+      description: Chainmail shirt & gambeson, chainmail coif
       is_magic: false
       special_group: Mundane
       defense: 0
@@ -279,8 +279,10 @@ fs3combat:
         Abdomen: 5
         Left Arm: 6
         Right Arm: 6
+        Head: 4
+        Neck: 3
     Plate:
-      description: Full plate armor with no helmet
+      description: Full plate armor with helmet
       is_magic: false
       special_group: Mundane
       defense: -1
@@ -291,8 +293,10 @@ fs3combat:
         Right Arm: 7
         Right Leg: 5
         Left Leg: 5
+        Head: 4
+        Neck: 4
     Leather:
-      description: Leather armor
+      description: Leather armor and helmet
       is_magic: false
       special_group: Mundane
       defense: 0
@@ -301,6 +305,7 @@ fs3combat:
         Abdomen: 4
         Left Arm: 5
         Right Arm: 5
+        Head: 3
     Police:
       description: Police-Grade Kevlar Vest
       is_magic: false
@@ -361,10 +366,6 @@ fs3combat:
 #---------------
   armor special groups:
     Mundane:
-    - modern helmet
-    - leather helmet
-    - metal helmet
-    - chainmail coif
     - weaken
     Magic:
     - weaken
