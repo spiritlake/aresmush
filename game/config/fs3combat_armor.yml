@@ -319,23 +319,6 @@ fs3combat:
   # ARMOR SPECIALS
   #--------------
   armor specials:
-    Leather Helmet:
-      description: A leather helmet
-      is_magic: false
-      protection:
-        Head: 3
-    Metal Helmet:
-      description: A metal helmet
-      is_magic: false
-      protection:
-        Head: 4
-    Chainmail Coif:
-      description: A chainmail coif that covers your head and neck, with a helmet
-        atop.
-      is_magic: false
-      protection:
-        Head: 4
-        Neck: 3
     Weaken:
       description: Level 4 Entropy spell
       is_magic: true
