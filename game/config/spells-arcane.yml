@@ -396,6 +396,19 @@ spells:
     roll: true
     school: Arcane
     target_num: 1
+  Spirit Echo:
+    available: true
+    casting_time: 30 seconds
+    damage_type: Other
+    desc: "Cast a spell on a ghost or spirit at rest that calls forth a random strong memory of up to thirty seconds. The caster experiences the memory as their own for the duration.\n\nThe spell can be cast multiple times, receiving a different memory each time. Some spirits may have only one or two memories strong enough to remain coherent, and memories may repeat. Each subsequent memory becomes less and less clear, until it is entirely fragmented.\n\nThe memory should be chosen by a GM. The attempt to cast this spell can confirm whether a spirit is present."
+    duration: 30 seconds
+    effect: Other
+    level: 5
+    name: Spirit Echo
+    range: Short
+    roll: true
+    school: Arcane
+    target_num: 1
 #---------------
 # LEVEL 6
 #---------------
