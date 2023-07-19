@@ -64,6 +64,18 @@ fs3combat:
       accuracy: 0
       init_mod: 0
       special_group: Ranged
+    Catapult:
+      description: Catapult using ammo which explode into shrapnel.
+      skill: Archery
+      lethality: 0
+      penetration: 7
+      weapon_type: Explosive
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      has_shrapnel: true
+      init_mod: 0
+      special_group: Ranged
     Shrapnel:
       description: Random Shrapnel
       skill: 3
