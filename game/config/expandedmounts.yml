@@ -88,3 +88,4 @@ expandedmounts:
   shortcuts:
     roll/mount: mount/roll
     mythic: warden
+    combat/mounthero: mount/hero
