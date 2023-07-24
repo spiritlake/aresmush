@@ -13,10 +13,13 @@ login:
     - 3
     minute:
     - 0
-  creation_not_allowed_message: 'Shattered is currently full. See the front page for information about creation.'
-  guest_disabled_message: 'Shattered is currently full. See the front page for information about creation.'
+  creation_not_allowed_message: Shattered is currently full. See the front page for
+    information about creation.
+  guest_disabled_message: Shattered is currently full. See the front page for information
+    about creation.
   guest_role: guest
-  login_not_allowed_message: 'Shattered is currently full. See the front page for information about creation.'
+  login_not_allowed_message: Shattered is currently full. See the front page for information
+    about creation.
   notice_cleanup_cron:
     day:
     - 18
@@ -40,3 +43,4 @@ login:
     manage_login: Can access login-related admin tools like resetting someone's password.
   random_guest_selection: false
   boot_timeout_seconds: 300
+  disable_nonadmin_logins: false
