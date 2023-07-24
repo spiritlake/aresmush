@@ -22,9 +22,11 @@ module AresMUSH
     attribute :shared
     attribute :was_restarted, :type => DataType::Boolean, :default => false
     attribute :logging_enabled, :type => DataType::Boolean, :default => true
-    attribute :deletion_warned, :type => DataType::Boolean, :default => false
     attribute :icdate
     attribute :content_warning
+
+    attribute :in_trash, :type => DataType::Boolean, :default => false
+    attribute :trash_date, :type => DataType::Time
 
     collection :scene_poses, "AresMUSH::ScenePose"
     collection :scene_likes, "AresMUSH::SceneLike"
@@ -39,6 +41,9 @@ module AresMUSH
     set :likers, "AresMUSH::Character"
 
     set :creatures, "AresMUSH::Creature"
+
+    # DEPRECATED - Replaced with trash
+    attribute :deletion_warned
 
     # DEPRECATED - DO NOT USE (replaced by plot links)
     reference :plot, "AresMUSH::Plot"
