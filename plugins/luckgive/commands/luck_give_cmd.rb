@@ -3,7 +3,7 @@ module AresMUSH
     class LuckGiveCmd
       #luck/give <name>=<reason>
       include CommandHandler
-      attr_accessor :target_name, :reason
+      attr_accessor :target_name, :reason, :target
 
       def parse_args
         args = cmd.parse_args(ArgParser.arg1_equals_arg2)
