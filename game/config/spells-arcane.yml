@@ -134,7 +134,7 @@ spells:
     available: true
     casting_time: 1 round
     damage_type: Psionic
-    desc: Read someone's surface thoughts. Can penetrate the innate shield of a bonded mage.
+    desc: Read the surface-level thoughts and emotions of a sapient target, including those with naturally guarded minds. Surface-level thoughts may include things such as words, phrases or images, but do not include deeper background knowledge. motivations, or memories.
     duration: 30 minutes
     effect: Psionic
     level: 2
