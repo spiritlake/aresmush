@@ -100,7 +100,7 @@ spells:
     name: Aeromancy
     range: Short
     roll: true
-    school:
+    school: Aether
   Flame Dart:
     available: true
     casting_time: 1 round

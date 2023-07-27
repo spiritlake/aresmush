@@ -91,7 +91,7 @@ module AresMUSH
 
       poses = room.sorted_pose_order
 
-      if room.scene.scene_type == "Text" && poses.count < 2
+      if room.scene && room.scene.scene_type == "Text" && poses.count < 2
         room.scene.participants.each do |char|
           if char.room.scene.nil? || (!char.room.scene.nil? && room.scene.id != char.room.scene.id)
             Txt.notify_if_portal_pose(room, char)

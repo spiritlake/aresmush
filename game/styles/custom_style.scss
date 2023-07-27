@@ -75,7 +75,9 @@ html, body {
   scrollbar-color: #ebebeb #1f252f;   /* scroll thumb and track */
 }
 
-
+.container-fluid {
+	max-width: unset;
+}
 
 body {
 	font-family: Verdana, Geneva, sans-serif;

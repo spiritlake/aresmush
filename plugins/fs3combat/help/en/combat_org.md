@@ -71,13 +71,12 @@ All combat commands accept combatant name(s) so you can force NPCs (or idle PCs)
 
 `combat/log <page>` - Views the combat log, with detailed messages about the rolls and effects.
 
-
-## Targeting
 ## Teams and Targeting
 
 `combat/targets` - See a breakdown of who's targeting whom.
 
 `combat/team <list of names>=<team#>` - Switches teams.
+`combat/teamname <#>=<name>` - Names a team.
 `combat/target <team#>=<list of team #s>` - Sets it up so NPCs on a given team will only
     target people on the listed teams.  "combat/target 3=1 4" means team 3 will only target
     people on teams 1 and 4.
