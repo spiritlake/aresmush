@@ -346,6 +346,18 @@ spells:
     school: Aether
     spell_mod: -2
     target_num: 1
+  Sonic Rupture:
+    available: true
+    casting_time: 1 round
+    desc: The caster generates a concentrated area of ultrasonic vibrations within a target, creating bubbles in liquids - including soft tissue - which rapidly collapse, rupturing adjacent material to cause internal damage. There is no effect if no moisture is present.
+    effect: Damage
+    fs3_attack: true
+    level: 6
+    line_of_sight: true
+    name: Sonic Rupture
+    range: Long
+    school: Aether
+    target_num: 1
 #---------------
 # LEVEL 7
 #---------------
