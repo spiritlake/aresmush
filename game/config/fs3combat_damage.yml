@@ -7,10 +7,10 @@ fs3combat:
     IMPAIR: 4
     INCAP: 7
   damage_table:
-    GRAZE: 20
-    FLESH: 70
-    MODERATE: 83
-    IMPAIR: 98
+    GRAZE: 15
+    FLESH: 65
+    MODERATE: 100
+    IMPAIR: 125
   healing_cron:
     hour:
     - 2
