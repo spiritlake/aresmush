@@ -362,7 +362,15 @@ module AresMUSH
             message = t('fs3combat.attack_dodged', :name => combatant.name, :target => target.name, :weapon => weapon)
           end
         else
+          # Magic Changes
+          spell_boost = attacker_net_successes + 1
+          puts "**** SPELL BOOST: #{attacker_net_successes} -> #{spell_boost}"
+          if combatant.action_klass == "Spell" && spell_boost < 0
             message = t('fs3combat.attack_near_miss', :name => combatant.name, :target => target.name, :weapon => weapon)
+          else
+            hit = true
+          end
+          # /Magic changes
         end
       else
         hit = true
