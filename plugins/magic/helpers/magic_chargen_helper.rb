@@ -234,7 +234,7 @@ module AresMUSH
 
     def self.mage_cg_spells(char)
       level = Global.read_config("magic", "cg_max_spell_level")
-      spells = Global.read_config("spells").values.select { |s| s['level'] <= level }
+      spells = Global.read_config("spells").values.select { |s| s['level'] <= level && !s['no_cg']}
       if !char.major_schools.empty?
         spells = spells.select { |s| s['school'] == char.major_schools.first}
       else
@@ -253,7 +253,7 @@ module AresMUSH
 
     def self.mythic_cg_spells(char)
       level = Global.read_config("magic", "cg_max_spell_level")
-      spells = Global.read_config("spells").values.select { |s| s['level'] <= level }
+      spells = Global.read_config("spells").values.select { |s| s['level'] <= level && !s['no_cg']}
 
       if !char.minor_schools.empty?
         spells = spells.select { |s| s['school'] == char.minor_schools.first}
