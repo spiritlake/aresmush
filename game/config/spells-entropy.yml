@@ -435,6 +435,20 @@ spells:
     rounds: 2
     school: Entropy
     target_num: 3
+  Impair:
+    available: true
+    casting_time: 1 round
+    damage_desc: Wound Spell
+    damage_inflicted: MODERATE
+    damage_type: Bypass
+    desc: "Causes a target's body to rip or tear itself, inflicting a moderate wound and making it painful for them to use the affected body part. \n\nSpell ignores target's armor."
+    effect: Damage
+    level: 6
+    line_of_sight: true
+    name: Impair
+    range: Short
+    school: Entropy
+    target_num: 1
   Wound:
     available: true
     casting_time: 1 round
