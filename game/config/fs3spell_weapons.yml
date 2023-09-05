@@ -384,7 +384,8 @@ fs3combat:
       penetration: 0
       weapon_type: Stun
       recoil: 0
-      damage_type: Psionic
+      damage_type: Physical
+      magic_damage_type: Psionic
       accuracy: 0
       init_mod: 0
     Stun (Creation):
