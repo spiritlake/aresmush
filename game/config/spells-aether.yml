@@ -358,6 +358,7 @@ spells:
     range: Long
     school: Aether
     target_num: 1
+    weapon: Sonic Rupture
 #---------------
 # LEVEL 7
 #---------------
