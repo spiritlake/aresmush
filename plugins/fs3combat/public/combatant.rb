@@ -141,6 +141,10 @@ module AresMUSH
     def total_damage_mod
       if (is_in_vehicle?)
         FS3Combat.total_damage_mod(self.associated_model) + FS3Combat.total_damage_mod(self.vehicle)
+      elsif !self.npc && self.associated_model&.bonded
+        mount = Mount.named(self.associated_model.bonded.name)
+        self.log "Total damage mod: #{self.associated_model.name}=#{FS3Combat.total_damage_mod(self.associated_model)} + #{mount.name}=#{FS3Combat.total_damage_mod(mount)} / 2 = #{(FS3Combat.total_damage_mod(self.associated_model) + FS3Combat.total_damage_mod(mount)) / 2}"
+        (FS3Combat.total_damage_mod(self.associated_model) + FS3Combat.total_damage_mod(mount)) / 2
       else
         FS3Combat.total_damage_mod(self.associated_model)
       end
