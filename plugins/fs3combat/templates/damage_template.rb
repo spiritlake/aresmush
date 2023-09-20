@@ -41,6 +41,14 @@ module AresMUSH
         FS3Combat.total_damage_mod(target)
       end
 
+      def mage_mythic_wound_mod
+        (FS3Combat.total_damage_mod(target) + FS3Combat.total_damage_mod(target.bonded)) / 2
+      end
+
+      def callsign
+        target.class == AresMUSH::Character ? target.demographic(:callsign) : target.bonded.demographic(:callsign)
+      end
+
       def magic_energy_mod
         Magic.get_magic_energy_mod(target)
       end
