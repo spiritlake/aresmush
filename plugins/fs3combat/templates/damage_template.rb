@@ -45,6 +45,10 @@ module AresMUSH
         (FS3Combat.total_damage_mod(target) + FS3Combat.total_damage_mod(target.bonded)) / 2
       end
 
+      def npc
+        target.class == AresMUSH::Npc
+      end
+
       def callsign
         target.class == AresMUSH::Character ? target.demographic(:callsign) : target.bonded.demographic(:callsign)
       end
