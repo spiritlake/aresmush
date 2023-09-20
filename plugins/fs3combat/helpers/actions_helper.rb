@@ -91,7 +91,7 @@ module AresMUSH
       puts "Checking for KO #{combatant.name}"
       return if (!combatant.freshly_damaged || combatant.is_ko || combatant.total_damage_mod > -1.0)
 
-      combatant.log "Checking for KO: #{combatant.name} damaged=#{combatant.freshly_damaged} ko=#{combatant.is_ko} mod=#{combatant.total_damage_mod}"
+      combatant.log "Checking for KO: #{combatant.name} | damaged=#{combatant.freshly_damaged} ko=#{combatant.is_ko} mod=#{combatant.total_damage_mod}"
 
       if (combatant.is_npc? && (combatant.total_damage_mod <= -8))
         combatant.log "#{combatant.name} auto-KO'd."
@@ -150,7 +150,7 @@ module AresMUSH
       mod = damage_mod + damage_mod + pc_mod + vehicle_mod + ko_mod
 
       roll = combatant.roll_ability(composure, mod)
-      combatant.log "#{combatant.name.upcase} checking KO. roll=#{roll} composure=#{composure} damage=#{damage_mod}*2=#{damage_mod + damage_mod} vehicle=#{vehicle_mod}  pc=#{pc_mod} mod=#{ko_mod}"
+      combatant.log "#{combatant.name.upcase} checking KO. composure=#{composure} damage=#{damage_mod}*2=#{damage_mod + damage_mod} vehicle=#{vehicle_mod}  pc=#{pc_mod} mod=#{ko_mod} total=#{mod} roll=#{roll} "
 
       roll
     end
@@ -389,6 +389,7 @@ module AresMUSH
         message: message,
         hit: hit,
         attacker_net_successes: attacker_net_successes,
+        stopped_by_shield: stopped_by_shield,
       }
     end
 
