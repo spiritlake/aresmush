@@ -81,8 +81,8 @@ fs3combat:
     Target:
       hitloc: Target
       weapon: Unarmed
-    Quadraped:
-      hitloc: Quadraped
+    Quadruped:
+      hitloc: Quadruped
       defense_skill: Reflexes
       weapon: Claws
       armor: Tough Hide

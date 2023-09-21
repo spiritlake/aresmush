@@ -910,7 +910,7 @@ fs3combat:
       - Stem
       critical_areas:
       - Flower
-    Quadraped:
+    Quadruped:
       areas:
         Chest:
         - Rear Left Leg
@@ -1018,7 +1018,7 @@ fs3combat:
       - Head
       - Neck
       - Groin
-    QuadrapedWithTail:
+    QuadrupedWithTail:
       areas:
         Chest:
         - Rear Left Leg
