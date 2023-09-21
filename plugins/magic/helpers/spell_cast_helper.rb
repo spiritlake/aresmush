@@ -341,7 +341,7 @@ module AresMUSH
       elsif damage_inflicted.downcase == "flesh"
         desc = "%xgFlesh Wound%xn"
       elsif damage_inflicted.downcase == "moderate"
-        desc = "%xgModeratexn"
+        desc = "%xgModerate%xn"
       else
         desc = ""
       end
