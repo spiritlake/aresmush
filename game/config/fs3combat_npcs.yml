@@ -60,42 +60,42 @@ fs3combat:
       Magic: 24
       Wounds: -25
 
-# MYTHICS
+# MYTHICS - These settings control what NPC mythics get
     Dragon:
-      Default: 10
-      Composure: 12
-      Magic: 10
-      Wounds: -10
+      Default: 11
+      Composure: 13
+      Magic: 11
+      Wounds: -15
     Lupine:
-      Default: 10
-      Composure: 11
-      Alertness: 12
-      Magic: 10
-      Wounds: -10
-    Pantherine:
-      Default: 10
-      Alertness: 13
-      Magic: 10
-      Wounds: -10
-    Pegasus:
-      Default: 10
-      Composure: 11
-      Brawl: 11
-      Melee: 11
-      Magic: 10
-      Wounds: -10
-    Griffon:
-      Default: 10
+      Default: 11
       Composure: 12
-      Brawl: 11
-      Melee: 11
-      Alertness: 12
-      Magic: 10
-      Wounds: -10
-    Roc:
-      Default: 10
+      Alertness: 13
+      Magic: 11
+      Wounds: -15
+    Pantherine:
+      Default: 11
+      Alertness: 14
+      Magic: 11
+      Wounds: -15
+    Pegasus:
+      Default: 11
+      Composure: 12
       Brawl: 12
       Melee: 12
-      Reflexes: 12
-      Magic: 10
-      Wounds: -10
+      Magic: 11
+      Wounds: -15
+    Griffon:
+      Default: 11
+      Composure: 13
+      Brawl: 12
+      Melee: 12
+      Alertness: 13
+      Magic: 11
+      Wounds: -15
+    Roc:
+      Default: 11
+      Brawl: 13
+      Melee: 13
+      Reflexes: 13
+      Magic: 11
+      Wounds: -15

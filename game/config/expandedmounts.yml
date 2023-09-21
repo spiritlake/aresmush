@@ -6,6 +6,7 @@ expandedmounts:
     <li>Spells must be in your mythic school.</li>
     <li>You must have a spell in each previous level.</li></ul>'
   cg_blurb: All Wardens are bonded to a creature known as a mythic. Through this bond, they share their magic. You'll create your mythic in CG, though you can flesh them out later.
+  # These settings control what stats PC mounts get
   Dragon:
     armor: Dragon
     weapons:
