@@ -76,7 +76,7 @@ fs3combat:
     Pantherine:
       weapon: Sharp Claws
       hitloc: Winged Mythic
-      armor: Panterine
+      armor: Pantherine
       defense_skill: Reflexes
     Target:
       hitloc: Target
