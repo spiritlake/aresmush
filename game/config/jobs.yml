@@ -52,7 +52,7 @@ jobs:
       color: "%xy"
     ARCHIVED:
       color: "%xx%xh"
-  system_category: SYS
+  system_category: SYSTEM
   trouble_category: REQ
   luck_category: LUCK
   permissions:

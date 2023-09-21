@@ -367,11 +367,11 @@ fs3combat:
       init_mod: 0
     Stun (Aether):
       description: Stun spell
-      is_magic: true
+      is_magic: x
       skill: Aether
       lethality: 0
       penetration: 0
-      weapon_type: Stun
+      weapon_type: Ranged
       recoil: 0
       damage_type: Physical
       accuracy: 0
@@ -382,7 +382,7 @@ fs3combat:
       skill: Arcane
       lethality: 0
       penetration: 0
-      weapon_type: Stun
+      weapon_type: Ranged
       recoil: 0
       damage_type: Physical
       magic_damage_type: Psionic
@@ -394,7 +394,7 @@ fs3combat:
       skill: Creation
       lethality: 0
       penetration: 0
-      weapon_type: Stun
+      weapon_type: Ranged
       recoil: 0
       damage_type: Physical
       accuracy: 0
@@ -405,7 +405,7 @@ fs3combat:
       skill: Entropy
       lethality: 0
       penetration: 0
-      weapon_type: Stun
+      weapon_type: Ranged
       recoil: 0
       damage_type: Physical
       accuracy: 0
