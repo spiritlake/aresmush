@@ -413,6 +413,19 @@ spells:
 #---------------
 # LEVEL 6
 #---------------
+  Greater Restore Mana:
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: Restore a significant portion of the target's mana. Cannot be cast on oneself.
+    effect: Heal
+    energy_points: 35
+    level: 6
+    line_of_sight: true
+    name: Restore Mana
+    range: Short
+    school: Arcane
+    target_num: 1
   Group Awaken Terror:
     available: false
     casting_time: 1 round
