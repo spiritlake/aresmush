@@ -422,7 +422,7 @@ spells:
     energy_points: 35
     level: 6
     line_of_sight: true
-    name: Restore Mana
+    name: Greater Restore Mana
     range: Short
     school: Arcane
     target_num: 1
