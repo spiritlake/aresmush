@@ -50,39 +50,39 @@ fs3combat:
     #   defense_skill: Reflexes
     Dragon:
       weapon: Sharp Teeth
-      armor: Tough Hide
+      armor: Dragon
       hitloc: Dragon
       defense_skill: Reflexes
     Griffon:
       weapon: Sharp Talons
-      armor: Tough Hide
+      armor: Griffon
       hitloc: Winged Mythic
       defense_skill: Reflexes
     Roc:
       weapon: Sharp Talons
-      armor: Tough Hide
+      armor: Roc
       hitloc: Bird
       defense_skill: Reflexes
     Pegasus:
       weapon: Hard Hooves
       hitloc: Winged Mythic
-      armor: Tough Hide
+      armor: Pegasus
       defense_skill: Reflexes
     Lupine:
       weapon: Sharp Claws
       hitloc: Winged Mythic
-      armor: Tough Hide
+      armor: Lupine
       defense_skill: Reflexes
     Pantherine:
       weapon: Sharp Claws
       hitloc: Winged Mythic
-      armor: Tough Hide
+      armor: Pantherine
       defense_skill: Reflexes
     Target:
       hitloc: Target
       weapon: Unarmed
-    Quadraped:
-      hitloc: Quadraped
+    Quadruped:
+      hitloc: Quadruped
       defense_skill: Reflexes
       weapon: Claws
       armor: Tough Hide

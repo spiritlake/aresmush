@@ -55,7 +55,7 @@ fs3combat:
         Head: 5
         Neck: 4
     Pantherine:
-      description: Dragon hide
+      description: Pantherine hide
       is_magic: false
       special_group: Mundane
       defense: 0
