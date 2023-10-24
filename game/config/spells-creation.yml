@@ -54,6 +54,18 @@ spells:
     range: Touch
     roll: true
     school: Creation
+  Sense Injury:
+    available: true
+    area: 100 yard radius
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: The caster can identify from a distance the presence of an injured person, mythic, cryptid, or animal who can be healed via Creation magic. The caster cannot identify the nature of the injury or if there are multiple injured creatures present.
+    effect: Heal
+    level: 2
+    name: Sense Injury
+    range: self
+    roll: true
+    school: Creation
   Sling Barb:
     available: true
     casting_time: 1 round
