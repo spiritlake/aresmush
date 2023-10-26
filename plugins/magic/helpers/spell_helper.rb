@@ -103,7 +103,7 @@ module AresMUSH
         if target.magic_energy >= (target.total_magic_energy * 0.8)
           puts "no more healing"
         end
-        return t('magic.cannot_spell_fatigue_heal_further', :name => target.name) if (energy_points && (target.magic_energy >= (target.total_magic_energy * 0.8)))
+        return t('magic.cannot_spell_fatigue_heal_further', :name => target.name) if (energy_points && energy_points > 0 && (target.magic_energy >= (target.total_magic_energy * 0.8)))
       end
 
       return false
