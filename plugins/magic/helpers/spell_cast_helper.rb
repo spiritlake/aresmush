@@ -435,7 +435,7 @@ module AresMUSH
         message = t('magic.dont_target_self')
         return message
       end
-      margin = FS3Combat.determine_attack_margin(combatant, target, mod = -1, called_shot = nil, mount_hit = false, result = nil)
+      margin = FS3Combat.determine_attack_margin(combatant, target, mod = -2, called_shot = nil, mount_hit = false, result = nil)
       stopped_by_shield = margin[:stopped_by_shield] || []
       puts "++++ #{margin}"
       puts "++++ #{stopped_by_shield}"
