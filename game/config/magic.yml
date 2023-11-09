@@ -58,6 +58,15 @@ magic:
     combat/spellmod: spell/mod
     manarestore: fatigueheal
   achievements:
+    has_died:
+      type: story
+      message: Died %{count} times.
+      levels:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
     potions_made:
       type: potion
       message: Made %{count} potions.
