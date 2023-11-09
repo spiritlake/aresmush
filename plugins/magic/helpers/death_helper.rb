@@ -38,7 +38,7 @@ module AresMUSH
         FS3Combat.emit_to_combat(combatant.combat, t('magic.died', :name => combatant.name), npcmaster = nil, add_to_scene = true)
       end
       char.update(dead: true)
-      char.is_mount? ? return : Magic.handle_has_died_achievement(combatant.associated_model)
+      char.is_mount? ? return : Magic.handle_has_died_achievement(char)
     end
 
     def self.treat_dying(healer_name, patient)
