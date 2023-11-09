@@ -18,6 +18,7 @@ module AresMUSH
     end
 
     def self.death_counter(combatant)
+      puts "DEATH COUNTER"
       death_count = combatant.death_count
       if death_count == 1
         combatant.update(death_count: 2)
@@ -26,11 +27,18 @@ module AresMUSH
         combatant.update(death_count: 3)
         FS3Combat.emit_to_combat(combatant.combat, t('magic.two_death', :name => combatant.name), npcmaster = nil, add_to_scene = true)
       elsif death_count == 3
+        Magic.kill(combatant.associated_model)
+      end
+    end
+
+    def self.kill(char)
+      if char.combat
+        combatant = char.combatant || char
         combatant.update(death_count: 4)
         FS3Combat.emit_to_combat(combatant.combat, t('magic.died', :name => combatant.name), npcmaster = nil, add_to_scene = true)
-        combatant.character.update(dead: true)
-        Magic.handle_has_died_achievement(combatant.associated_model)
       end
+      char.update(dead: true)
+      char.is_mount? ? return : Magic.handle_has_died_achievement(combatant.associated_model)
     end
 
     def self.treat_dying(healer_name, patient)

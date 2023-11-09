@@ -31,6 +31,11 @@ module AresMUSH
         end
       end
 
+      case cmd.root
+      when "kill"
+        return KillCmd
+      end
+
       #FATIGUE HEAL
       case cmd.root
       when "fatigueheal"

@@ -35,6 +35,7 @@ module AresMUSH
     attribute :is_ko
     attribute :death_count, :type => DataType::Integer, :default => 0
     attribute :dead, :type => DataType::Boolean, :default => false
+    attribute :has_died, :type => DataType::Integer
 
     reference :rider, 'AresMUSH::Combatant'
     collection :passengers, 'AresMUSH::Combatant', :passenger_on
