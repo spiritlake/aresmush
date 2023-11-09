@@ -21,6 +21,7 @@ module AresMUSH
         error = self.parse_targets(self.names)
         return error if error
         return t('magic.dont_have_potion') if (!combatant.is_npc? && !self.potion)
+        return t('magic.not_potion') if !Magic.is_potion?(self.spell)
         return t('fs3combat.only_one_target') if (self.targets.count > 1)
         targets.each do |target|
           heal_points = Global.read_config("spells", self.spell, "heal_points")
