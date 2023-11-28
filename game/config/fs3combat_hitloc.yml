@@ -2,7 +2,7 @@
 fs3combat:
   hitloc:
 
-    Humanoid:
+    Humanoids:
       areas:
         Chest:
         - Left Leg
