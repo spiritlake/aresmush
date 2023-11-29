@@ -2,7 +2,7 @@
 fs3combat:
   hitloc:
 
-    Humanoids:
+    Humanoid:
       areas:
         Chest:
         - Left Leg
@@ -364,104 +364,6 @@ fs3combat:
     Multiheaded Cryptid:
       areas:
         Chest:
-        - Left Leg
-        - Right Leg
-        - Left Leg
-        - Right Leg
-        - Abdomen
-        - Abdomen
-        - Abdomen
-        - Chest
-        - Chest
-        - Chest
-        Left Leg:
-        - Chest
-        - Right Leg
-        - Right Leg
-        - Right Leg
-        - Abdomen
-        - Abdomen
-        - Abdomen
-        - Left Leg
-        - Left Leg
-        - Left Leg
-        Right Leg:
-        - Chest
-        - Left Leg
-        - Left Leg
-        - Left Leg
-        - Abdomen
-        - Abdomen
-        - Abdomen
-        - Right Leg
-        - Right Leg
-        - Right Leg
-        Right Wing:
-        - Head
-        - Right Leg
-        - Right Leg
-        - Chest
-        - Chest
-        - Abdomen
-        - Abdomen
-        - Right Wing
-        - Right Wing
-        - Right Wing
-        Left Wing:
-        - Head
-        - Left Leg
-        - Left Leg
-        - Chest
-        - Chest
-        - Abdomen
-        - Abdomen
-        - Left Wing
-        - Left Wing
-        - Left Wing
-        Head:
-        - Front Right Leg
-        - Front Left Leg
-        - Neck
-        - Neck
-        - Chest
-        - Chest
-        - Chest
-        - Head
-        - Head
-        - Head
-        Neck:
-        - Chest
-        - Chest
-        - Chest
-        - Abdomen
-        - Abdomen
-        - Head
-        - Head
-        - Neck
-        - Neck
-        - Neck
-        Abdomen:
-        - Left Leg
-        - Right Leg
-        - Left Leg
-        - Right Leg
-        - Chest
-        - Chest
-        - Chest
-        - Abdomen
-        - Abdomen
-        - Abdomen
-      vital_areas:
-      - Abdomen
-      - Chest
-      - Neck
-      critical_areas:
-      - Head
-      crew_areas:
-      - Chest
-    Multiheaded Cryptid:
-      areas:
-        Chest:
         - Left Wing
         - Right Wing
         - Right Neck
@@ -598,9 +500,9 @@ fs3combat:
       - Center Neck
       - Right Neck
       - Left Head
-      - Center Head
       - Right Head
       critical_areas:
+      - Center Head
       crew_areas:
       - Chest
     Winged Mythic:
