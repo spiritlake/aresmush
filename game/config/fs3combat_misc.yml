@@ -95,6 +95,11 @@ fs3combat:
       hitloc: Humanoid
       armor: Leather
       weapon: Bow
+    Multiheaded Cryptid:
+      hitloc: Multiheaded Cryptid
+      defense_skill: Reflexes
+      weapon: Strong Beak
+      armor: Tough Hide
   shortcuts:
     combat/skill: combat/summary
     combat/skills: combat/summary
