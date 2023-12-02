@@ -53,31 +53,37 @@ fs3combat:
       armor: Dragon
       hitloc: Dragon
       defense_skill: Reflexes
+      npc_type: Dragon
     Griffon:
       weapon: Sharp Talons
       armor: Griffon
       hitloc: Winged Mythic
       defense_skill: Reflexes
+      npc_type: Griffon
     Roc:
       weapon: Sharp Talons
       armor: Roc
       hitloc: Bird
       defense_skill: Reflexes
+      npc_type: Roc
     Pegasus:
       weapon: Hard Hooves
       hitloc: Winged Mythic
       armor: Pegasus
       defense_skill: Reflexes
+      npc_type: Pegasus
     Lupine:
       weapon: Sharp Claws
       hitloc: Winged Mythic
       armor: Lupine
       defense_skill: Reflexes
+      npc_type: Lupine
     Pantherine:
       weapon: Sharp Claws
       hitloc: Winged Mythic
       armor: Pantherine
       defense_skill: Reflexes
+      npc_type: Pantherine
     Target:
       hitloc: Target
       weapon: Unarmed
