@@ -172,11 +172,19 @@ fs3combat:
         Read Right Leg: 4
         Front Left Leg: 4
         Front Right Leg: 4
+        Left Leg: 4
+        Right Leg: 4
         Right Wing: 3
         Left Wing: 3
         Abdomen: 4
         Head: 3
+        Left Head: 3
+        Center Head: 3
+        Right Head: 3
         Neck: 3
+        Left Neck: 3
+        Center Neck: 3
+        Right Neck: 3
         Groin: 2
         Body: 4
         Fin: 2
@@ -203,7 +211,13 @@ fs3combat:
         Left Wing: 6
         Abdomen: 6
         Head: 5
+        Left Head: 5
+        Center Head: 5
+        Right Head: 5
         Neck: 4
+        Left Neck: 4
+        Center Neck: 4
+        Right Neck: 4
         Groin: 4
         Leg: 5
         Arm: 5

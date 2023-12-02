@@ -361,6 +361,150 @@ fs3combat:
       - Head
       crew_areas:
       - Chest
+    Multiheaded Cryptid:
+      areas:
+        Chest:
+        - Left Wing
+        - Right Wing
+        - Right Neck
+        - Center Neck
+        - Left Neck
+        - Abdomen
+        - Abdomen
+        - Chest
+        - Chest
+        - Chest
+        Abdomen:
+        - Left Wing
+        - Right Wing
+        - Right Neck
+        - Center Neck
+        - Left Neck
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        Left Wing:
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Right Neck
+        - Center Neck
+        - Left Neck
+        - Left Wing
+        - Left Wing
+        - Left Wing
+        Right Wing:
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Left Neck
+        - Center Neck
+        - Right Neck
+        - Right Wing
+        - Right Wing
+        - Right Wing
+        Left Head:
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Left Wing
+        - Left Wing
+        - Left Neck
+        - Center Head
+        - Left Head
+        - Left Head
+        Center Head:
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Center Neck
+        - Left Head
+        - Right Head
+        - Center Head
+        Right Head:
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Right Wing
+        - Right Wing
+        - Right Neck
+        - Center Head
+        - Right Head
+        - Right Head
+        Left Neck:
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Left Wing
+        - Left Wing
+        - Left Head
+        - Center Neck
+        - Left Neck
+        - Left Neck
+        Center Neck:
+        - Chest
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Center Head
+        - Left Neck
+        - Right Neck
+        - Center Neck
+        Right Neck:
+        - Chest
+        - Chest
+        - Abdomen
+        - Abdomen
+        - Right Wing
+        - Right Wing
+        - Right Head
+        - Center Neck
+        - Right Neck
+        - Right Neck
+        Left Leg:
+        - Chest
+        - Right Leg
+        - Right Leg
+        - Right Leg
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Left Leg
+        - Left Leg
+        - Left Leg
+        Right Leg:
+        - Chest
+        - Left Leg
+        - Left Leg
+        - Left Leg
+        - Abdomen
+        - Abdomen
+        - Abdomen
+        - Right Leg
+        - Right Leg
+        - Right Leg
+      vital_areas:
+      - Left Neck
+      - Center Neck
+      - Right Neck
+      - Left Head
+      - Right Head
+      critical_areas:
+      - Center Head
+      crew_areas:
+      - Chest
     Winged Mythic:
       areas:
         Chest:
