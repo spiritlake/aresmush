@@ -183,13 +183,14 @@ module AresMUSH
     def self.cast_weapon(caster_name, combatant, target, spell, weapon, is_potion = false)
       armor = Global.read_config("spells", spell, "armor")
       Magic.set_magic_weapon(target, weapon)
+      message = []
       if armor
         message = []
       elsif is_potion
         if target.name == combatant.name
-          messages.concat [t('magic.potion', :name => target.name, :potion => spell)]
+          message = [t('magic.potion', :name => target.name, :potion => spell)]
         else
-          messages.concat [t('magic.potion_target', :name => caster_name, :target => target.name, :potion => spell)]
+          message = [t('magic.potion_target', :name => caster_name, :target => target.name, :potion => spell)]
         end
       else
         message = [t('magic.casts_spell', :name => caster_name, :spell => spell, :mod => "", :succeeds => "%xgSUCCEEDS%xn")]
