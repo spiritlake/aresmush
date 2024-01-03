@@ -106,6 +106,11 @@ fs3combat:
       defense_skill: Reflexes
       weapon: Strong Beak
       armor: Tough Hide
+    Bird:
+      weapon: Talons
+      armor: Bird
+      hitloc: Bird
+      defense_skill: Reflexes
   shortcuts:
     combat/skill: combat/summary
     combat/skills: combat/summary
