@@ -63,3 +63,5 @@ jobs:
     text: Your job has been received. We'll get to it soon.
   - name: Spell Pending
     text: Thanks for your spell request! We work through spells at a rate of one per week, so your job has been moved to pending. Keep an eye on this space for feedback or questions when we get to your request.
+  - name: Cryptid Pending
+    text: Thanks for your cryptid request! We work through cryptids one at a time, so your job has been moved to pending. Keep an eye on this space for feedback or questions when we get to your request.

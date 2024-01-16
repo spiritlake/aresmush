@@ -9,7 +9,7 @@ en:
         invalid_action: "Not a valid idle action.  Try one of these: %{actions}"
 
         idle_roster: "Added to roster"
-        idle_warn: "In danger of idling out.  Characters who are not played for more than six weeks will be marked 'Gone' and moved off-camera. "
+        idle_warn: "In danger of idling out.  Characters who have not shared a scene for more than four weeks will be marked 'Gone' and moved off-camera. "
         idle_dead: "Dead"
         idle_gone: "Left the Grid"
         idle_reset: "No Longer Idle"
