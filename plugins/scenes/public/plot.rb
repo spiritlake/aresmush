@@ -8,6 +8,7 @@ module AresMUSH
     attribute :summary
     attribute :completed, :type => DataType::Boolean
     attribute :background, :type => DataType::Boolean, :default => false
+    attribute :featured, :type => DataType::Boolean, :default => false
     attribute :content_warning
 
     set :storytellers, "AresMUSH::Character"
