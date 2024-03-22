@@ -2626,16 +2626,17 @@ tr:nth-of-type(even) {
 	background: $lightest-slate;
 }
 
-.table-striped>tbody>tr:nth-of-type(odd) {
-	background: $lighter-slate;
-	color: $light-grey;
+.table-striped>tbody>tr:nth-of-type(odd),
+.table-striped>tbody>tr:nth-of-type(even) {
 	line-height: 2;
 }
 
-.table-striped>tbody>tr:nth-of-type(even) {
-	background: $lightest-slate;
-	color: $light-grey;
-	line-height: 2;
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-bg-type: #8494ae!important;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+    --bs-table-bg-type: #b2bccc!important;
 }
 
 th,

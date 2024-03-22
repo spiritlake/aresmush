@@ -274,6 +274,51 @@ website:
       route: search-locations
     - title: Jobs & Requests
       route: search-jobs
+  - title: Admin
+    roles:
+    - admin
+    - coder
+    menu:
+    - title: Jobs
+      route: jobs
+    - title: Setup
+      route: setup
+    - title: Manage
+      route: manage
+    - title: Logs
+      route: logs
+    - title: Files
+      route: files
+    - title: Roles
+      route: roles
+    - title: Server
+      route: server-info
+  - title: Code
+    roles:
+    - coder
+    menu:
+    - title: Tinker
+      route: tinker
+    - title: Custom Code
+      route: custom-code
+  - title: Theme
+    roles:
+    - admin
+    menu:
+    - title: Theme Colors
+      route: setup-colors
+    - title: Custom Styles
+      route: textfile
+      ids:
+      - style
+      - custom_style.scss
+    - title: Files
+      route: files
+    - title: Home Page Text
+      route: textfile
+      ids:
+      - text
+      - website.txt
   uploadable_extensions:
   - ".jpg"
   - ".png"
@@ -368,9 +413,18 @@ website:
     - 3
     minute:
     - 37
-  story: <div class="torn_container torn_left"><div></div> <div><p><b>The World Beyond the Cradle</b></p><p>It's been seventy years since the world Shattered, and
-    the Cradle has been thriving for over five decades. The Wardens have grown with
-    them, settling into their magic, their bond, and their sworn oath to protect the
-    Cradle and its citizens.</p><p>Some dust has settled since the controversial <a href="https://shatteredmu.com/forum/6/78">election of Warden Commander Sophie Warner</a>. While some Wardens still struggle to adapt to her changes, new threats arise. In June, Shattered mythics to the South  attacked the Cradle for the first time in decades. In the months since, continued attacks against traveling traders and settlements have led Wardens to seek intel and take increased action to protect their home.</p><p>It has become increasingly clear that the Wardens must reach beyond the Cradle's border to secure its future. While some Wardens see freedom and opportunity, others fear the cost.</p><p>What will this new danger mean for the Wardens, and for the Cradle of humanity they protect?
+  story: <div class="torn_container torn_left"><div></div> <div><p><b>The World Beyond
+    the Cradle</b></p><p>It's been seventy years since the world Shattered, and the
+    Cradle has been thriving for over five decades. The Wardens have grown with them,
+    settling into their magic, their bond, and their sworn oath to protect the Cradle
+    and its citizens.</p><p>Some dust has settled since the controversial <a href="https://shatteredmu.com/forum/6/78">election
+    of Warden Commander Sophie Warner</a>. While some Wardens still struggle to adapt
+    to her changes, new threats arise. In June, Shattered mythics to the South  attacked
+    the Cradle for the first time in decades. In the months since, continued attacks
+    against traveling traders and settlements have led Wardens to seek intel and take
+    increased action to protect their home.</p><p>It has become increasingly clear
+    that the Wardens must reach beyond the Cradle's border to secure its future. While
+    some Wardens see freedom and opportunity, others fear the cost.</p><p>What will
+    this new danger mean for the Wardens, and for the Cradle of humanity they protect?
     </p><p><b>[Read more at the <a href="/wiki/ooc:story_so_far">Story So Far</a>]</p></div></div>
   hide_searchbox: false
