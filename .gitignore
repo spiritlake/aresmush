@@ -59,3 +59,4 @@ game/scripts/aresconfig.js
 .byebug_history
 .vscode/settings.json
 engine/aresmush/database.rb
+Gemfile.lock
