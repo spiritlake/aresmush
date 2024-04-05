@@ -70,7 +70,7 @@ module AresMUSH
             Scenes.add_to_scene(enactor.room.scene, msg)
           end
         end
-        puts "~~~~MAGIC ENERGY END: #{enactor.magic_energy}"
+        # puts "~~~~MAGIC ENERGY END: #{enactor.magic_energy}"
       end
 
     end

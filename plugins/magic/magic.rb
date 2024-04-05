@@ -164,6 +164,7 @@ module AresMUSH
       when "getSchools"
         return GetSchoolsRequestHandler
       when "addSceneSpell"
+        puts "addSceneSpell"
         return AddSceneSpellRequestHandler
       when "charSpellList"
         return CharSpellListRequestHandler

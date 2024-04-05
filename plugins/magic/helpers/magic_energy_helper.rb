@@ -2,9 +2,9 @@ module AresMUSH
   module Magic
 
     def self.reset_magic_energy(char)
-      puts "Magic energy before reset: #{char.name}: #{char.magic_energy}"
+      # puts "Magic energy before reset: #{char.name}: #{char.magic_energy}"
       char.update(magic_energy: char.total_magic_energy)
-      puts  "Magic energy after reset: #{char.name}: #{char.magic_energy}"
+      # puts  "Magic energy after reset: #{char.name}: #{char.magic_energy}"
     end
 
     def self.set_npc_energy(npc, percent)
@@ -14,11 +14,11 @@ module AresMUSH
 
     def self.subtract_magic_energy(char_or_npc, spell, success)
       char = char_or_npc
-      puts  "Magic energy before subtraction: #{char.name} #{char.magic_energy}"
+      # puts  "Magic energy before subtraction: #{char.name} #{char.magic_energy}"
       level = Global.read_config("spells", spell, "level")
       spell_school = Global.read_config("spells", spell, "school")
       cost = Global.read_config("magic", "energy_cost_by_level", level)
-      puts  "Level: #{level} Starting Cost: #{cost}"
+      # puts  "Level: #{level} Starting Cost: #{cost}"
       if (char.class == Npc)
         cost = cost + 1
       else
@@ -33,12 +33,12 @@ module AresMUSH
       success == "%xrFAILS%xn" ? cost = cost/4 : cost = cost
       magic_energy = [(char.magic_energy - cost), 0].max
       char.update(magic_energy: magic_energy)
-      puts  "Cost: #{cost} Magic energy after subtraction: #{char.name} #{char.magic_energy}"
+      # puts  "Cost: #{cost} Magic energy after subtraction: #{char.name} #{char.magic_energy}"
     end
 
     def self.get_fatigue_level(char_or_npc)
       char = char_or_npc
-      puts "NUMBER: #{char.magic_energy} "
+      # puts "NUMBER: #{char.magic_energy} "
       if (char.magic_energy <= (char.total_magic_energy*0.8).round) && (char.magic_energy >= (char.total_magic_energy*0.66).round)
         degree = "Mild"
         color = "%X2"
@@ -70,7 +70,7 @@ module AresMUSH
         effect = Global.read_config("magic", "fatigue_effect", "None")
         msg = t('magic.magic_fatigue', :name => char.name, :color => color, :degree => "no%xn", :effect => effect)
       end
-      puts "Magic energy fatigue level: #{msg}, #{degree}"
+      # puts "Magic energy fatigue level: #{msg}, #{degree}"
       return {
         msg: msg,
         degree: degree,

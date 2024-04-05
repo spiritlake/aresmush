@@ -10,14 +10,14 @@ module AresMUSH
     # use the other methods in this class to get the success level and title to display.
     #EM Changes
     def self.roll_ability(char, roll_params, mount_average = false)
-      puts ":::::::::::Roll params: #{char.name} #{roll_params} #{roll_params.to_s.include?("Reflexes") } mount_average? #{mount_average}"
+      # puts ":::::::::::Roll params: #{char.name} #{roll_params} #{roll_params.to_s.include?("Reflexes") } mount_average? #{mount_average}"
       if char.combat && (char.combatant.is_mount? || char.bonded)
         dice = ExpandedMounts.dice_to_roll_for_combat_ability(char, roll_params)
       elsif (char.bonded && char.combat) || char.is_mount? || mount_average
         dice = ExpandedMounts.dice_to_roll_for_ability(char, roll_params)
       else
         dice = FS3Skills.dice_to_roll_for_ability(char, roll_params)
-        puts "Unmounted dice: #{dice}"
+        # puts "Unmounted dice: #{dice}"
       end
       #/EM Changes
 
