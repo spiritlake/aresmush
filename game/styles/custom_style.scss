@@ -2618,6 +2618,11 @@ table .user-bar a:hover, table .user-bar a:focus {
 	border-color: $blackest-grey;
 }
 
+.table > :not(caption) > * > * {
+	background: unset;
+}
+
+
 tr:nth-of-type(odd) {
 	background: $lighter-slate;
 }
