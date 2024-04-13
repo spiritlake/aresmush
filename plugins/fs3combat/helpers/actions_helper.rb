@@ -429,6 +429,7 @@ module AresMUSH
       if !hit_expanded_mount_or_rider[:hit_target]
         original_target = target
         target = hit_expanded_mount_or_rider[:target]
+        called_shot = nil
       end
       #/EM Changes
 
