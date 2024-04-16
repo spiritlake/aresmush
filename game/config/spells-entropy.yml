@@ -41,6 +41,7 @@ spells:
     level: 2
     name: Shadow Cloak
     range: Self
+    roll: true
     school: Entropy
     target_num: 1
   Lighten Load:
