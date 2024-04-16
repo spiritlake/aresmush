@@ -245,6 +245,9 @@ module AresMUSH
             potion.delete
           end
 
+        else message = "LORD you done got lost lol"
+          messages.concat message
+
         end
 
         messages
