@@ -67,6 +67,7 @@ spells:
     level: 2
     name: Cloud Cover
     range: Self
+    roll: true
     school: Aether
     target_num: 1
   Dustup:
