@@ -463,7 +463,6 @@ spells:
     desc: Restore a portion of mana for up to three targets. Cannot be cast on oneself.
     effect: Heal
     energy_points: 15
-    is_potion: true
     level: 6
     line_of_sight: true
     name: Group Restore Mana
