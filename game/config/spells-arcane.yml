@@ -456,6 +456,20 @@ spells:
     school: Arcane
     spell_mod: -3
     target_num: 3
+Group Restore Mana:
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: Restore a portion of mana for up to three targets. Cannot be cast on oneself.
+    effect: Heal
+    energy_points: 15
+    is_potion: true
+    level: 6
+    line_of_sight: true
+    name: Group Restore Mana
+    range: Short
+    school: Arcane
+    target_num: 3
   Rewrite Memory:
     available: true
     casting_time: "1 round to cast, additional rounds for rewriting at GM's discretion."

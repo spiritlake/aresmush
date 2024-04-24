@@ -316,6 +316,35 @@ spells:
     range: Touch
     school: Creation
     target_num: 1
+  Rejuvenate:
+    available: true
+    attack_mod: true
+    casting_time: 1 round
+    damage_type: Bypass
+    defense_mod: 2
+    desc: The caster imbues up to three targets with a burst of energy and vigor, increasing their attack and defense.
+    duration: 5 rounds
+    effect: Buff
+    level:
+    line_of_sight: true
+    name: Rejuvenate
+    range: Long
+    rounds: 3
+    school: Creation
+    target_num: 3
+  Major Heal:
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: Provide a large amount of healing magic to a target's most severe treatable wound, speeding their healing significantly and restoring some of their vigor.
+    effect: Heal
+    heal_points: 10
+    level: 6
+    line_of_sight: true
+    name: Major Heal
+    range: Short
+    school: Creation
+    target_num: 1
   Stalagmite:
     available: true
     casting_time: 1 round
@@ -349,6 +378,20 @@ spells:
 #---------------
 # LEVEL 7
 #---------------
+  Medium Group Heal:
+    area: 10 yard radius
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: Provide a middling amount of healing magic to the most severe treatable wound of up to three targets the caster can see, speeding their healing by up to nearly a week and restoring some of their vigor.
+    effect: Heal
+    heal_points: 7
+    level: 7
+    line_of_sight: true
+    name: Medium Group Heal
+    range: Short
+    school: Creation
+    target_num: 3
   Poison Puffs:
     area: 10 yard radius
     available: true
