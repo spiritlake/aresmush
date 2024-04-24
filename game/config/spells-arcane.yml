@@ -456,7 +456,7 @@ spells:
     school: Arcane
     spell_mod: -3
     target_num: 3
-Group Restore Mana:
+  Group Restore Mana:
     available: true
     casting_time: 1 round
     damage_type: Bypass
