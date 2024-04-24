@@ -325,7 +325,7 @@ spells:
     desc: The caster imbues up to three targets with a burst of energy and vigor, increasing their attack and defense.
     duration: 5 rounds
     effect: Buff
-    level:
+    level: 6
     line_of_sight: true
     name: Rejuvenate
     range: Long
