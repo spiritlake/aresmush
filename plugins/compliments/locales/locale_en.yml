@@ -7,3 +7,4 @@ en:
     invalid_name: "That is not a character."
     not_scene: "That is not a scene number."
     comp_scenes_not_enabled: "Your game does not have complimenting all participants of a scenes enabled. Try complimenting the characters instead."
+    cant_comp_self: "You can't leave a compliment for yourself."
