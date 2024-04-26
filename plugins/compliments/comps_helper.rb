@@ -23,7 +23,7 @@ module AresMUSH
     def self.notify_of_comp(target, comper_char)
       message = t('compliments.has_left_comp', :from => comper_char.name)
       Login.emit_if_logged_in target, "%xc#{message}%xn"
-      Login.notify(target, :comp, message, nil)
+      Login.notify(target, :comp, message, target.id)
     end
 
     def self.add_comp(targets, msg, comper_char)
@@ -41,7 +41,8 @@ module AresMUSH
         Compliments.notify_of_comp(target, comper_char)
         end
       end
-      Login.find_client(comper_char).emit_success t('compliments.left_comp', :name =>  target_names.join(", "))
+      success_msg = t('compliments.left_comp', :name =>  target_names.join(", "))
+      Login.emit_if_logged_in(comper_char, success_msg)
     end
 
     def self.get_comps(char, page=1)
