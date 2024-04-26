@@ -13,6 +13,7 @@ module AresMUSH
       #    return { goals: Website.format_markdown_for_html(char.goals) }
       def self.get_fields_for_viewing(char, viewer)
         spells = Magic.spell_list_all_data(char.spells_learned)
+        puts "Getting custom fields"
         return {
           comps: Compliments.get_comps(char),
           spells: spells,
