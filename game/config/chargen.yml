@@ -16,7 +16,9 @@ chargen:
   - hooks %{name}
   - sheet %{name}
   approval_message: |-
-    Welcome to the Wardens! At North Weyr, things are currently in upheaval after the death of the respected Warden Commander Morrow and the subsequent controversial election of Warden Commander Warner. Warden posts are being shuffled, with many long-time weyr residents posted elsewhere while new faces populate the weyr.
+    Welcome to the Wardens! At North Weyr, the dust has largely settled since the controversial election of Warden Commander Sophie Warner over a year ago. Her leadership has been met with the strain of new, unprecedented threats and mixed opinions about how she's met them.
+
+    Pressure continues from the Shattered to the south, based in Spokane, while the never-predictable Prism Passes have become even more tumultuous of late. Read more about the [current story](/wiki/ooc:story_so_far) to orient yourself.
 
     Check out the [Getting Started](/wiki/guide:getting_started) guide for more help, including where to set your home, how to find RP and get involved in the story, and more.
   arrivals_category: New Arrivals
