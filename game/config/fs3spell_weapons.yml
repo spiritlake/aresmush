@@ -113,7 +113,7 @@ fs3combat:
       description: Level 5 Aether spell
       is_magic: true
       skill: Aether
-      lethality: -20
+      lethality: 0
       penetration: 50
       weapon_type: Ranged
       recoil: 0
@@ -126,7 +126,7 @@ fs3combat:
       description: Level 5 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 10
+      lethality: 30
       penetration: 6
       weapon_type: Ranged
       recoil: 0
@@ -138,7 +138,7 @@ fs3combat:
       description: Level 5 Entropy spell
       is_magic: true
       skill: Entropy
-      lethality: 10
+      lethality: 30
       penetration: 8
       weapon_type: Ranged
       recoil: 0
@@ -151,7 +151,7 @@ fs3combat:
       description: Level 6 Entropy spell
       is_magic: true
       skill: Entropy
-      lethality: -5
+      lethality: 20
       penetration: 8
       weapon_type: Explosive
       recoil: 0
@@ -165,7 +165,7 @@ fs3combat:
       description: Level 6 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 5
+      lethality: 30
       penetration: 7
       weapon_type: Ranged
       recoil: 0
@@ -178,7 +178,7 @@ fs3combat:
       description: Level 6 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 15
+      lethality: 40
       penetration: 9
       weapon_type: Ranged
       recoil: 0
@@ -190,7 +190,7 @@ fs3combat:
       description: Level 6 Aether spell
       is_magic: true
       skill: Aether
-      lethality: -10
+      lethality: 15
       penetration: 50
       weapon_type: Ranged
       recoil: 0
@@ -203,7 +203,7 @@ fs3combat:
       description: Level 6 Creation spell
       is_magic: true
       skill: Creation
-      lethality: 10
+      lethality: 35
       penetration: 8
       weapon_type: Ranged
       recoil: 0
@@ -216,7 +216,7 @@ fs3combat:
       description: Level 7 Entropy spell
       is_magic: true
       skill: Entropy
-      lethality: -10
+      lethality: 20
       penetration: 7
       weapon_type: Explosive
       recoil: 0
@@ -229,7 +229,7 @@ fs3combat:
       description: Level 7 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 15
+      lethality: 55
       penetration: 9
       weapon_type: Ranged
       recoil: 0
@@ -242,7 +242,7 @@ fs3combat:
       description: Level 7 Creation spell
       is_magic: true
       skill: Creation
-      lethality: -15
+      lethality: 15
       penetration: 50
       weapon_type: Ranged
       recoil: 0
@@ -254,7 +254,7 @@ fs3combat:
       description: Level 7 Creation spell
       is_magic: true
       skill: Creation
-      lethality: 10
+      lethality: 45
       penetration: 9
       weapon_type: Ranged
       is_automatic: true
@@ -268,7 +268,7 @@ fs3combat:
       description: Level 8 Creation spell
       is_magic: true
       skill: Creation
-      lethality: 10
+      lethality: 45
       penetration: 10
       weapon_type: Explosive
       is_automatic: true
@@ -282,7 +282,7 @@ fs3combat:
       description: Level 8 Entropy spell
       is_magic: true
       skill: Entropy
-      lethality: 10
+      lethality: 45
       penetration: 10
       weapon_type: Explosive
       is_automatic: true
@@ -297,7 +297,7 @@ fs3combat:
       description: Level 8 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 20
+      lethality: 55
       penetration: 11
       weapon_type: Ranged
       recoil: 0
@@ -309,7 +309,7 @@ fs3combat:
       description: Level 8 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 0
+      lethality: 35
       penetration: 50
       weapon_type: Ranged
       recoil: 0
