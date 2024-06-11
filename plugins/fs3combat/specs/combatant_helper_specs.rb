@@ -106,9 +106,8 @@ module AresMUSH
           FS3Combat.roll_attack(@combatant, @target)
         end
 
-        it "should account for luck spent on attack or spell" do
+        it "should account for luck spent on attack" do
           allow(@combatant).to receive(:luck) { "Attack" }
-          allow(@combatant).to receive(:luck) { "Spell" }
           expect(@combatant).to receive(:roll_ability).with("Knives", 3)
           FS3Combat.roll_attack(@combatant, @target)
         end
