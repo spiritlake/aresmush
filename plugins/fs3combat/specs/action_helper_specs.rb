@@ -888,9 +888,10 @@ module AresMUSH
         end
 
 
-        it "should add luck to damage if luck spent on attack" do
+        it "should add luck to damage if luck spent on attack or spell" do
           allow(FS3Combat).to receive(:determine_armor) { 22 }
           allow(@combatant).to receive(:luck) { "Attack" }
+          allow(@combatant).to receive(:luck) { "Spell" }
           expect(FS3Combat).to receive(:determine_damage).with(@target, "Chest", "Knife", 8, false) { "INCAP" }
           FS3Combat.resolve_attack(@combatant, "A", @target, "Knife")
         end

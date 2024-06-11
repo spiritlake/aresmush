@@ -444,7 +444,7 @@ module AresMUSH
 
       reduced_by_armor = armor > 0 ? t('fs3combat.reduced_by_armor') : ""
 
-      attack_luck_mod = (attacker && (attacker.luck == "Attack" || attacker.luck == "Spell")) ? 30 : 0
+      attack_luck_mod = (attacker && attacker.luck == "Spell") ? 30 : 0
 
       defense_luck_mod = target.luck == "Defense" ? 30 : 0
 
