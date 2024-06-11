@@ -475,7 +475,7 @@ spells:
     damage_type: Cold
     level: 6
     name: Glacial Armor
-    range: Self
+    range: Touch
     school: Entropy
 #---------------
 # LEVEL 7
