@@ -437,7 +437,7 @@ spells:
     school: Entropy
     target_num: 3
   Impair:
-    available: true
+    available: false
     casting_time: 1 round
     damage_desc: Wound Spell
     damage_inflicted: MODERATE
