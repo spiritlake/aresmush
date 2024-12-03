@@ -132,8 +132,9 @@ module AresMUSH
 
     def self.check_magic_attribute_rating(char)
       magic = FS3Skills.ability_rating(char, "Magic")
-      if magic > 3
-        error = "%xr< Your Magic attribute cannot be higher than 3. >%xn"
+      max_magic = Global.read_config("magic", "cg_max_magic_attribute")
+      if magic > max_magic
+        error = "%xr< Your Magic attribute cannot be higher than #{max_magic}. >%xn"
       else
         error = t('chargen.ok')
       end
@@ -144,7 +145,7 @@ module AresMUSH
     end
 
     def self.check_points_on_spells(char)
-      max_points = 25
+      max_points = Global.read_config("magic", "cg_max_spell_points")
       char_points = Magic.points_on_spells(char)
       char_points = char_points == char_points.to_i ? char_points.to_i : char_points
       if char_points > max_points
