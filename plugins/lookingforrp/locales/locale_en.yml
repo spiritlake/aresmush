@@ -1,0 +1,4 @@
+---
+en:
+  lookingforrp:
+    set: "You've been set 'looking for RP' for the next %{duration} hour(s)."
