@@ -55,7 +55,7 @@ fs3combat:
         Head: 5
         Neck: 4
     Pantherine:
-      description: Dragon hide
+      description: Pantherine hide
       is_magic: false
       special_group: Mundane
       defense: 0
@@ -172,11 +172,19 @@ fs3combat:
         Read Right Leg: 4
         Front Left Leg: 4
         Front Right Leg: 4
+        Left Leg: 4
+        Right Leg: 4
         Right Wing: 3
         Left Wing: 3
         Abdomen: 4
         Head: 3
+        Left Head: 3
+        Center Head: 3
+        Right Head: 3
         Neck: 3
+        Left Neck: 3
+        Center Neck: 3
+        Right Neck: 3
         Groin: 2
         Body: 4
         Fin: 2
@@ -203,7 +211,13 @@ fs3combat:
         Left Wing: 6
         Abdomen: 6
         Head: 5
+        Left Head: 5
+        Center Head: 5
+        Right Head: 5
         Neck: 4
+        Left Neck: 4
+        Center Neck: 4
+        Right Neck: 4
         Groin: 4
         Leg: 5
         Arm: 5
@@ -270,7 +284,7 @@ fs3combat:
         Chest: 8
         Abdomen: 7
     Chainmail:
-      description: Chainmail shirt & gambeson
+      description: Chainmail shirt & gambeson, chainmail coif
       is_magic: false
       special_group: Mundane
       defense: 0
@@ -279,8 +293,10 @@ fs3combat:
         Abdomen: 5
         Left Arm: 6
         Right Arm: 6
+        Head: 4
+        Neck: 3
     Plate:
-      description: Full plate armor with no helmet
+      description: Full plate armor with helmet
       is_magic: false
       special_group: Mundane
       defense: -1
@@ -291,8 +307,10 @@ fs3combat:
         Right Arm: 7
         Right Leg: 5
         Left Leg: 5
+        Head: 4
+        Neck: 4
     Leather:
-      description: Leather armor
+      description: Leather armor and helmet
       is_magic: false
       special_group: Mundane
       defense: 0
@@ -301,6 +319,7 @@ fs3combat:
         Abdomen: 4
         Left Arm: 5
         Right Arm: 5
+        Head: 3
     Police:
       description: Police-Grade Kevlar Vest
       is_magic: false
@@ -314,57 +333,36 @@ fs3combat:
   # ARMOR SPECIALS
   #--------------
   armor specials:
-    Leather Helmet:
-      description: A leather helmet
-      is_magic: false
-      protection:
-        Head: 3
-    Metal Helmet:
-      description: A metal helmet
-      is_magic: false
-      protection:
-        Head: 4
-    Chainmail Coif:
-      description: A chainmail coif that covers your head and neck, with a helmet
-        atop.
-      is_magic: false
-      protection:
-        Head: 4
-        Neck: 3
     Weaken:
       description: Level 4 Entropy spell
       is_magic: true
       protection:
-        Head: -3
-        Neck: -3
-        Chest: -3
-        Abdomen: -3
-        Left Leg: -3
-        Right Leg: -3
-        Groin: -3
-        Left Arm: -3
-        Right Arm: -3
-        Left Hand: -3
-        Right Hand: -3
-        Left Foot: -3
-        Right Foot: -3
-        Tail: -3
-        Front Right Leg: -3
-        Rear Right Leg: -3
-        Front Left Leg: -3
-        Read Left Leg: -3
-        Right Wing: -3
-        Left Wing: -3
+        Head: -2
+        Neck: -2
+        Chest: -2
+        Abdomen: -2
+        Left Leg: -2
+        Right Leg: -2
+        Groin: -2
+        Left Arm: -2
+        Right Arm: -2
+        Left Hand: -2
+        Right Hand: -2
+        Left Foot: -2
+        Right Foot: -2
+        Tail: -2
+        Front Right Leg: -2
+        Rear Right Leg: -2
+        Front Left Leg: -2
+        Read Left Leg: -2
+        Right Wing: -2
+        Left Wing: -2
 
 #---------------
 # ARMOR SPECIAL GROUPS
 #---------------
   armor special groups:
     Mundane:
-    - modern helmet
-    - leather helmet
-    - metal helmet
-    - chainmail coif
     - weaken
     Magic:
     - weaken

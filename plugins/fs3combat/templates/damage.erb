@@ -12,6 +12,9 @@
 
 %xh<%= t('fs3combat.wound_mod') %>%xn <%= left(wound_mod, 25) -%>
 %xh<%= t('magic.magic_energy_mod') %>%xn <%= magic_energy_mod %> (magic) <%= magic_energy_attack_mod -%> (attk)
+<% if !npc && target.bonded %>
+%xh<%= callsign -%> Wound Modifier:%xn <%= mage_mythic_wound_mod.round(2) %>
+<% end %>
 
 %xh<%= t('fs3combat.healed_by_title')%>%xn <%= healed_by %>
 <% if vehicle_notice %>

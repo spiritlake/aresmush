@@ -31,6 +31,17 @@ module AresMUSH
         end
       end
 
+      case cmd.root
+      when "kill"
+        return KillCmd
+      end
+
+      #FATIGUE HEAL
+      case cmd.root
+      when "fatigueheal"
+        return FatigueHealCmd
+      end
+
       #ITEMS
       case cmd.root
       when "items"
@@ -70,6 +81,8 @@ module AresMUSH
           return PotionGiveCmd
         when "add"
           return PotionAddCmd
+        when "remove"
+          return PotionRemoveCmd
         when "use"
           return PotionUseCmd
         end
@@ -151,6 +164,7 @@ module AresMUSH
       when "getSchools"
         return GetSchoolsRequestHandler
       when "addSceneSpell"
+        puts "addSceneSpell"
         return AddSceneSpellRequestHandler
       when "charSpellList"
         return CharSpellListRequestHandler

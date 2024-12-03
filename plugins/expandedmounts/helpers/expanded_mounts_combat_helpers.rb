@@ -1,4 +1,4 @@
-require 'byebug'
+# require 'byebug'
 module AresMUSH
   module ExpandedMounts
 
@@ -84,9 +84,10 @@ module AresMUSH
     def self.new_turn(combat)
       combat.mounts.each do |m|
         puts "Mounts new turn"
-        FS3Combat.check_for_ko(m)
         Magic.death_new_turn(m)
+        FS3Combat.check_for_ko(m)
         m.update(freshly_damaged: false)
+        m.update(damaged_by: [])
       end
     end
 

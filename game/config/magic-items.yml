@@ -5,7 +5,7 @@ magic-items:
     desc: Fancy purple satin gloves with slightly fraying gold embroidery along the palm and knuckles. These gloves provide a bonus to lethality
     weapon_specials: Guilt-Weighted Gloves
   Potion:
-    available: true
+    available: false
     cost: 2
   Hammered Vambraces:
     name: Hammered Vambraces

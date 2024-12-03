@@ -13,6 +13,10 @@ module AresMUSH
       Global.read_config("fs3combat", "weapon specials")
     end
 
+    def self.weapon_types
+       ['explosive', 'ranged', 'melee', 'suppressive']
+     end
+
     def self.weapon_stat(name_with_specials, stat)
       return nil if !name_with_specials
 
@@ -63,7 +67,6 @@ module AresMUSH
       name = name_with_specials.before("+")
       armor = FS3Combat.armor(name)
       return nil if !armor
-
       if (stat == "protection")
         value = armor[stat].dup
       else

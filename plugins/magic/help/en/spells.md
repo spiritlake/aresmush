@@ -43,3 +43,4 @@ For a full explanation of the Magic system, see the [Magic wiki page](/wiki/magi
 `spell/add <name>=<spell>` - Add a spell to someone's spell list without spending XP.
 `spell/remove <name>=<spell>` - Remove a spell from someone's spell list.
 `shield/off <name>=<shield>` - Out of combat, turn off a protective shield such as Mind Shield, Endure Fire, or Endure Cold.
+`manarestore` - Instantly restore full mana to all participants in a combat. Intended for testing.

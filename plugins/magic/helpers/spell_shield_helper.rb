@@ -94,7 +94,7 @@ module AresMUSH
           msg = Magic.shield_success_msgs(target, caster_name, weapon_or_spell, shield.name)
           hit = false
         else
-          msg = Magic.shield_failed_msgs(target, caster_name, weapon_or_spell),
+          msg = Magic.shield_failed_msgs(target, caster_name, weapon_or_spell)
           hit = true
         end
 
@@ -119,6 +119,8 @@ module AresMUSH
     def self.shield_failed_msgs(target, caster_name, weapon_or_spell)
       damage_type =  Magic.magic_damage_type(weapon_or_spell)
       shield = Magic.find_best_shield(target, damage_type)
+      puts "Spell #{weapon_or_spell} damage type #{damage_type}"
+      puts "SHIELD: #{shield}"
       type_does_damage = Global.read_config("magic",  "type_does_damage", damage_type)
       is_stun = Global.read_config("spells", weapon_or_spell, "is_stun") || FS3Combat.weapon_stat(weapon_or_spell, "is_stun") || false
       if weapon_or_spell.include?("Shrapnel")
@@ -127,7 +129,8 @@ module AresMUSH
         #shouldn't this also include weapons which ARE spells but are CAST by spells? IE Magic.is_spell?(weapon_or_spell) && !Global.read_config("spells", weapon_or_spell, "fs3_attack") || !Magic.is_spell?(weapon_or_spell)
         t('magic.shield_failed_against_attack', :name => caster_name, :weapon => weapon_or_spell, :mod => "", :shield => shield.name, :target => target.name)
       elsif type_does_damage
-        t('magic.shield_failed_against_spell', :name => caster_name, :spell => weapon_or_spell, :mod => "", :shield => shield.name, :target => target.name)
+        #When a stun spell tries to get the message with its
+        t('magic.shield_failed_against_spell', :name => caster_name, :spell => weapon_or_spell, :mod => "", :shield => "shield.name", :target => target.name)
       elsif is_stun
          t('magic.shield_failed_stun', :name => caster_name, :spell => weapon_or_spell, :shield=> shield.name, :mod => "", :target => target.name, :rounds => Global.read_config("spells", weapon_or_spell, "rounds"))
       else

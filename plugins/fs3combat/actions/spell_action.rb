@@ -4,7 +4,7 @@ module AresMUSH
       attr_accessor  :spell_name, :target, :names, :has_target, :caster_name
 
       def prepare
-        puts "#{combatant.name.upcase} energy beginning of action: #{combatant.associated_model.magic_energy}"
+        puts "#{combatant.name.upcase} magic energy beginning of action! #{combatant.associated_model.magic_energy}"
         if (self.action_args =~ /\//)
           self.spell_name = self.action_args.before("/")
           self.names = self.action_args.after("/")
@@ -39,13 +39,14 @@ module AresMUSH
 
         targets.each do |target|
           return t('magic.dont_target_self') if target == combatant && (spell['fs3_attack'] || spell['is_stun'])
+          return t('magic.dont_attack_koed', :target => target.name) if ((spell['fs3_attack'] || spell['is_stun']) && target.is_ko)
           return t('expandedmounts.cast_on_rider') if target.is_mount? && ExpandedMounts.target_rider(spell)
           # Don't let people waste a spell that won't have an effect
           return t('magic.not_dead', :target => target.name) if (spell['is_res'] && !target.associated_model.dead)
           return t('magic.not_ko', :target => target.name) if ((spell['is_revive'] || spell['auto_revive']) && !target.is_ko)
           wound = FS3Combat.worst_treatable_wound(target.associated_model)
           return t('magic.no_healable_wounds', :target => target.name) if (spell['heal_points'] && wound.blank? && !spell['weapon'])
-          return t('magic.cannot_spell_fatigue_heal_further', :name => target.name) if (spell['energy_points'] && (target.associated_model.magic_energy >= (target.associated_model.total_magic_energy * 0.8)))
+          return t('magic.cannot_spell_fatigue_heal_further', :name => target.name) if (spell['energy_points'] && spell['energy_points'] > 0 && (target.associated_model.magic_energy >= (target.associated_model.total_magic_energy * 0.8)))
           # Check that weapon specials can be added to weapon
           if spell['weapon_specials']
             # return "This spell is currently broken. Don't worry, I know."
@@ -191,7 +192,8 @@ module AresMUSH
 
               #Inflict Damage
               if spell['damage_inflicted']
-                message = Magic.cast_inflict_damage(self.caster_name, combatant, target, self.spell_name, spell['damage_inflicted'], spell['damage_desc'])
+                is_mock = !combat.is_real?
+                message = Magic.cast_inflict_damage(self.caster_name, combatant, target, self.spell_name, spell['damage_inflicted'], spell['damage_desc'], is_mock)
                 messages.concat message
               end
 
@@ -235,3 +237,5 @@ module AresMUSH
     end
   end
 end
+
+

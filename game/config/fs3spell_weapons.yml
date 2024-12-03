@@ -10,7 +10,7 @@ fs3combat:
     # LEVEL 2
     Sling Barb:
       description: Level 2 Creation spell
-      is_magic: true
+      is_magic: truex
       skill: Creation
       lethality: 0
       penetration: 3
@@ -21,6 +21,18 @@ fs3combat:
       init_mod: 0
       special_group: Spell
     # LEVEL 3
+    Flame Dart:
+      description: Level 3 Aether spell
+      is_magic: true
+      skill: Aether
+      lethality: 15
+      penetration: 3
+      weapon_type: Ranged
+      recoil: 0
+      damage_type: Fire
+      accuracy: 0
+      init_mod: 0
+      special_group: Spell
     Ice Talons:
       description: Level 3 Entropy spell
       is_magic: true
@@ -72,6 +84,18 @@ fs3combat:
       init_mod: 0
       special_group: Spell
       magic_damage_type: Cold
+    Lightning Ball:
+      description: Level 4 Aether spell
+      is_magic: true
+      skill: Aether
+      lethality: 0
+      penetration: 6
+      weapon_type: Ranged
+      recoil: 0
+      damage_type: Physical
+      accuracy: 0
+      init_mod: 0
+      special_group: Spell
     Stone Skin:
       description: Level 4 Creation spell
       is_magic: true
@@ -89,7 +113,7 @@ fs3combat:
       description: Level 5 Aether spell
       is_magic: true
       skill: Aether
-      lethality: -20
+      lethality: 0
       penetration: 50
       weapon_type: Ranged
       recoil: 0
@@ -102,11 +126,23 @@ fs3combat:
       description: Level 5 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 10
+      lethality: 30
       penetration: 6
       weapon_type: Ranged
       recoil: 0
       damage_type: Fire
+      accuracy: 0
+      init_mod: 0
+      special_group: Spell
+    Gravity Crush:
+      description: Level 5 Entropy spell
+      is_magic: true
+      skill: Entropy
+      lethality: 30
+      penetration: 8
+      weapon_type: Ranged
+      recoil: 0
+      damage_type: Physical
       accuracy: 0
       init_mod: 0
       special_group: Spell
@@ -115,7 +151,7 @@ fs3combat:
       description: Level 6 Entropy spell
       is_magic: true
       skill: Entropy
-      lethality: -5
+      lethality: 20
       penetration: 8
       weapon_type: Explosive
       recoil: 0
@@ -129,7 +165,7 @@ fs3combat:
       description: Level 6 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 5
+      lethality: 30
       penetration: 7
       weapon_type: Ranged
       recoil: 0
@@ -142,7 +178,7 @@ fs3combat:
       description: Level 6 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 15
+      lethality: 40
       penetration: 9
       weapon_type: Ranged
       recoil: 0
@@ -150,11 +186,24 @@ fs3combat:
       accuracy: 0
       init_mod: 0
       special_group: Spell
+    Sonic Rupture:
+      description: Level 6 Aether spell
+      is_magic: true
+      skill: Aether
+      lethality: 15
+      penetration: 50
+      weapon_type: Ranged
+      recoil: 0
+      damage_type: Physical
+      accuracy: 1
+      init_mod: 0
+      special_group: Spell
+      magic_damage_type: Bypass
     Stalagmite:
       description: Level 6 Creation spell
       is_magic: true
       skill: Creation
-      lethality: 10
+      lethality: 35
       penetration: 8
       weapon_type: Ranged
       recoil: 0
@@ -167,7 +216,7 @@ fs3combat:
       description: Level 7 Entropy spell
       is_magic: true
       skill: Entropy
-      lethality: -10
+      lethality: 20
       penetration: 7
       weapon_type: Explosive
       recoil: 0
@@ -180,7 +229,7 @@ fs3combat:
       description: Level 7 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 15
+      lethality: 55
       penetration: 9
       weapon_type: Ranged
       recoil: 0
@@ -193,7 +242,7 @@ fs3combat:
       description: Level 7 Creation spell
       is_magic: true
       skill: Creation
-      lethality: -15
+      lethality: 15
       penetration: 50
       weapon_type: Ranged
       recoil: 0
@@ -205,7 +254,7 @@ fs3combat:
       description: Level 7 Creation spell
       is_magic: true
       skill: Creation
-      lethality: 10
+      lethality: 45
       penetration: 9
       weapon_type: Ranged
       is_automatic: true
@@ -219,7 +268,7 @@ fs3combat:
       description: Level 8 Creation spell
       is_magic: true
       skill: Creation
-      lethality: 10
+      lethality: 45
       penetration: 10
       weapon_type: Explosive
       is_automatic: true
@@ -233,7 +282,7 @@ fs3combat:
       description: Level 8 Entropy spell
       is_magic: true
       skill: Entropy
-      lethality: 10
+      lethality: 45
       penetration: 10
       weapon_type: Explosive
       is_automatic: true
@@ -248,7 +297,7 @@ fs3combat:
       description: Level 8 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 20
+      lethality: 55
       penetration: 11
       weapon_type: Ranged
       recoil: 0
@@ -260,7 +309,7 @@ fs3combat:
       description: Level 8 Aether spell
       is_magic: true
       skill: Aether
-      lethality: 0
+      lethality: 35
       penetration: 50
       weapon_type: Ranged
       recoil: 0
@@ -318,7 +367,7 @@ fs3combat:
       init_mod: 0
     Stun (Aether):
       description: Stun spell
-      is_magic: true
+      is_magic: x
       skill: Aether
       lethality: 0
       penetration: 0
@@ -336,6 +385,7 @@ fs3combat:
       weapon_type: Stun
       recoil: 0
       damage_type: Physical
+      magic_damage_type: Psionic
       accuracy: 0
       init_mod: 0
     Stun (Creation):
@@ -369,12 +419,14 @@ fs3combat:
     - strength
     - weaken
     Ranged:
+    - death touched
     - fire
     - ice
     - lightning
     - scope
     - weaken
     Melee:
+    - death touched
     - fire
     - ice
     - lightning
@@ -394,10 +446,10 @@ fs3combat:
     #---------------
     # MAGIC ITEMS
     #---------------
-    # Guilt-Weighted Gloves:
-    #   description: Magic item
-    #   is_magic: true
-    #   lethality: 5
+    Guilt-Weighted Gloves:
+      description: Magic item
+      is_magic: true
+      lethality: 5
     #---------------
     # SPELLS
     #---------------
@@ -407,13 +459,17 @@ fs3combat:
       lethality: 5
       penetration: 1
       init_mod: 2
+    Death Touched:
+      description: Level 4 Entropy Spell
+      is_magic: true
+      lethality: 20
     Fire:
       description: Level 4 Aether spell
       is_magic: true
       lethality: 10
       accuracy: 1
     Ice:
-      description: Level 4 Ice spell
+      description: Level 4 Entropy spell
       is_magic: true
       lethality: 10
       penetration: 1
@@ -428,174 +484,3 @@ fs3combat:
       is_magic: true
       lethality: -15
       penetration: -1
-
-
-
-
-
-
-
-# #TESTING SPELLS
-
-
-#     Earth Bolt:
-#       description: Level 3 Entropy spell
-#       is_magic: true
-#       skill: Entropy
-#       lethality: -10
-#       penetration: 4
-#       weapon_type: Explosive
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 2
-#       has_shrapnel: true
-#       init_mod: 0
-#       special_group: Spell
-#     Stone Fists:
-#       description: Level 3 Entropy spell
-#       is_magic: true
-#       skill: Brawl
-#       lethality: 0
-#       penetration: 5
-#       weapon_type: Melee
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       init_mod: 0
-#       special_group: Body
-#     Stone Slam:
-#       description: Level 3 Entropy spell
-#       is_magic: true
-#       skill: Entropy
-#       lethality: -5
-#       penetration: 5
-#       weapon_type: Ranged
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       init_mod: 0
-#       special_group: Spell
-#     Hot Hands:
-#       description: Level 3 Aether spell
-#       is_magic: true
-#       skill: Brawl
-#       lethality: -5
-#       penetration: 6
-#       weapon_type: Melee
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 3
-#       init_mod: 0
-#       special_group: Body
-#     Natural Weaponry:
-#       description: Level 2 Creation spell
-#       is_magic: true
-#       skill: Brawl
-#       lethality: -10
-#       penetration: 4
-#       weapon_type: Melee
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       init_mod: 0
-#       special_group: Body
-#     Poison Puffs:
-#       description: Level 6 Creation spell
-#       is_magic: true
-#       skill: Creation
-#       lethality: -15
-#       penetration: 50
-#       weapon_type: Explosive
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       init_mod: 0
-#       special_group: Spell
-#     Ice Talons:
-#       description: Level 3 Entropy spell
-#       is_magic: true
-#       skill: Brawl
-#       lethality: -5
-#       penetration: 5
-#       weapon_type: Melee
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       init_mod: 0
-#       special_group: Body
-#     Cone Of Cold:
-#       description: Level 4 Entropy spell
-#       is_magic: true
-#       skill: Entropy
-#       lethality: -5
-#       penetration: 6
-#       weapon_type: Explosive
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       has_shrapnel: true
-#       init_mod: 0
-#       special_group: Spell
-#     Ice Armor:
-#       description: Level 4 Entropy spell
-#       is_magic: true
-#       skill: Brawl
-#       lethality: 0
-#       penetration: 6
-#       weapon_type: Melee
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       init_mod: 0
-#       special_group: Body
-#     Slick Ground:
-#       description: Level 5 Entropy spell
-#       is_magic: true
-#       skill: Entropy
-#       lethality: 0
-#       penetration: 0
-#       weapon_type: Suppressive
-#       is_automatic: true
-#       recoil: 0
-#       damage_type: Stun
-#       accuracy: 3
-#       init_mod: 0
-#       special_group: Spell
-#     Exploding Ice:
-#       description: Level 5 Entropy spell
-#       is_magic: true
-#       skill: Entropy
-#       lethality: 5
-#       penetration: 8
-#       weapon_type: Explosive
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 1
-#       has_shrapnel: true
-#       init_mod: 0
-#       special_group: Spell
-#     Fling:
-#       description: Level 2 Aether spell
-#       is_magic: true
-#       skill: Aether
-#       lethality: -15
-#       penetration: 3
-#       weapon_type: Ranged
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       init_mod: 0
-#       special_group: Spell
-#     Buckshot:
-#       description: Level 5 Aether spell
-#       is_magic: true
-#       skill: Aether
-#       lethality: 5
-#       penetration: 8
-#       weapon_type: Explosive
-#       recoil: 0
-#       damage_type: Physical
-#       accuracy: 0
-#       has_shrapnel: true
-#       init_mod: 0
-#       special_group: Spell

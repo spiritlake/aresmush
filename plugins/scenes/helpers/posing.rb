@@ -2,9 +2,11 @@ module AresMUSH
   module Scenes
 
     def self.new_scene_activity(scene, activity_type, data)
-      last_posed = scene.last_posed ? scene.last_posed.name : nil
+      last_posed = scene.last_posed
+      last_posed_name = last_posed ? last_posed.name : ""
+
       # **NOTE** Don't add any more pipes after 'data' because poses can contain pipes.
-      web_msg = "#{scene.id}|#{last_posed}|#{activity_type}|#{data}"
+      web_msg = "#{scene.id}|#{last_posed_name}|#{activity_type}|#{data}"
       Global.client_monitor.notify_web_clients(:new_scene_activity, web_msg, true) do |char|
         Scenes.can_read_scene?(char, scene) && Scenes.is_watching?(scene, char)
       end
@@ -13,11 +15,11 @@ module AresMUSH
       end
     end
 
-    def self.create_new_pose_notification(scene, last_posed_name)
+    def self.create_new_pose_notification(scene, last_posed)
       message = t('scenes.new_scene_activity', :id => scene.id)
       watching_participants = scene.watchers.to_a & scene.participants.to_a
       watching_participants.each do |w|
-        if (last_posed_name != w.name)
+        if (!AresCentral.is_alt?(w, last_posed))
           is_in_room = scene.room && scene.room == w.room
           Login.notify(w, :scene, message, scene.id, "", !is_in_room)
         end
@@ -32,6 +34,15 @@ module AresMUSH
       if (is_ooc)
         color = Global.read_config("scenes", "ooc_color")
         formatted_pose = "#{color}<OOC>%xn #{pose}"
+
+        if room.scene && room.scene.scene_type == "Text"
+          room.scene.participants.each do |char|
+            if char.room.scene.nil? || (!char.room.scene.nil? && room.scene.id != char.room.scene.id)
+              Txt.notify_if_portal_pose(room, char)
+            end
+          end
+        end
+
       end
       if (system_pose)
         line = "%R%xh%xc%% #{'-'.repeat(75)}%xn%R"
@@ -79,6 +90,15 @@ module AresMUSH
     def self.notify_next_person(room)
 
       poses = room.sorted_pose_order
+
+      if room.scene && room.scene.scene_type == "Text" && poses.count < 2
+        room.scene.participants.each do |char|
+          if char.room.scene.nil? || (!char.room.scene.nil? && room.scene.id != char.room.scene.id)
+            Txt.notify_if_portal_pose(room, char)
+          end
+        end
+      end
+
       return if poses.count < 2
 
       if (room.pose_order_type == '3-per')
@@ -173,7 +193,7 @@ module AresMUSH
         # (Group 2: Quote -- Multiple letters not quote -- Quote )
         # /([^"]+)?("[^"]+")?/
         quote_matches = pose.scan(/([^#{quote_markers}]+)?([#{quote_markers}][^#{quote_markers}]+[#{quote_markers}]?)?/)
-        puts "quote matches #{quote_matches}"
+
         colored_pose = ""
         quote_matches.each do |m|
           if (m[0])

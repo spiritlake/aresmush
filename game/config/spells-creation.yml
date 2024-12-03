@@ -54,6 +54,18 @@ spells:
     range: Touch
     roll: true
     school: Creation
+  Sense Injury:
+    available: true
+    area: 100 yard radius
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: The caster can identify from a distance the presence of an injured person, mythic, cryptid, or animal who can be healed via Creation magic. The caster cannot identify the nature of the injury or if there are multiple injured creatures present.
+    effect: Heal
+    level: 2
+    name: Sense Injury
+    range: self
+    roll: true
+    school: Creation
   Sling Barb:
     available: true
     casting_time: 1 round
@@ -116,7 +128,7 @@ spells:
   Shield Of The Forest:
     available: true
     casting_time: 1 round
-    desc: 'Swiftly grow a barrier that protects the caster or their target by placing them in [cover](https://www.aresmush.com/fs3/fs3-3/combat/#stance) for one round.'
+    desc: 'Swiftly grow a barrier that protects the caster or their target.'
     duration: 3 rounds
     effect: Shield
     is_shield: true
@@ -141,20 +153,6 @@ spells:
     school: Creation
     target_num: 1
     weapon: Stone Slam
-  Terramancy:
-    available: true
-    area: 2 cubic feet
-    casting_time: 1 round
-    damage_type: Bypass
-    desc: "For the duration of the spell, the caster can move around and shape up to a total of 2 cubic feet of pre-existing dirt, rock, or stone. The caster can sculpt detailed, non-weaponized shapes that animate at their direction. Earth returns to its natural, but not necessarily original, state when the spell ends. "
-    duration: 30 minutes
-    effect: Manipulation
-    level: 3
-    line_of_sight: true
-    name: Terramancy
-    range: Short
-    roll: true
-    school: Creation
   Water Cannon:
     available: true
     casting_time: 1 round
@@ -186,7 +184,7 @@ spells:
     is_potion: true
     level: 4
     name: Agility
-    range: Self
+    range: Touch
     rounds: 3
     school: Creation
   Minor Group Heal:
@@ -216,7 +214,7 @@ spells:
     school: Creation
   Stone Skin:
     armor: Stone Skin
-    available: true
+    available: false
     casting_time: 1 round
     damage_type: Bypass
     desc: Caster weaponizes and protects their own body by augmenting it with stone and rock.
@@ -239,7 +237,7 @@ spells:
     is_potion: true
     level: 4
     name: Strength
-    range: Self
+    range: Touch
     rounds: 100
     school: Creation
     weapon_specials: Strength
@@ -318,6 +316,19 @@ spells:
     range: Touch
     school: Creation
     target_num: 1
+  Major Heal:
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: Provide a large amount of healing magic to a target's most severe treatable wound, speeding their healing significantly and restoring some of their vigor.
+    effect: Heal
+    heal_points: 10
+    level: 6
+    line_of_sight: true
+    name: Major Heal
+    range: Short
+    school: Creation
+    target_num: 1
   Stalagmite:
     available: true
     casting_time: 1 round
@@ -351,6 +362,20 @@ spells:
 #---------------
 # LEVEL 7
 #---------------
+  Medium Group Heal:
+    area: 10 yard radius
+    available: true
+    casting_time: 1 round
+    damage_type: Bypass
+    desc: Provide a middling amount of healing magic to the most severe treatable wound of up to three targets the caster can see, speeding their healing by up to nearly a week and restoring some of their vigor.
+    effect: Heal
+    heal_points: 7
+    level: 7
+    line_of_sight: true
+    name: Medium Group Heal
+    range: Short
+    school: Creation
+    target_num: 3
   Poison Puffs:
     area: 10 yard radius
     available: true
@@ -367,6 +392,22 @@ spells:
     school: Creation
     target_num: 3
     weapon: Poison Puffs
+  Rejuvenate:
+    available: true
+    attack_mod: 2
+    casting_time: 1 round
+    damage_type: Bypass
+    defense_mod: 2
+    desc: The caster imbues up to three targets with a burst of energy and vigor, increasing their attack and defense.
+    duration: 5 rounds
+    effect: Buff
+    level: 7
+    line_of_sight: true
+    name: Rejuvenate
+    range: Long
+    rounds: 3
+    school: Creation
+    target_num: 3
   Stone Daggers:
     available: true
     casting_time: 1 round

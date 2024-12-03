@@ -9,7 +9,7 @@ module AresMUSH
     end
 
     def self.format_msg(event)
-      "#{event.title}\n#{t('events.starts_at_title')} #{event.start_datetime_standard}\n#{t('events.who_title')} #{event.organizer_name}\nContent Warning: #{event.content_warning}\n#{t('events.tags_title')} #{event.tags.join(" ")}\n\n#{event.description}\n\n#{Game.web_portal_url}\/event\/#{event.id}"
+      "#{event.title}\n#{t('events.starts_at_title')} #{event.start_datetime_standard}\n#{t('events.who_title')} #{event.organizer_name}\nContent Warning: #{event.content_warning}\n#{t('events.tags_title')} #{event.content_tags.join(" ")}\n\n#{event.description}\n\n#{Game.web_portal_url}\/event\/#{event.id}"
     end
 
     def self.reply_to_forum_post(event)
@@ -19,8 +19,8 @@ module AresMUSH
       author = Character.named(event.organizer_name)
       category = BbsBoard.find_one_by_name(category_name)
       if post == "error"
-        client = Global.client_monitor.find_client(author)
-        return client.emit_failure "Cannot reply to event forum post with updates; you may want to do it manually. This happens when the event name has changed."
+        msg = "%xrCannot reply to event forum post with updates; you may want to do it manually. This happens when the event name has changed.%xn"
+        return Login.emit_if_logged_in(author, msg)
       else
         Forum.reply(category, post, author, reply)
       end

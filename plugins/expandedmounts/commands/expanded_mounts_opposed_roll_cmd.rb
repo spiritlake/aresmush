@@ -28,6 +28,11 @@ module AresMUSH
           return
         end
 
+        if (model1 && !model1.bonded)
+          client.emit_failure t('expandedmounts.has_no_mount', :name => model1.name)
+          return
+        end
+
         if (self.name2)
           result = ClassTargetFinder.find(self.name2, Character, enactor)
           model2 = result.target
@@ -39,8 +44,13 @@ module AresMUSH
           return
         end
 
-        die_result1 = FS3Skills.parse_and_roll(model1, self.roll_str1)
-        die_result2 = FS3Skills.parse_and_roll(model2, self.roll_str2)
+        if (model2 && !model2.bonded)
+          client.emit_failure t('expandedmounts.has_no_mount', :name => model2.name)
+          return
+        end
+
+        die_result1 = FS3Skills.parse_and_roll(model1, self.roll_str1, true)
+        die_result2 = FS3Skills.parse_and_roll(model2, self.roll_str2, true)
 
         if (!die_result1 || !die_result2)
           client.emit_failure t('fs3skills.unknown_roll_params')
@@ -55,7 +65,7 @@ module AresMUSH
         message = t('expandedmounts.opposed_roll_result',
            :name1 => !model1 ? t('fs3skills.npc', :name => self.name1) : model1.name,
            :name2 => !model2 ? t('fs3skills.npc', :name => self.name2) : model2.name,
-           :bonded1 => !model1 || model1.bonded  ? "Mount" : model1.bonded.name,
+           :bonded1 => !model1 || !model1.bonded  ? "Mount" : model1.bonded.name,
            :bonded2 => !model2 || !model2.bonded ? "Mount" : model2.bonded.name,
            :roll1 => self.roll_str1,
            :roll2 => self.roll_str2,

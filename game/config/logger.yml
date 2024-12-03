@@ -16,7 +16,7 @@ logger:
       type: PatternFormatter
   - type: RollingFileOutputter
     name: file
-    max_backups: 20
+    max_backups: 40
     maxsize: 125000
     filename: game/logs/log.txt
     formatter:

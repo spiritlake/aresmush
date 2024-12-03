@@ -1,4 +1,4 @@
-require 'byebug'
+# require 'byebug'
 module AresMUSH
   module Magic
 
@@ -86,8 +86,10 @@ module AresMUSH
       end
 
       if using_potion
-        message = [Magic.get_potion_message(caster, names[0], spell_name)]
-        messages.concat message
+
+        messages = [Magic.get_potion_message(caster, names[0], spell_name)]
+        # puts message
+        # messages.concat message
       else
         if (!names.empty? && names.all?(caster_name))
           if !spell['heal_points'] && !spell['is_shield'] && !spell['energy_points']
@@ -144,6 +146,7 @@ module AresMUSH
     def self.cast_heal(caster_name, target_char_or_combatant, spell, heal_points)
       target = Magic.get_associated_model(target_char_or_combatant)
       wound = FS3Combat.worst_treatable_wound(target)
+
       if wound.blank?
         message = [t('magic.cast_heal_no_effect', :name => caster_name, :spell => spell, :mod => "", :succeeds => "%xgSUCCEEDS%xn", :target => target.name, :points => heal_points)]
       elsif target.combat && target_char_or_combatant.death_count > 0
@@ -158,6 +161,7 @@ module AresMUSH
     end
 
     def self.cast_fatigue_heal(caster_name, target, spell, is_potion = false)
+      puts "Casting magic energy heal. Before heal #{target.name} #{target.magic_energy}"
       energy_points = Global.read_config("spells", spell, "energy_points")
       new_magic_energy = [(target.magic_energy + energy_points), (target.total_magic_energy * 0.8)].min
       target.update(magic_energy: new_magic_energy)
@@ -166,6 +170,7 @@ module AresMUSH
       else
         message = [t('magic.cast_fatigue_heal', :name => caster_name, :spell => spell, :mod => "", :succeeds => "%xgSUCCEEDS%xn", :target => target.name, :points => energy_points)]
       end
+      puts "Casting magic energy heal. After heal #{target.name} #{target.magic_energy}"
       return message
     end
 
@@ -175,11 +180,18 @@ module AresMUSH
     #   puts "Char #{char} #{char.name} #{char.magic_energy}"
     # end
 
-    def self.cast_weapon(caster_name, combatant, target, spell, weapon)
+    def self.cast_weapon(caster_name, combatant, target, spell, weapon, is_potion = false)
       armor = Global.read_config("spells", spell, "armor")
       Magic.set_magic_weapon(target, weapon)
+      message = []
       if armor
         message = []
+      elsif is_potion
+        if target.name == combatant.name
+          message = [t('magic.potion', :name => target.name, :potion => spell)]
+        else
+          message = [t('magic.potion_target', :name => caster_name, :target => target.name, :potion => spell)]
+        end
       else
         message = [t('magic.casts_spell', :name => caster_name, :spell => spell, :mod => "", :succeeds => "%xgSUCCEEDS%xn")]
       end
@@ -194,7 +206,8 @@ module AresMUSH
       else
         weapon_special = {
         name: spell['weapon_specials'],
-        rounds: spell['rounds'],
+        # Needs to be +1 because the newturn immediately after cast will do -1
+        rounds: spell['rounds'] + 1,
         weapon: target.weapon,
         combatant: target
       }
@@ -318,8 +331,8 @@ module AresMUSH
       return message
     end
 
-    def self.cast_inflict_damage(caster_name, combatant, target, spell, damage_inflicted, damage_desc)
-      FS3Combat.inflict_damage(target.associated_model, damage_inflicted, damage_desc)
+    def self.cast_inflict_damage(caster_name, combatant, target, spell, damage_inflicted, damage_desc, is_mock = false)
+      FS3Combat.inflict_damage(target.associated_model, damage_inflicted, damage_desc, is_stun = false, is_mock)
       target.update(freshly_damaged: true)
       damaged_by = target.damaged_by
       damaged_by << caster_name
@@ -328,6 +341,8 @@ module AresMUSH
         desc = "%xyImpaired%xn"
       elsif damage_inflicted.downcase == "flesh"
         desc = "%xgFlesh Wound%xn"
+      elsif damage_inflicted.downcase == "moderate"
+        desc = "%xcModerate%xn"
       else
         desc = ""
       end
@@ -379,7 +394,7 @@ module AresMUSH
         mod_msg.concat ["#{spell_mod} spell casting"]
       end
       mod_msg = mod_msg.join(", ")
-      target.combat.log "SETTING SPELL MODS (mod/rounds): Attack:#{target.magic_attack_mod}/#{target.magic_attack_mod_counter} Defense:#{target.magic_defense_mod}/#{target.magic_defense_mod_counter} Init:#{target.magic_init_mod}/#{target.magic_init_mod_counter} Lethal:#{target.magic_lethal_mod}/#{target.magic_lethal_mod_counter} Spell:#{target.spell_mod}/#{target.spell_mod_counter}"
+      target.combat.log "SPELL MODS (mod/rounds) FOR #{target.name}: Attack:#{target.magic_attack_mod}/#{target.magic_attack_mod_counter} Defense:#{target.magic_defense_mod}/#{target.magic_defense_mod_counter} Init:#{target.magic_init_mod}/#{target.magic_init_mod_counter} Lethal:#{target.magic_lethal_mod}/#{target.magic_lethal_mod_counter} Spell:#{target.spell_mod}/#{target.spell_mod_counter}"
       return mod_msg
     end
 
@@ -421,7 +436,7 @@ module AresMUSH
         message = t('magic.dont_target_self')
         return message
       end
-      margin = FS3Combat.determine_attack_margin(combatant, target, mod = 0, called_shot = nil, mount_hit = false, result = nil)
+      margin = FS3Combat.determine_attack_margin(combatant, target, mod = -2, called_shot = nil, mount_hit = false, result = nil)
       stopped_by_shield = margin[:stopped_by_shield] || []
       puts "++++ #{margin}"
       puts "++++ #{stopped_by_shield}"

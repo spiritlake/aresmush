@@ -16,14 +16,16 @@ module AresMUSH
         return t('magic.use_school_version') if (self.spell == "Potions" || self.spell == "Familiar")
         # return t('magic.request_spell') if (self.spell == "Wild Shape" || self.spell == "Greater Wild Shape" || self.spell == "Half Shift")
         return t('magic.not_spell') if !Magic.is_spell?(self.spell)
-        # return t('fs3skills.not_enough_xp') if enactor.xp <= 0
+        return t('fs3skills.not_enough_xp') if enactor.xp <= 0
         return t('magic.too_many_spells', :spell_max => Magic.spell_max) if Magic.count_spells_total(enactor) >= Magic.spell_max
         previous = Magic.previous_level_spell?(enactor, self.spell)
         return t('magic.need_previous_level') if Magic.previous_level_spell?(enactor, self.spell) == false
         num_can_learn = Magic.num_can_learn(enactor)
         return t('magic.learning_too_many_spells', :num_can_learn => num_can_learn) if (Magic.count_spells_learning(enactor) > (num_can_learn - 1) && !Magic.find_spell_learned(enactor, self.spell))
         return t('magic.wrong_school') if !enactor.schools.keys.include? self.school
-        return "Level 8 spells aren't available yet" if self.spell_level == 8
+        available = Global.read_config("spells", self.spell, "available")
+        return "That spell isn't available to learn." if !available
+        return "Level 9 & 10 spells aren't available to PCs." if self.spell_level > 8
         return nil
       end
 

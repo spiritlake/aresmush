@@ -27,9 +27,11 @@ module AresMUSH
           raise "Unrecognized date time separator.  Check your 'short' date format in datetime.yml."
         end
 
-
-
         date_time = OOCTime.parse_datetime(date.strip.downcase)
+        if (!date_time)
+          raise "Invalid date format."
+        end
+
         if (date_time < DateTime.now)
           return nil, nil, t('events.no_past_events')
         end
@@ -64,12 +66,6 @@ module AresMUSH
         signup.update(comment: comment)
       else
         EventSignup.create(event: event, character: char, comment: comment)
-        organizer = event.character
-        if (organizer)
-          message = t('events.signup_added', :title => event.title, :name => char.name)
-          Login.notify(organizer, :event, message, event.id)
-          Login.emit_ooc_if_logged_in organizer, message
-        end
       end
     end
 
@@ -125,7 +121,6 @@ module AresMUSH
         f.puts "BEGIN:VCALENDAR\r\n"
         f.puts "VERSION:2.0\r\n"
         f.puts "PRODID:-//hacksw/handcal//NONSGML v1.0//EN\r\n"
-
         Event.all.each do |event|
           f.puts "BEGIN:VEVENT\r\n"
           f.puts "UID:#{event.ical_uid}\r\n"
@@ -144,19 +139,10 @@ module AresMUSH
       if (!Events.can_manage_signup?(event, char, enactor))
         return t('dispatcher.not_allowed')
       end
-
       signup = event.signups.select { |s| s.character == char }.first
       if (!signup)
         return t('events.not_signed_up', :name => char.name)
       end
-
-      organizer = event.character
-      if (organizer)
-        message = t('events.signup_removed', :title => event.title, :name => signup.character.name)
-        Login.notify(organizer, :event, message, event.id)
-        Login.emit_ooc_if_logged_in organizer, message
-      end
-
       signup.delete
 
       return nil

@@ -66,28 +66,35 @@ module AresMUSH
     def action
       return nil if !self.action_klass
       a = get_action_instance
-      
+
       error = a.prepare
       if (error)
         self.combat.log "Action Reset: #{self.name} #{self.action_klass} #{self.action_args} #{error}"
-        FS3Combat.emit_to_combat self.combat, t('fs3combat.invalid_action', :name => self.name, :error => error)
+        #FS3Combat.emit_to_combat self.combat, t('fs3combat.invalid_action', :name => self.name, :error => error)
         return nil
       end
-      
+
       a
     end
-    
+
     def action_error?
       a = get_action_instance
+      return nil if !a
       a.prepare
     end
-    
+
     def reset_action
       FS3Combat.emit_to_combat self.combat, t('fs3combat.resetting_action', :name => self.name)
       self.update(action_klass: nil)
       self.update(action_args: nil)
-    end      
-      
+    end
+
+    def reset_action
+      FS3Combat.emit_to_combat self.combat, t('fs3combat.resetting_action', :name => self.name)
+      self.update(action_klass: nil)
+      self.update(action_args: nil)
+    end
+
     def is_subdued?
       self.subdued_by && self.subdued_by.is_subduing?(self)
     end
@@ -132,6 +139,10 @@ module AresMUSH
     def total_damage_mod
       if (is_in_vehicle?)
         FS3Combat.total_damage_mod(self.associated_model) + FS3Combat.total_damage_mod(self.vehicle)
+      elsif !self.npc && self.associated_model&.bonded
+        mount = Mount.named(self.associated_model.bonded.name)
+        self.log "Total damage mod: #{self.associated_model.name}=#{FS3Combat.total_damage_mod(self.associated_model)} + #{mount.name}=#{FS3Combat.total_damage_mod(mount)} / 2 = #{(FS3Combat.total_damage_mod(self.associated_model) + FS3Combat.total_damage_mod(mount)) / 2}"
+        (FS3Combat.total_damage_mod(self.associated_model) + FS3Combat.total_damage_mod(mount)) / 2
       else
         FS3Combat.total_damage_mod(self.associated_model)
       end
@@ -200,14 +211,12 @@ module AresMUSH
     def log(msg)
       self.combat.log(msg)
     end
-    
+
     # Private
-    
     def get_action_instance
       return nil if !self.action_klass
       klass = FS3Combat.const_get(self.action_klass)
       a = klass.new(self, self.action_args)
     end
-    
   end
 end

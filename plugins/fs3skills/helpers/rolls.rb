@@ -10,14 +10,14 @@ module AresMUSH
     # use the other methods in this class to get the success level and title to display.
     #EM Changes
     def self.roll_ability(char, roll_params, mount_average = false)
-      puts ":::::::::::Roll params: #{char.name} #{roll_params} #{roll_params.to_s.include?("Reflexes") } mount_average? #{mount_average}"
+      # puts ":::::::::::Roll params: #{char.name} #{roll_params} #{roll_params.to_s.include?("Reflexes") } mount_average? #{mount_average}"
       if char.combat && (char.combatant.is_mount? || char.bonded)
         dice = ExpandedMounts.dice_to_roll_for_combat_ability(char, roll_params)
       elsif (char.bonded && char.combat) || char.is_mount? || mount_average
         dice = ExpandedMounts.dice_to_roll_for_ability(char, roll_params)
       else
         dice = FS3Skills.dice_to_roll_for_ability(char, roll_params)
-        puts "Unmounted dice: #{dice}"
+        # puts "Unmounted dice: #{dice}"
       end
       #/EM Changes
 
@@ -81,6 +81,11 @@ module AresMUSH
       vs_name2 = (request.args[:vs_name2] || "").titlecase
       pc_name = request.args[:pc_name] || ""
       pc_skill = request.args[:pc_skill] || ""
+      # EM Changes
+      mount_roll_str = (request.args[:mount_roll_string] || "")
+      #/EM Changes
+
+
 
       # ------------------
       # VS ROLL
@@ -140,6 +145,22 @@ module AresMUSH
           :dice => FS3Skills.print_dice(roll),
           :success => success_title
           )
+
+      # ------------------
+      # EM CHANGES
+      # MOUNT ROLL
+      # ------------------
+      elsif (!mount_roll_str.blank?)
+        roll = FS3Skills.parse_and_roll(enactor, mount_roll_str, true)
+        roll_result = FS3Skills.get_success_level(roll)
+        success_title = FS3Skills.get_success_title(roll_result)
+        message = t('expandedmounts.simple_roll_result',
+          :char => enactor.name,
+          :bonded => enactor.bonded&.name || "",
+          :roll => mount_roll_str,
+          :dice => FS3Skills.print_dice(roll),
+          :success => success_title
+        )
 
       # ------------------
       # SELF ROLL

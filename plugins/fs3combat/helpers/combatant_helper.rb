@@ -2,6 +2,7 @@ module AresMUSH
   module FS3Combat
 
     def self.roll_attack(combatant, target, mod = 0)
+      puts "++++MOD IS HERE: #{mod}"
       ability = FS3Combat.weapon_stat(combatant.weapon, "skill")
       accuracy_mod = FS3Combat.weapon_stat(combatant.weapon, "accuracy")
       attack_mod = combatant.attack_mod  ? combatant.attack_mod  : 0

@@ -35,6 +35,7 @@ module AresMUSH
     attribute :is_ko
     attribute :death_count, :type => DataType::Integer, :default => 0
     attribute :dead, :type => DataType::Boolean, :default => false
+    attribute :has_died, :type => DataType::Integer
 
     reference :rider, 'AresMUSH::Combatant'
     collection :passengers, 'AresMUSH::Combatant', :passenger_on
@@ -85,7 +86,11 @@ module AresMUSH
     end
 
     def total_damage_mod
-      FS3Combat.total_damage_mod(self)
+      if !self.is_in_combat?
+        FS3Combat.total_damage_mod(self)
+      else
+        self.bonded.combatant.total_damage_mod
+      end
     end
 
     ## MISC COMBAT
@@ -151,9 +156,9 @@ module AresMUSH
       self.bonded.combatant.luck
     end
 
-    def damage_mod
-      (self.bonded.combatant.total_damage_mod + FS3.total_damage_mod(self)) / 2
-    end
+    # def damage_mod
+    #   (self.bonded.combatant.total_damage_mod + FS3.total_damage_mod(self)) / 2
+    # end
 
     def is_passing?
       self.bonded.combatant.is_passing?

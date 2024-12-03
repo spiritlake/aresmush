@@ -3,6 +3,8 @@ jobs:
   active_statuses:
   - NEW
   - OPEN
+  - WAITING
+  - PENDING
   archive_cron:
     hour:
     - 4
@@ -40,17 +42,32 @@ jobs:
       color: "%xg"
     OPEN:
       color: "%xb"
+    WAITING:
+      color: "%x61"
+    PENDING:
+      color: "%x87"
     HOLD:
       color: "%xx%xh"
     DONE:
       color: "%xy"
     ARCHIVED:
       color: "%xx%xh"
-  system_category: SYS
-  trouble_category: PLAYER
+  system_category: SYSTEM
+  trouble_category: REQ
+  luck_category: LUCK
   permissions:
     access_jobs: Allows non-admins to access jobs in categories allowed for their
       roles.
   responses:
   - name: Received
     text: Your job has been received. We'll get to it soon.
+  - name: Spell Pending
+    text: Thanks for your spell request! We work through spells at a rate of one per
+      week, so your job has been moved to pending. Keep an eye on this space for feedback
+      or questions when we get to your request.
+  - name: Cryptid Pending
+    text: Thanks for your cryptid request! We work through cryptids one at a time,
+      so your job has been moved to pending. Keep an eye on this space for feedback
+      or questions when we get to your request.
+  scheduled_jobs: []
+  custom_fields: []

@@ -4,6 +4,7 @@ secrets.yml
 real_database.yml
 packer_vars.json
 server.yml
+sites.yml
 
 
 # Logs and errors
@@ -58,4 +59,5 @@ Gemfile.lock
 game/scripts/aresconfig.js
 .byebug_history
 .vscode/settings.json
-game/config/sites.yml
+engine/aresmush/database.rb
+Gemfile.lock

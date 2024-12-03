@@ -209,17 +209,21 @@ module AresMUSH
       
           FS3Combat.emit_to_combat combat, all_messages.join("\n"), nil, true, true
 
-          combat.log "---- Resolutions ----"          
+
+          combat.log "---- Resolutions ----"
+          #EM Changes
+          ExpandedMounts.new_turn(combat)
+          #/EM Changes
           combat.active_combatants.each { |c| FS3Combat.reset_for_new_turn(c) }
-          
-          # This will reset their action if it's no longer valid.  Do this after everyone's been KO'd.                    
+
+          # This will reset their action if it's no longer valid.  Do this after everyone's been KO'd.
           combat.log "---- Resetting Actions ----"
           combat.active_combatants.each do |c|
             if (c.action_error?)
               c.reset_action
             end
           end
-    
+
           FS3Combat.emit_to_combat combat, t('fs3combat.new_turn', :name => enactor.name)
           
           combat_data = FS3Combat.build_combat_web_data(combat, nil)
@@ -246,13 +250,12 @@ module AresMUSH
         .map { |team, members| 
           { 
             team: team,
-            combatants: members.map { |c| 
+            name: combat.team_name(team),
+            combatants: members.map { |c|
               FS3Combat.build_combatant_summary_data(combat, c, viewer)
             }
           }
         }
-      
-      
       {
         id: combat.id,
         organizer: combat.organizer.name,
@@ -287,7 +290,7 @@ module AresMUSH
         can_edit: can_manage || (viewer && viewer.name == combatant.name)
       }
     end
-    
+
     def self.damage_list_web_data(model, include_healed = true)
       model.damage
         .select { |d| include_healed ? true : !d.healed }

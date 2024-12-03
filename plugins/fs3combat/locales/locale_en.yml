@@ -16,6 +16,7 @@ en:
         healed_wound: "%xh%xxHealed%xn"
         graze_wound: "%xhGraze%xn"
         flesh_wound: "%xgFlesh Wound%xn"
+        moderate_wound: "%xcModerate%xn"
         impaired_wound: "%xyImpaired%xn"
         incap_wound: "%xrIncapacitated%xn"
         
@@ -124,7 +125,9 @@ en:
         everyone_posed: "Everyone has posed!"
         team_target_set: "Team %{team} will now pick targets from teams %{targets}."
         team_targets: "Team     Targeted Team(s)"
-        
+        team_name_set: "%{enactor} has set team %{team}'s name to %{name}."
+
+
         random_targets: "Suggested Targets: %{targets}"
         no_targets_specified: "No targets specified."
         
@@ -229,6 +232,21 @@ en:
         mount_title_mod_vs_unmounted: "Mod vs Unmounted:"
             
         # ----------------------------
+        # MOUNTS
+        # ----------------------------
+
+        dismounted: "%{name} has dismounted."
+        mounted: "%{name} has mounted a %{mount}."
+        invalid_mount: "That is not a valid mount type."
+        not_mounted: "You are not mounted."
+        cant_be_in_both_vehicle_and_mount: "%{name} can't be in both a vehicle and on a mount at the same time."
+        mounts_disabled: "Mounts are disabled here."
+        mounts_title: "Mounts List"
+        mount_title_description: "Description:"
+        mount_title_toughness: "Toughness:"
+        mount_title_mod_vs_unmounted: "Mod vs Unmounted:"
+
+        # ----------------------------
         # HITLOCS
         # ----------------------------
         
@@ -273,7 +291,7 @@ en:
         turn_in_progress: "Turn in progress.  Please wait."
         resetting_action: "Resetting %{name}'s action because it's no longer valid."
         invalid_action: "ATTENTION! %{name}'s action is no longer valid: %{error}"
-        
+
         # ----------------------------
         # STANCE
         # ----------------------------
@@ -407,7 +425,8 @@ en:
         reload_action_msg_long: "%{name} will reload this turn."
         reload_action_msg_short: "Reload"
         reload_resolution_msg: "%{name} reloads."
-        cant_reload: "That weapon can't be reloaded."      
-        
+        cant_reload: "That weapon can't be reloaded."
+
         cant_link_scene: "You are not a part of that scene, so you can't link combat to it."
         unrecognized_combat_cmd: "That is not a valid combat command."
+

@@ -64,6 +64,8 @@ scenes:
   - Event
   - Vignette
   - Text
+  - Journal
+  - Letter
   shortcuts:
     scenes: scene
     scene/close: scene/stop
@@ -101,7 +103,7 @@ scenes:
     scene/addpose: scene/emit
     scene/pose: scene/emit
     scene/mine: scene/unshared
-  trending_scenes_category:
+  trending_scenes_category: 
   trending_scenes_cron:
     hour:
     - 19
@@ -116,9 +118,8 @@ scenes:
     - 22
     minute:
     - 2
-  unshared_scene_deletion_days: 20
   unshared_scene_warning_days: 13
-  use_custom_char_cards: false
+  use_custom_char_cards: true
   permissions:
     control_npcs: Pose from NPCs in scenes.
     manage_scenes: Can use scene-related admin tools, like stopping or unsharing scenes.
@@ -130,3 +131,5 @@ scenes:
   - suicide
   - bigotry
   - torture
+  scene_trash_timeout_days: 14
+  delete_scenes_on_idle_out: false

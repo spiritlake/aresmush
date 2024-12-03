@@ -1,4 +1,4 @@
-require 'byebug'
+# require 'byebug'
 module AresMUSH
   module FS3Combat
     class DamageTemplate < ErbTemplateRenderer
@@ -39,6 +39,18 @@ module AresMUSH
 
       def wound_mod
         FS3Combat.total_damage_mod(target)
+      end
+
+      def mage_mythic_wound_mod
+        (FS3Combat.total_damage_mod(target) + FS3Combat.total_damage_mod(target.bonded)) / 2
+      end
+
+      def npc
+        target.class == AresMUSH::Npc
+      end
+
+      def callsign
+        target.class == AresMUSH::Character ? target.demographic(:callsign) : target.bonded.demographic(:callsign)
       end
 
       def magic_energy_mod

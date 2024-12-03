@@ -13,6 +13,8 @@ module AresMUSH
           has_target = true
         end
 
+        puts request.args
+
         if (!scene)
           return { error: t('webportal.not_found') }
         end

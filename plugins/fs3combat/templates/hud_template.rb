@@ -83,7 +83,8 @@ module AresMUSH
 
       def format_damage(c)
         return "%xh%xr#{t('fs3combat.ko_status')}%xn" if c.is_ko
-        FS3Combat.print_damage(c.total_damage_mod)
+        damage_mod = FS3Combat.total_damage_mod(c.associated_model)
+        FS3Combat.print_damage(damage_mod)
       end
 
       def format_weapon(c)
@@ -96,6 +97,15 @@ module AresMUSH
         end
 
         "#{weapon}#{notes}"
+      end
+
+      def team_name(team)
+        name = @combat.team_name(team)
+        if (name)
+          "#{team} (#{name})"
+        else
+          team
+        end
       end
     end
   end

@@ -16,7 +16,7 @@ module AresMUSH
           return { error: t('dispatcher.not_allowed') }
         end
 
-        Global.logger.info "Scene #{scene.id} edited by #{enactor.name}: #{request.args}."
+        Global.logger.info "Scene #{scene.id} edited by #{enactor.name}."
 
         if (scene.shared)
           [ :log, :location, :summary, :scene_type, :title, :icdate ].each do |field|
@@ -63,12 +63,10 @@ module AresMUSH
           end
         end
 
-        if (!scene.completed)
-          is_private = request.args[:privacy] == "Private"
-          scene.update(private_scene: is_private)
-          if (is_private)
-            scene.watchers.replace []
-          end
+        is_private = request.args[:privacy] == "Private"
+        scene.update(private_scene: is_private)
+        if (is_private)
+          scene.watchers.replace []
         end
 
         participant_names = request.args[:participants] || []

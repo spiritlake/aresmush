@@ -64,6 +64,20 @@ $dark-red: #621624;
 $darkest-red: #380c14;
 
 // MAIN BODY
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 8px;
+	background-color: #cfc4b9;
+}
+
+html, body {
+	scrollbar-width: auto;          /* "auto" or "thin" */
+  scrollbar-color: #ebebeb #1f252f;   /* scroll thumb and track */
+}
+
+.container-fluid {
+	max-width: unset;
+}
 
 body {
 	font-family: Verdana, Geneva, sans-serif;
@@ -82,29 +96,14 @@ body {
 	z-index: 1;
 }
 
-.ansi-green-bg {
-	background-color: #8bb678;
-}
-
-.ansi-green-fg {
-	color: #8bb678;
-}
-
-#jobMenuBottom {
-	float: left;
-	margin-top: 5px;
-}
-
 body>.container-fluid {
 	padding: 0;
 	margin: 0;
-	margin-left: 6px;
-	width: calc(100% - 6px);
 }
 
 p {
-	margin: 0 0 16px;
-	line-height: 1.6;
+	margin: 0 0 20px;
+	line-height: 1.75;
 }
 
 a {
@@ -129,6 +128,7 @@ select {
 	min-height: 30px;
 	border: 1px solid $almost-black;
 	outline: 0;
+	height: 29px;
 }
 
 input {
@@ -181,6 +181,17 @@ code {
 }
 
 .status-message p {
+	margin: 1em;
+	line-height: 1;
+}
+
+.scene-alerts,
+.chat-alerts {
+    padding: 5px;
+}
+
+.scene-alerts p,
+.chat-alerts p {
 	margin: 1em;
 	line-height: 1;
 }
@@ -391,15 +402,15 @@ code {
 
 // Search menu
 
-#navbar .navbar-nav>li:nth-of-type(9) {
+#navbar .navbar-nav>li:nth-of-type(10) {
     margin-top: -1px
 }
 
-#navbar .navbar-nav>li:nth-of-type(9) .dropdown-toggle {
+#navbar .navbar-nav>li:nth-of-type(10) .dropdown-toggle {
     font-size: 0
 }
 
-#navbar .navbar-nav>li:nth-of-type(9) .dropdown-toggle:before {
+#navbar .navbar-nav>li:nth-of-type(10) .dropdown-toggle:before {
     font-size: 1rem;
     content: "\f002";
     font-weight: 400;
@@ -408,7 +419,7 @@ code {
     line-height: 18px
 }
 
-.nav.navbar-right li:nth-of-type(9) .dropdown-toggle .caret {
+.nav.navbar-right li:nth-of-type(10) .dropdown-toggle .caret {
     display: none
 }
 
@@ -672,11 +683,6 @@ button {
 	background-size: 500px;
 }
 
-#jobMenuBottom + .action-buttons {
-	float: right;
-	width: fit-content;
-}
-
 .btn-secondary,
 .btn-collapse,
 .btn-default {
@@ -743,7 +749,6 @@ button {
 	border-color: #c69163;
 	padding-top: 8px;
 	letter-spacing: .03em;
-	text-shadow: 1px 1px 1px $blackest-grey;
 }
 
 .btn-warning:disabled {
@@ -761,8 +766,8 @@ button {
 
 .collapse.show {
 	background: $darker-slate;
-	padding: 5px 15px;
-	margin-top: -10px;
+	padding: 20px 15px 5px;
+        margin-top: 10px;
 }
 
 //FS3
@@ -1226,6 +1231,14 @@ button {
 
 .profile-tab .nav-tabs > .nav-item:nth-child(7n+7) > .nav-link {
 	background-color: #7e7f7a;
+}
+
+.comp {
+	padding: 10px;
+	margin: 15px;
+	box-shadow: #1f252f 5px 5px 5px;
+	border-radius: 2px;
+	border: solid 1px #5d6168;
 }
 
 .tab-cover {
@@ -1707,6 +1720,11 @@ h6, .h6 {
 	border-left: none;
 }
 
+.sidebar-box-right p {
+        line-height: 1.6;
+        margin: 0 0 10px;
+}
+
 .sidebar-box {
 	border-top: none;
 }
@@ -1725,6 +1743,21 @@ h6, .h6 {
 	background: #953535;
 }
 
+.play-title {
+	display: none;
+}
+
+.scene-set-pose {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+    border-left: 0;
+    font-style: normal;
+    padding: 20px;
+    background-color: $dark-slate;
+    box-shadow: 2px 2px 5px #191919;
+}
+
 .scene-ooc-pose {
 	background-color: $dark-grey;
 	color: $light-grey;
@@ -1735,6 +1768,26 @@ h6, .h6 {
 
 .scene-pose-header {
 	border-top: 1px dashed #4e5954;
+	margin: 0px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.scene-pose-header > .small-profile-icon {
+	width: 40px;
+	height: 40px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0xpx
+}
+
+.scene-pose {
+	margin: 0px;
+	padding: 5px;
+
+	p {
+		margin: 10px
+	}
 }
 
 .scene-ooc-pose p {
@@ -1817,6 +1870,31 @@ h6, .h6 {
 }
 
 //LIVE SCENES
+
+.form-group:nth-of-type(6)>.col-sm-9>p {
+	width: 50%;
+	float: left;
+	min-width: 200px;
+	margin: 0;
+}
+
+p:nth-of-type(2)>#location {
+	width: calc(100% - .5em);
+	margin-left: .5em;
+}
+
+#limit,
+#title,
+#icdate,
+#tags,
+#content_warning {
+	padding: 6px 12px;
+	width: 100%;
+}
+
+#content_warning {
+	margin-top: 15px;
+}
 
 @media screen and (min-width:768px) {
 	.live-scenes-heading .col-sm-6 {
@@ -1983,8 +2061,23 @@ h1+p+table~span+hr+h2~div>p:last-of-type:not(:first-of-type) {
 	border: 0
 }
 
+.play-sidebar > .collapse.show {
+        padding: 0;
+        margin: 0;
+}
+
 #sceneMenuCollapse {
 	background: unset;
+}
+
+.play-selector {
+	padding: 2px;
+}
+
+.scene-pose-box {
+	.markdown-editor {
+		margin-bottom: 0px;
+	}
 }
 
 .play-sidebar::after {
@@ -2346,17 +2439,17 @@ h1+p+table~span+hr+h2~div>p:last-of-type:not(:first-of-type) {
 
 //TOC, BLOCKQUOTE AND BREADCRUMBS
 blockquote {
-	background: $darkest-slate;
-	border-left: 5px solid $dark-rose;
+	background: $dark-slate;
+	border-left: 5px solid $rose;
 	color: $light-grey;
 }
 
 blockquote a {
-	color: $secondary-color;
+	color: $secondary-color!important;
 }
 
 blockquote a:hover {
-	color: $rust;
+	color: $rust!important;
 }
 
 .toc {
@@ -2533,6 +2626,11 @@ table .user-bar a:hover, table .user-bar a:focus {
 	border-color: $blackest-grey;
 }
 
+.table > :not(caption) > * > * {
+	background: unset;
+}
+
+
 tr:nth-of-type(odd) {
 	background: $lighter-slate;
 }
@@ -2541,16 +2639,17 @@ tr:nth-of-type(even) {
 	background: $lightest-slate;
 }
 
-.table-striped>tbody>tr:nth-of-type(odd) {
-	background: $lighter-slate;
-	color: $light-grey;
+.table-striped>tbody>tr:nth-of-type(odd),
+.table-striped>tbody>tr:nth-of-type(even) {
 	line-height: 2;
 }
 
-.table-striped>tbody>tr:nth-of-type(even) {
-	background: $lightest-slate;
-	color: $light-grey;
-	line-height: 2;
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-bg-type: #8494ae!important;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+    --bs-table-bg-type: #b2bccc!important;
 }
 
 th,
@@ -2633,7 +2732,11 @@ th,
 }
 
 .cg-tip a {
-	color: $lightest-greyish-green;
+	color: $dark-slate;
+}
+
+.cg-tip a:hover {
+	color: $rust;
 }
 
 #fs3abilities > .tab-content {
@@ -2697,6 +2800,7 @@ th,
 
 
 .infobox {
+        background: $darker-slate;
 	margin: 15px 15px 0px 5px;
 	width: 410px;
 	border-radius: 10px;
@@ -2730,6 +2834,26 @@ th,
 
  .creature-wrap {
 	background-image: url("/game/uploads/theme_images/leatherbg.jpg");
+
+	.index-card {
+		width:95%;
+		margin: auto;
+		margin-bottom:30px;
+	}
+
+	.card-title {
+		display: flex;
+		flex-flow: row nowrap;
+	}
+
+	.card-header {
+		height: 60px;
+		background: linear-gradient(#fefbf7, #fefbf7 57px, pink 59px, pink 60px);
+	}
+
+	.col-md-4 {
+		padding: 0px;
+	}
  }
 
 
@@ -2775,6 +2899,9 @@ th,
      font-family: 'Courier Prime', monospace;
      font-size: 1.2em;
 }
+
+.card-title-left {flex-basis: calc(100% - 200px)}
+.card-title-right {flex-basis: 200px; text-align: right;}
 
 .spell-stats {
     display: flex;
@@ -2852,6 +2979,11 @@ th,
 	background-color: $red;
 }
 
+.job-status-WAITING {
+	background-color: $dark-purple;
+	color: white;
+}
+
 .job-category-APP {
 	background: $dusky-purple;
 }
@@ -2907,6 +3039,12 @@ th,
 
 }
 
+.inline-response {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
 .admin-only-reply, .admin-only-reply .markdown-editor {
     background-color: $dark-slate;
     border-color: $darker-slate;
@@ -2947,10 +3085,162 @@ th,
 }
 
 /* --------------------------
-ALERTIFY DIALOGS
+RELATIONSHIP ROW
+---------------------------*/
+
+.relationship-mat {
+    background-image: url(/game/uploads/wolpertinger/leatherbg-seamless.jpg);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.relationship-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    border: 0;
+}
+
+.relationship-icon-container {
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.relationship-content {
+    margin-left: 15px;
+    background-color: #fefbf7;
+    padding: 5px;
+    width: 100%;
+}
+
+.relationship-name {
+    border-bottom: 1px solid lightblue;
+}
+
+/* --------------------------
+ALERTIFY DIALOGS & ALERTS
 ---------------------------*/
 
 .alertify-notifier .ajs-message.ajs-success {
   background-color: $darkest-slate;
   color: $primary-words-color;
+}
+
+@media screen and (min-width: 768px) {
+	.live-scene-controls + .scene-alerts {
+		width: 100%;
+		float: left;
+	}
+
+	.live-scene-controls + .alert-warning {
+		position: relative;
+		top: 1.5em;
+	}
+}
+
+/* --------------------------
+ANSI COLORS
+---------------------------*/
+
+.ansi-blue-bg {
+    background-color: #344a92;
+    color: $light-grey;
+}
+
+.ansi-red-bg {
+    background-color: #d16e66;
+    color: $light-grey;
+}
+
+.ansi-red {
+    color: #d16e66;
+}
+
+.ansi-green-bg {
+	background-color: #8bb678;
+        color: $light-grey;
+}
+
+.ansi-green-fg {
+	color: #8bb678;
+}
+
+.ansi-magenta-fg {
+     color: #ffabff;
+}
+
+.ansi-magneta-fg-bg {
+     background-color: #ffabff;
+     color: $light-grey;
+}
+
+/* --------------------------
+LOCATIONS
+---------------------------*/
+
+.area-entry h2,
+.location-entry h2 {
+    border-bottom: 0;
+    font-family: 'PT Sans';
+    background-color: $header-slate;
+}
+
+.area-entry,
+.location-entry {
+    border: 1px solid $header-slate;
+    border-top: 0;
+    min-height: 300px;
+    height: 300px;
+    margin-bottom: 50px
+}
+
+.location-entry {
+    height: 200px!important
+}
+
+.area-entry-summary {
+    height: 263px;
+    overflow: scroll;
+}
+
+.location-entry-summary {
+    height: 163px;
+    overflow: scroll;
+}
+
+.location-entry-summary {
+    height: 163px;
+    overflow: scroll
+}
+
+.area-entry-summary::-webkit-scrollbar,
+.location-entry-summary::-webkit-scrollbar {
+    width: 14px;
+    background-color: transparent
+}
+
+.area-entry-summary::-webkit-scrollbar-thumb,
+.location-entry-summary::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border: 4px solid transparent;
+    border-radius: 7px;
+    box-shadow: $lightest-teal inset 0 0 0 10px;
+    width: 10px
+}
+
+.area-entry-summary::-webkit-scrollbar-button,
+.location-entry-summary::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none
+}
+
+.area-entry-summary::-webkit-scrollbar-corner,
+.location-entry-summary::-webkit-scrollbar-corner {
+    background-color: transparent
 }

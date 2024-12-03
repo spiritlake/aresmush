@@ -50,39 +50,45 @@ fs3combat:
     #   defense_skill: Reflexes
     Dragon:
       weapon: Sharp Teeth
-      armor: Tough Hide
+      armor: Dragon
       hitloc: Dragon
       defense_skill: Reflexes
+      npc_type: Dragon
     Griffon:
-      weapon: Talons
-      armor: Tough Hide
+      weapon: Sharp Talons
+      armor: Griffon
       hitloc: Winged Mythic
       defense_skill: Reflexes
+      npc_type: Griffon
     Roc:
-      weapon: Talons
-      armor: Tough Hide
+      weapon: Sharp Talons
+      armor: Roc
       hitloc: Bird
       defense_skill: Reflexes
+      npc_type: Roc
     Pegasus:
       weapon: Hard Hooves
       hitloc: Winged Mythic
-      armor: Tough Hide
+      armor: Pegasus
       defense_skill: Reflexes
+      npc_type: Pegasus
     Lupine:
       weapon: Sharp Claws
       hitloc: Winged Mythic
-      armor: Tough Hide
+      armor: Lupine
       defense_skill: Reflexes
+      npc_type: Lupine
     Pantherine:
       weapon: Sharp Claws
       hitloc: Winged Mythic
-      armor: Tough Hide
+      armor: Pantherine
       defense_skill: Reflexes
+      npc_type: Pantherine
     Target:
       hitloc: Target
       weapon: Unarmed
-    Quadraped:
-      hitloc: Quadraped
+    Quadruped:
+      hitloc: Quadruped
       defense_skill: Reflexes
       weapon: Claws
       armor: Tough Hide
@@ -95,6 +101,16 @@ fs3combat:
       hitloc: Humanoid
       armor: Leather
       weapon: Bow
+    Multiheaded Cryptid:
+      hitloc: Multiheaded Cryptid
+      defense_skill: Reflexes
+      weapon: Strong Beak
+      armor: Tough Hide
+    Bird:
+      weapon: Talons
+      armor: Bird
+      hitloc: Bird
+      defense_skill: Reflexes
   shortcuts:
     combat/skill: combat/summary
     combat/skills: combat/summary
@@ -106,6 +122,7 @@ fs3combat:
     healing: heal/list
     weapons: weapon
     newturn: combat/newturn
+    mounts: mount
 
   achievements:
     fs3_hero:
