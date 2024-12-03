@@ -7,6 +7,7 @@ module AresMUSH
         descs = request.args[:descs]
         summary = request.args[:summary]
         area_id = request.args[:area_id]
+
         icon_type = request.args[:icon_type]
         owner_names = request.args[:owners] || []
         enactor = request.enactor
@@ -19,7 +20,7 @@ module AresMUSH
         if (!Rooms.can_build?(enactor))
           return { error: t('dispatcher.not_allowed') }
         end
-
+        
         if (!area_id.blank?)
           area = Area[area_id]
           if (!area)
@@ -52,7 +53,6 @@ module AresMUSH
              room.room_owners.add owner
            end
          end
-
 
         { id: room.id }
       end
