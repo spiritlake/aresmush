@@ -2,4 +2,7 @@
 lookingforrp:
   cron:
     minute:
-    - 35
+    - 00
+    - 15
+    - 30
+    - 45
