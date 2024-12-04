@@ -1,0 +1,70 @@
+---
+idle:
+  idle_exempt_roles:
+  - admin
+  - builder
+  - coder
+  - guest
+  monthly_reminder_cron:
+    hour:
+    - 15
+    minute:
+    - 0
+    day:
+    - 1
+  monthly_reminder_title: Monthly Chores
+  monthly_reminder: It's time to run the idle sweep!
+  reminder_category: MISC
+  use_roster: true
+  idle_category: Announcements
+  days_before_idle: 20
+  arrivals_category: New Arrivals
+  default_contact: Admin
+  idle_warn_msg: You haven't played in awhile and your character is in danger of idling
+    out.
+  roster_arrival_msg: |-
+    %{name} has been claimed off the roster.
+
+    RP Hooks:
+
+    %{rp_hooks}
+  roster_welcome_msg: Welcome!  You may wish to check your %xcnotes%xn and web portal
+    profile page for any notes left by the prior player.  Type %xhonstage%xn to go
+    forth and RP.
+  roster_app_template: |-
+    Tell us why you want to play this character:
+
+
+
+  roster_app_category: APP
+  restrict_roster: true
+  roster_fields:
+  - field: name
+    width: 10
+    title: Name
+  - field: demographic
+    width: 8
+    title: Gender
+    value: gender
+  - field: age
+    width: 5
+    title: Age
+  - field: group
+    width: 13
+    title: Mythic
+    value: Mythic
+  - field: major_school
+    width: 13
+    title: Mage School
+  - field: minor_school
+    width: 14
+    title: Mythic School
+  shortcuts:
+    idle/add: idle/action
+    roster/update: roster/add
+    roster/contact: roster/add
+    roster/notes: roster/note
+    idle/notes: idle/note
+  permissions:
+    manage_idle: Access idle purge commands.
+    manage_roster: Access roster commands.

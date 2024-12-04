@@ -5,7 +5,7 @@ module AresMUSH
     def self.plugin_dir
       File.dirname(__FILE__)
     end
- 
+
     def self.shortcuts
       Global.read_config("fs3combat", "shortcuts")
     end
@@ -67,13 +67,15 @@ module AresMUSH
        when "combats"
          return CombatListCmd
        when "combat"
-         case cmd.switch        
+         case cmd.switch
          when "all", "list"
            return CombatListCmd
          when "ammo"
            return CombatAmmoCmd
          when "attackmod", "defensemod", "lethalmod", "initmod"
            return CombatModCmd
+        when "seemods"
+          return CombatSeeModsCmd
          when "armor"
            return CombatArmorCmd
          when "hitloc"
@@ -149,7 +151,7 @@ module AresMUSH
            return CombatActionCmd
          end
        end
-       
+
        nil
     end
 

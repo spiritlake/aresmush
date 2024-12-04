@@ -1,0 +1,370 @@
+---
+fs3combat:
+  armor:
+  #--------------
+  # MYTHIC ARMOR
+  #--------------
+    Dragon:
+      description: Dragon hide
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 7
+        Rear Left Leg: 6
+        Rear Right Leg: 6
+        Front Left Leg: 6
+        Front Right Leg: 6
+        Tail: 5
+        Right Wing: 5
+        Left Wing: 5
+        Abdomen: 7
+        Head: 6
+        Neck: 5
+    Griffon:
+      description: Griffon hide
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 5
+        Rear Left Leg: 4
+        Rear Right Leg: 4
+        Front Left Leg: 4
+        Front Right Leg: 4
+        Tail: 3
+        Right Wing: 3
+        Left Wing: 3
+        Abdomen: 5
+        Head: 4
+        Neck: 3
+    Lupine:
+      description: Lupine hide
+      is_magic: false
+      defense: 0
+      protection:
+        Chest: 6
+        Rear Left Leg: 5
+        Rear Right Leg: 5
+        Front Left Leg: 5
+        Front Right Leg: 5
+        Tail: 4
+        Right Wing: 4
+        Left Wing: 4
+        Abdomen: 6
+        Head: 5
+        Neck: 4
+    Pantherine:
+      description: Dragon hide
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 5
+        Rear Left Leg: 4
+        Rear Right Leg: 4
+        Front Left Leg: 4
+        Front Right Leg: 4
+        Tail: 3
+        Right Wing: 3
+        Left Wing: 3
+        Abdomen: 5
+        Head: 4
+        Neck: 3
+    Pegasus:
+      description: Pegasus hide
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 6
+        Rear Left Leg: 5
+        Rear Right Leg: 5
+        Front Left Leg: 5
+        Front Right Leg: 5
+        Tail: 4
+        Right Wing: 4
+        Left Wing: 4
+        Abdomen: 6
+        Head: 5
+        Neck: 4
+    Roc:
+      description: Roc hide
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 5
+        Rear Left Leg: 4
+        Rear Right Leg: 4
+        Front Left Leg: 4
+        Front Right Leg: 4
+        Tail: 3
+        Right Wing: 3
+        Left Wing: 3
+        Abdomen: 5
+        Head: 4
+        Neck: 3
+
+
+
+  #--------------
+  # CREATURE ARMOR
+  #--------------
+    Shell:
+      description: Low level animal shell armor
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 4
+        Rear Left Leg: 3
+        Rear Right Leg: 3
+        Front Left Leg: 3
+        Front Right Leg: 3
+        Left Leg: 3
+        Right Leg: 3
+        Tail: 3
+        Right Wing: 3
+        Left Wing: 3
+        Abdomen: 4
+        Head: 3
+        Neck: 3
+        Groin: 4
+        Leg: 3
+        Eyes: 1
+        Right Claw: 3
+        Left Claw: 3
+        Carapace: 3
+        Abdomen: 3
+    Thick Shell:
+      description: Animal shell on par with plate armor
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 7
+        Rear Left Leg: 5
+        Rear Right Leg: 5
+        Front Left Leg: 5
+        Front Right Leg: 5
+        Right Wing: 6
+        Left Wing: 6
+        Left Leg: 5
+        Right Leg: 5
+        Tail: 6
+        Abdomen: 6
+        Head: 6
+        Neck: 5
+        Groin: 5
+        Leg: 5
+        Eyes: 3
+        Right Claw: 5
+        Left Claw: 5
+        Carapace: 7
+        Abdomen: 7
+    Tough Hide:
+      description: Low level animal hide
+      special_group: Mundane
+      is_magic: false
+      defense: 0
+      protection:
+        Chest: 4
+        Rear Left Leg: 4
+        Read Right Leg: 4
+        Front Left Leg: 4
+        Front Right Leg: 4
+        Right Wing: 3
+        Left Wing: 3
+        Abdomen: 4
+        Head: 3
+        Neck: 3
+        Groin: 2
+        Body: 4
+        Fin: 2
+        Tail: 4
+        Leg: 4
+        Arm: 4
+        Body: 4
+        Fin: 3
+    Very Tough Hide:
+      description: Animal hide on par with chainmail armor
+      special_group: Mundane
+      is_magic: false
+      defense: 0
+      protection:
+        Chest: 6
+        Rear Left Leg: 6
+        Rear Right Leg: 6
+        Front Left Leg: 6
+        Front Right Leg: 6
+        Left Leg: 6
+        Right Leg: 6
+        Tail: 6
+        Right Wing: 6
+        Left Wing: 6
+        Abdomen: 6
+        Head: 5
+        Neck: 4
+        Groin: 4
+        Leg: 5
+        Arm: 5
+        Body: 6
+        Fin: 4
+    Bird:
+      description: Armor for feathered birds.
+      special_group: Mundane
+      is_magic: false
+      defense: 3
+      protection:
+        Head: 0
+        Neck: 0
+        Chest: 0
+        Abdomen: 0
+        Left Leg: 0
+        Right Leg: 0
+        Groin: 0
+        Left Arm: 0
+        Right Arm: 0
+        Left Hand: 0
+        Right Hand: 0
+        Left Foot: 0
+        Right Foot: 0
+        Right Wing: 0
+        Left Wing: 0
+    Big Cat:
+      description: Armor for lynx, panthera, etc.
+      special_group: Mundane
+      is_magic: false
+      protection:
+        Head: 0
+        Neck: 0
+        Chest: 0
+        Abdomen: 0
+        Left Leg: 0
+        Right Leg: 0
+        Groin: 0
+        Left Arm: 0
+        Right Arm: 0
+        Left Hand: 0
+        Right Hand: 0
+        Left Foot: 0
+        Right Foot: 0
+      defense: 2
+
+  #--------------
+  # Mundane HUMAN ARMOR
+  #--------------
+    None:
+      description: In case you need to take off armor
+      is_magic: false
+      defense: 0
+      protection:
+        Nowhere: 0
+    Tactical:
+      description: Military-Grade Kevlar Vest and Helmet
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Head: 7
+        Neck: 5
+        Chest: 8
+        Abdomen: 7
+    Chainmail:
+      description: Chainmail shirt & gambeson
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 6
+        Abdomen: 5
+        Left Arm: 6
+        Right Arm: 6
+    Plate:
+      description: Full plate armor with no helmet
+      is_magic: false
+      special_group: Mundane
+      defense: -1
+      protection:
+        Chest: 7
+        Abdomen: 6
+        Left Arm: 7
+        Right Arm: 7
+        Right Leg: 5
+        Left Leg: 5
+    Leather:
+      description: Leather armor
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 5
+        Abdomen: 4
+        Left Arm: 5
+        Right Arm: 5
+    Police:
+      description: Police-Grade Kevlar Vest
+      is_magic: false
+      special_group: Mundane
+      defense: 0
+      protection:
+        Chest: 7
+        Abdomen: 6
+
+  #--------------
+  # ARMOR SPECIALS
+  #--------------
+  armor specials:
+    Leather Helmet:
+      description: A leather helmet
+      is_magic: false
+      protection:
+        Head: 3
+    Metal Helmet:
+      description: A metal helmet
+      is_magic: false
+      protection:
+        Head: 4
+    Chainmail Coif:
+      description: A chainmail coif that covers your head and neck, with a helmet
+        atop.
+      is_magic: false
+      protection:
+        Head: 4
+        Neck: 3
+    Weaken:
+      description: Level 4 Entropy spell
+      is_magic: true
+      protection:
+        Head: -3
+        Neck: -3
+        Chest: -3
+        Abdomen: -3
+        Left Leg: -3
+        Right Leg: -3
+        Groin: -3
+        Left Arm: -3
+        Right Arm: -3
+        Left Hand: -3
+        Right Hand: -3
+        Left Foot: -3
+        Right Foot: -3
+        Tail: -3
+        Front Right Leg: -3
+        Rear Right Leg: -3
+        Front Left Leg: -3
+        Read Left Leg: -3
+        Right Wing: -3
+        Left Wing: -3
+
+#---------------
+# ARMOR SPECIAL GROUPS
+#---------------
+  armor special groups:
+    Mundane:
+    - modern helmet
+    - leather helmet
+    - metal helmet
+    - chainmail coif
+    - weaken
+    Magic:
+    - weaken

@@ -1,0 +1,103 @@
+---
+fs3combat:
+  default_npc_type: 'Normal'
+  npc_types:
+    Trivial:
+      Default: 4
+      Firearms: 5
+      Archery: 5
+      Melee: 5
+      Brawl: 5
+      Magic: 5
+      Wounds: 20
+    Easy:
+      Default: 6
+      Firearms: 7
+      Archery: 7
+      Melee: 7
+      Brawl: 7
+      Magic: 7
+      Wounds: 10
+    Normal:
+      Default: 8
+      Archery: 9
+      Brawl: 9
+      Firearms: 9
+      Melee: 9
+      Magic: 9
+      Wounds: 0
+    Moderate:
+      Default: 10
+      Archery: 11
+      Brawl: 11
+      Firearms: 11
+      Melee: 11
+      Magic: 11
+      Wounds: -5
+    Hard:
+      Default: 12
+      Archery: 13
+      Brawl: 13
+      Firearms: 13
+      Melee: 13
+      Magic: 13
+      Wounds: -10
+    Difficult:
+      Default: 14
+      Archery: 15
+      Brawl: 15
+      Firearms: 15
+      Melee: 15
+      Magic: 15
+      Magic: 15
+      Wounds: -15
+    Impossible:
+      Default: 22
+      Archery: 24
+      Brawl: 24
+      Firearms: 24
+      Melee: 24
+      Magic: 24
+      Wounds: -25
+
+# MYTHICS
+    Dragon:
+      Default: 10
+      Composure: 12
+      Magic: 10
+      Wounds: -10
+    Lupine:
+      Default: 10
+      Composure: 11
+      Alertness: 12
+      Magic: 10
+      Wounds: -10
+    Pantherine:
+      Default: 10
+      Composure: 11
+      Altertness: 13
+      Magic: 10
+      Wounds: -10
+    Pegasus:
+      Default: 10
+      Composure: 11
+      Brawl: 11
+      Melee: 11
+      Magic: 10
+      Wounds: -10
+    Griffon:
+      Default: 10
+      Composure: 12
+      Brawl: 11
+      Melee: 11
+      Alertness: 12
+      Magic: 10
+      Wounds: -10
+    Roc:
+      Default: 10
+      Composure: 12
+      Brawl: 12
+      Melee: 12
+      Reflexes: 12
+      Magic: 10
+      Wounds: -10
