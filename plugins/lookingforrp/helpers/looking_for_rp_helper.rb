@@ -20,5 +20,9 @@ module AresMUSH
       Chargen.approved_chars.select { |c| c.looking_for_rp == true }
     end
 
+    def self.char_names
+      chars_looking_for_rp.map { |c| c.name }
+    end
+
   end
 end
