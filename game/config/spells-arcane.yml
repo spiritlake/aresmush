@@ -413,6 +413,20 @@ spells:
 #---------------
 # LEVEL 6
 #---------------
+  Beacon:
+    available: true
+    area: 1,000 mile radius
+    casting_time: 10 minutes
+    damage_type: Bypass
+    desc: "The caster creates a link between two inanimate objects. The first object cast on acts as a tracker for the second, allowing whoever is in possession of it to sense the location and direction of the 'beacon' object. The objects can range in size from something as small as a coin to something as large as a saddle.\n\nThe beacon object responds to the tracker object with a 'pulse' every 30 minutes, revealing its sense of direction to the person in possession of the tracker object at consistent intervals. \n\nThe feeling of the link becomes vaguer the more distant the objects are from one another, but whoever possesses the tracker will always be able to sense the beacon whenever it 'pulses,' as long as it's in range, for the duration of the spell.\n\nThe caster may only have one pair of linked objects active at a time. "
+    duration: 48 hours
+    effect: Other
+    level: 6
+    line_of_sight: true
+    name: Beacon
+    range: Touch
+    roll: true
+    school: Arcane
   Greater Restore Mana:
     available: true
     casting_time: 1 round

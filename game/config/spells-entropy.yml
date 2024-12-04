@@ -469,13 +469,13 @@ spells:
     available: true
     casting_time: 1 round
     damage_type: Bypass
-    desc: Caster weaponizes and protects their own body by augmenting it with thick sheets of ice.
+    desc: Caster weaponizes and protects the target by augmenting it with thick sheets of ice.
     duration: 8 hours
     effect: Armor
     damage_type: Cold
     level: 6
     name: Glacial Armor
-    range: Self
+    range: Touch
     school: Entropy
 #---------------
 # LEVEL 7
