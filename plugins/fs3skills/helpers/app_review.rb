@@ -14,12 +14,12 @@ module AresMUSH
         error = FS3Skills.check_high_abilities(char.fs3_action_skills, rating, limit, 'fs3skills.action_skills_above')
         too_high << error if error
       end
-      
+
       max_attrs = Global.read_config('fs3skills', 'max_attrs_at_or_above')
       max_attrs.each do |rating, limit|
         error = FS3Skills.check_high_abilities(char.fs3_attributes, rating, limit, 'fs3skills.attributes_above')
         too_high << error if error
-      end      
+      end
 
       error = FS3Skills.check_attr_points(char)
       too_high << error if error
@@ -38,11 +38,11 @@ module AresMUSH
         "#{message}%r#{error}"
       end
     end
-    
+
     def self.unusual_skills_check(char)
       too_high = []
       message = t('fs3skills.unusual_abilities_check')
-      
+
       all_skills = char.fs3_background_skills.map { |s| s.name }
       all_skills.concat char.fs3_action_skills.select { |s| s.rating > 1 }.map { |s| s.name }
       all_skills.concat char.fs3_languages.map { |s| s.name }
@@ -53,13 +53,13 @@ module AresMUSH
           too_high << t('fs3skills.unusual_skill', :skill => s)
         end
       end
-          
+
       char.fs3_background_skills.each do |b|
         if (b.rating > 1)
           too_high << t('fs3skills.high_bg', :skill => b.name)
         end
       end
-      
+
       if (too_high.count == 0)
         Chargen.format_review_status(message, t('chargen.ok'))
       else
@@ -67,7 +67,7 @@ module AresMUSH
         "#{message}%r#{error}"
       end
     end
-      
+
     def self.check_attr_points(char)
       points = AbilityPointCounter.points_on_attrs(char)
       max = Global.read_config("fs3skills", "max_points_on_attrs")
@@ -88,7 +88,10 @@ module AresMUSH
         
     def self.total_point_review(char)
       points =  AbilityPointCounter.total_points(char)
-      max = Global.read_config("fs3skills", "max_ap")
+      #Magic changes
+      points = points == points.to_i ? points.to_i : points
+      max = Magic.cg_max_points_by_age(char)
+      # max = Global.read_config("fs3skills", "max_ap")
       error = points > max ? t('chargen.too_many') : t('chargen.ok')
       Chargen.format_review_status(t('fs3skills.total_points_spent', :total => points, :max => max), error)
     end
@@ -99,30 +102,30 @@ module AresMUSH
       starting_skills = StartingSkills.get_skills_for_char(char)
       starting_skills.each do |skill, rating|
         if (FS3Skills.ability_rating(char, skill)) < rating
-          missing << t('fs3skills.missing_starting_skill', :skill => skill, :rating => rating) 
+          missing << t('fs3skills.missing_starting_skill', :skill => skill, :rating => rating)
         end
       end
-      
+
       starting_specs = StartingSkills.get_specialties_for_char(char)
       char.fs3_action_skills.each do |a|
         specs_for_skill = starting_specs[a.name]
         if (specs_for_skill)
           specs_for_skill.each do |s|
-            if (!a.specialties.include?(s))        
+            if (!a.specialties.include?(s))
               missing << t('fs3skills.missing_group_specialty', :spec => s, :skill => a.name)
             end
           end
         end
       end
-      
+
       char.fs3_action_skills.each do |a|
         config = FS3Skills.action_skill_config(a.name)
         if (config['specialties'] && a.specialties.empty? && a.rating > 2)
           missing << t('fs3skills.missing_specialty', :skill => a.name)
         end
       end
-      
-      
+
+
       if (missing.count == 0)
         Chargen.format_review_status(message, t('chargen.ok'))
       else
@@ -143,12 +146,12 @@ module AresMUSH
         return nil
       end
     end
-    
+
     def self.min_item_review(count, min_config_option_name, prompt)
       min = Global.read_config("fs3skills", min_config_option_name)
       error = count < min ? t('chargen.not_enough') : t('chargen.ok')
       Chargen.format_review_status(t(prompt, :num => count, :min => min), error)
     end
-    
+
   end
 end

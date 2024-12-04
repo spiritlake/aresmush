@@ -5,7 +5,7 @@ module AresMUSH
     def self.plugin_dir
       File.dirname(__FILE__)
     end
- 
+
     def self.shortcuts
       Global.read_config("custom", "shortcuts")
     end

@@ -3,6 +3,7 @@ toc: FS3 Skills and Combat
 summary: Using luck points.
 ---
 # FS3 - Luck
+> Learn how the FS3 skills system works in the [FS3 Tutorial](/help/fs3).
 
 Luck Points in FS3 can be used to generate various lucky breaks.  
 

@@ -1,6 +1,6 @@
 module AresMUSH
   module FS3Combat
-    
+
     def self.find_combat_by_number(client, num)
       num_str = "#{num}"
 
@@ -8,17 +8,17 @@ module AresMUSH
         client.emit_failure t('fs3combat.invalid_combat_number')
         return nil
       end
-      
+
       match = Combat[num.to_i]
 
       if (!match)
         client.emit_failure t('fs3combat.invalid_combat_number')
         return nil
       end
-      
+
       return match
     end
-    
+
     # client may be nil from web
     def self.join_combat(combat, name, combatant_type, enactor, client)
       result = ClassTargetFinder.find(name, Character, enactor)
@@ -51,9 +51,13 @@ module AresMUSH
         :npc => npc,
         :team =>  9,
         :combat => combat)
+        # Magic Changes - required to set the magic energy to the correct number when combat is starting.
+        npc.update(magic_energy: npc.total_magic_energy)
+        puts "Setting #{npc.name}'s magic energy to #{npc.magic_energy} (total: #{npc.total_magic_energy})"
+        # /Magic changes
       end
       FS3Combat.emit_to_combat combat, t('fs3combat.has_joined', :name => name, :type => combatant_type)
-      
+
       vehicle_type = FS3Combat.combatant_type_stat(combatant_type, "vehicle")
       mount_type = FS3Combat.combatant_type_stat(combatant_type, "mount")
       
@@ -66,10 +70,10 @@ module AresMUSH
         end
         FS3Combat.set_default_gear(enactor, combatant, combatant_type)
       end
-      
+
       return combatant
     end
-        
+
     def self.leave_combat(combat, combatant)
       FS3Combat.emit_to_combat combat, t('fs3combat.has_left', :name => combatant.name)
       combatant.delete

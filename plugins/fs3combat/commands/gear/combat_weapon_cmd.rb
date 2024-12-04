@@ -18,28 +18,29 @@ module AresMUSH
           self.weapon = titlecase_arg(args.arg1)
           specials_str = titlecase_arg(args.arg2)
         end
-        
+
         self.specials = specials_str ? specials_str.split('+') : nil
       end
 
       def required_args
         [ self.names, self.weapon ]
       end
-      
+
       def check_special_allowed
         return nil if !self.specials
-        allowed_specials = FS3Combat.weapon_stat(self.weapon, "allowed_specials") || []
+        special_group = FS3Combat.weapon_stat(weapon, "special_group") || ""
+        allowed_specials = Global.read_config("fs3combat", "weapon special groups", special_group) || []
         self.specials.each do |s|
           return t('fs3combat.invalid_weapon_special', :special => s) if !allowed_specials.include?(s)
         end
         return nil
       end
-      
+
       def check_valid_weapon
         return t('fs3combat.invalid_weapon') if !FS3Combat.weapon(self.weapon)
         return nil
       end
-      
+
       def handle
         self.names.each do |name|
           FS3Combat.with_a_combatant(name, client, enactor) do |combat, combatant|        

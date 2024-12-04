@@ -1,0 +1,43 @@
+---
+en:
+  expandedmounts:
+
+#--------------------------
+# MOUNTING AND DISMOUNTING
+#--------------------------
+
+        invalid_mount_name: "That is not a valid mount name."
+        not_on_mount: "%{name} is not mounted."
+        new_rider: "%{name} climbs atop %{mount}."
+        new_passenger: "%{name} is now a passenger on %{mount}."
+        dismounts: "%{name} climbs down from %{mount}."
+        mounts_list_title: "NAME                             BONDED MAGE"
+        already_on_mount: "You are already on %{mount}."
+
+#--------------------------
+# COMBAT
+#--------------------------
+        ko_dismount: "%xr%{name} has been thrown from %{mount}!%xn"
+        combat_name: "%{combatant} atop %{mount}"
+        combat_mounts_list_title: "Sentinel                 Damage    Warden              Passengers"
+        rider_not_in_combat: "%{mount}'s bonded mage %{rider} isn't in combat. Both mage and mythic must be in combat."
+        cast_on_rider: "You can't use that spell on a mount. Target the bonded mage instead."
+        hit_mount_or_rider: "%xm%{name} was aiming for %{aiming_at} but hit %{but_hit}.%xn"
+        not_koed: "%xr%{mount} isn't KOed!%xn"
+
+#--------------------------
+# CHARGEN & EDITS
+#--------------------------
+        mount_created: "%{name} created."
+        mount_updated: "%{name} updated."
+        already_mount_named: "There is already a character or mythic using that name."
+        need_mount_type: "You must set the mythic type before saving."
+        need_mount_name: "You must set the mythic name before saving."
+        need_minor_school: "You must set the mythic school before saving."
+
+#--------------------------
+# OTHER
+#--------------------------
+        no_mount: "You do not have a mount and cannot use this command."
+        simple_roll_result: "%xb<FS3>%xn %{char} and %{bonded} roll %{roll}: %{success} (%{dice})"
+        opposed_roll_result: "%xb<FS3>%xn %{name1} and %{bonded1} rolls %{roll1} (%{dice1}) vs %{name2} and %{bonded2}'s %{roll2} (%{dice2})%R%xb<FS3>%xn%T%T%{result}"

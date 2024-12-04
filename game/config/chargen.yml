@@ -1,0 +1,108 @@
+---
+chargen:
+  achievements:
+    created_character:
+      type: story
+      message: Created a character.
+  allow_web_submit: true
+  app_category: APP
+  app_hold_status: HOLD
+  app_resubmit_status: OPEN
+  app_review_commands:
+  - app %{name}
+  - look %{name}
+  - profile %{name}
+  - bg %{name}
+  - hooks %{name}
+  - sheet %{name}
+  approval_message: "Welcome to the Wardens! At North Weyr, things are currently in upheaval after the death of the respected Warden Commander Morrow and the subsequent controversial election of Warden Commander Warner. Warden posts are being shuffled, with many long-time weyr residents posted elsewhere while new faces populate the weyr.\n\nCheck out the [Getting Started](/wiki/guide:getting_started) guide for more help, including where to set your home, how to find RP and get involved in the story, and more."
+  arrivals_category: New Arrivals
+  bg_blurb: "A background is your character's backstory or history.  Please keep backgrounds to
+    4,000 characters (about 700 words) for readability.<br><br>Some questions to consider in your background
+    <ul><li>Where is your character from?</li>
+      <li>What are the major events in your character's life?</li>
+      <li>What was your mythic's life before they bonded? How do your character and your mythic feel about their bond?</li>
+      <li>Why did they choose to become a Warden? If they have been a Warden for some time, what sorts of things have they done?</li>
+      <li>Do they have any unusual skills you want to provide context for?</li></ul>"
+  demographics_blurb: Demographics record your basic character info.
+  desc_blurb: You can set both your main description, visible when people look at
+    you, and a short description that shows your character at a glance.
+  groups_blurb: Groups determine your character's affiliations.
+  hooks_blurb: "RP Hooks are interesting things about your character that others can
+      hook into for RP. This could be an odd personality quirk, a reputation your character
+      has, or anything else that might inspire someone to connect with you. Looking
+      around at other characters can be a good way to get inspiration for RP
+      Hooks.<br><br>Your RP Hooks will also show in the welcome message posted to the forum, so everyone gets a snapshot of who your character is. It's nice to do these in a bullet-pointed list to make them easy to read."
+  hooks_required: true
+  icon_blurb: "Your profile icon appears in scenes and the character gallery to show
+      your character at a glance. Providing a profile icon is optional. You can upload
+      additional character images once you're approved.<br><br>All images should be publicly available
+      and feature public persons such as actors, models, or professional athletes."
+  intro_blurb: "The online character creation tool will guide you through creating your character. Before getting started, we recommend reading \n\n* [Join Us](/wiki/guide:join_us) - Guidelines for creating a character, restricted and overdone concepts, and help with CG. \n* [World Intro](/wiki/home) - A fast and dirty introduction to theme.\n\n "
+  lastwill_blurb: Idled out characters will generally be presumed to be on a duty rotation at a Warden Outpost, so that they can be picked back up if you wish to return. If you have a different preference, you can register it with your character's 'last will'.
+  post_approval_message: Please make sure they have a profile image for their log
+    icon.
+  rank_blurb: Military rank.
+  rejection_message: "Sorry, your character could not be approved at the present time for the reasons listed.  You can make changes to your app by visiting [Create a Character](/chargen) on the web portal. \n\nFeel free to leave comments in this request or to ask for help on the **New Characters** channel if you have any questions.\n\n-----------"
+  shortcuts:
+    chargen: cg
+    cg/back: cg/prev
+    cg/previous: cg/prev
+    bg/approve: app/approve
+    bg/reject: app/reject
+    bg/submit: app/submit
+    bg/unsubmit: app/unsubmit
+    hooks: hook
+    hook/delete: hook/remove
+    hook/add: hook/set
+  stages:
+    start:
+      title: Character Creation
+      text: "Please complete character creation on the [web portal]/chargen."
+    app:
+      title: App Review
+      text: The `app` command is your friend during chargen.  It will alert you to
+        things you may have forgotten to set.  %xrred%xn issues will almost certainly
+        prevent your character from being approved (like forgetting to set your eye
+        color).  %xyYellow%xn issues are warnings; they might actually be OK if it
+        fits the character concept.
+    sheet:
+      help: sheets
+    demographics:
+      help: demographics
+    groups:
+      help: groups
+    abilities:
+      help: skills
+    background:
+      help: backgrounds
+    desc:
+      help: descriptions
+    hooks:
+      help: hooks
+    handles:
+      help: handles
+    profile:
+      help: profile
+    lastwill:
+      help: idle_out
+    review:
+      title: App Submission
+      text: You've completed chargen!  Review your app one more time, and use `app/submit
+        [<optional notes>]` to submit your character when ready.  The admins will
+        make sure it's a good fit for the game's theme, that the skills are reasonable
+        given the background, and that you haven't missed anything important in chargen.
+        See `help apps` for additional help on the app review process.
+  welcome_message: |-
+    Please welcome %{name}, our latest %{mythic}-bonded Warden to be approved!
+
+    Profile: %{profile_link}
+
+    RP Hooks:
+
+    %{rp_hooks}
+  permissions:
+    manage_apps: Approve and reject character apps.
+    view_bgs: Can view other characters' backgrounds
+  app_notes_prompt: If you want to make any special notes about your application,
+    you can enter them below.

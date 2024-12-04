@@ -8,7 +8,7 @@ aliases:
 ---
 # FS3 - Experience Points
 
-Experience Points (XP) are gained periodically to reflect what your character has been learning and/or practicing during that time.  You spend them to improve your abilities.  
+Experience Points (XP) are gained periodically to reflect what your character has been learning and/or practicing during that time.  You spend them to improve your abilities.
 
 > Learn how the FS3 skills system works in the [FS3 Tutorial](/help/fs3).
 

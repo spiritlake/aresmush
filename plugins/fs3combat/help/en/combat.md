@@ -20,13 +20,16 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
 > **Tip:** You can always specify a NPC or player name in front of any action command to make them do something.  For example, combat/join Bob=#123.  You need the equals sign even if there are no command options.  For example, combat/pass Bob=
 >
 > Most commands support multiple names as well, so you can do: combat/attack A B=C
+>
+>You can target mythics as well as
 
 `combat/stance <stance>` - Sets stance for your actions.  You can use `combat/stances` to see a list of possible stances.
 
-`combat/attack <target>[/<specials, see below>]`
+`combat/mount <mythic>` - Mounts your mythic in combat. Attacks directed at one have a chance to hit the other.
 
-    Specials are optional. Use commas to separate multiple options.
-    * burst - Fire a short (3-round) burst. 
+`combat/attack <target>[>mod:<mod>] OR [>called:<hitloc>]`
+
+    These are optional. Use commas to separate multiple options.
     * mod:<special modifiers> - Dice to add or subtract to the roll.
     * called:<location> - Perform a called shot to a particular hit location. 
        Use `combat/hitlocs <target>` to see a list of valid hit locations. 
@@ -43,16 +46,11 @@ The FS3 Combat system is designed to bring some order to the chaos of large comb
 
 `combat/pass` - Take no action this turn.
 
-`combat/fullauto <list of targets>` - Fire a full-auto burst
-
 `combat/explode <list of targets>` - Use an explosive weapon.
-
-`combat/suppress <target>` - Use suppressive fire
-    A full-auto or explosive weapon can specify a list of up to 3 targets.
 
 `combat/distract <target>` - Distracts a target
 
-`combat/subdue <target>` - Subdues or disarms a target. 
+`combat/subdue <target>` - Subdues or disarms a target.
 `combat/escape` – Attempts to escape while subdued.
 
 `combat/randtarget <number of targets>` - Suggests a couple potential targets at random.

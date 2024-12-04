@@ -1,9 +1,9 @@
 module AresMUSH
   module Profile
     class ProfileTemplate < ErbTemplateRenderer
-      
+
       attr_accessor :char
-      
+
       def initialize(enactor, char)
         @char = char
         @enactor = enactor
@@ -50,15 +50,15 @@ module AresMUSH
       def rank
         @char.rank
       end
-      
+
       def desc
         @char.description
       end
-      
+
       def status
         Chargen.approval_status(@char)
       end
-      
+
       def alts
         alt_list = AresCentral.alts(@char).select { |c| c != self }.map { |c| c.name }
         alt_list.delete(@char.name)
@@ -69,7 +69,7 @@ module AresMUSH
         formatter = MarkdownFormatter.new
         formatter.to_mush @char.rp_hooks
       end
-      
+
       def last_on
         if (Login.is_online?(@char))
           t('profile.currently_connected')
@@ -77,28 +77,28 @@ module AresMUSH
           OOCTime.local_long_timestr(@enactor, @char.last_on)
         end
       end
-      
+
       def timezone
         @char.timezone
       end
-      
+
       def custom_profile
         !@char.profile.empty?
       end
-      
+
       def handle_name
         @char.handle.name
       end
-      
+
       def unread_mail
         t('profile.unread_message_count', :num => @char.num_unread_mail)
       end
-      
+
       def wiki
         game_site = Game.web_portal_url
         "#{game_site}/char/#{@char.name}"
       end
-      
+
       def handle_profile
         arescentral = Global.read_config("arescentral", "arescentral_url")
         "#{arescentral}/handle/#{@char.handle.name}"
