@@ -5,6 +5,9 @@ who:
   - field: status
     width: 7
     title: Status
+  - field: lookingforrp
+    width: 3
+    title: RP?
   - field: name
     width: 20
     title: Name
