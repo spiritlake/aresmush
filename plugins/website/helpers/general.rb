@@ -136,13 +136,13 @@ module AresMUSH
     end
 
     def self.wiki_templates
-      templates = WikiPage.all.select { |p| p.category == "template" }.map { |p| {
-        title: p.title.gsub("template:", ""),
-        name: p.name.gsub("template:", ""),
+      templates = WikiPage.all.select { |p| p.category == "template" }.sort_by { |p| p.name.downcase }.map { |p| {
+        title: p.title.gsub("template:", "").gsub("Template:", ""),
+        name: p.name.gsub("template:", "").gsub("Template:", ""),
         text: p.text
       }
       }
-      templates << { title: 'blank', name: 'blank', text: '' }
+      templates.unshift({ title: 'blank', name: 'blank', text: '' })
       templates
     end
 
@@ -255,10 +255,16 @@ module AresMUSH
           help: "https://aresmush.com/tutorials/code/hooks/char-cards.html",
           files: {
             'char-card-custom.hbs' => File.join(web_code_path, 'templates', 'components', 'char-card-custom.hbs'),
+            'char-card-custom-tabs.hbs' => File.join(web_code_path, 'templates', 'components', 'char-card-custom-tabs.hbs'),
+            'char-card-custom-tabs-content.hbs' => File.join(web_code_path, 'templates', 'components', 'char-card-custom-tabs-content.hbs'),
             'char-card-custom.js' => File.join(web_code_path, 'components', 'char-card-custom.js'),
+            'char-card-custom-tabs.js' => File.join(web_code_path, 'components', 'char-card-custom-tabs.js'),
+            'char-card-custom-tabs-content.js' => File.join(web_code_path, 'components', 'char-card-custom-tabs-content.js'),
             'custom_char_card.rb' => File.join(plugin_code_path, 'scenes', 'custom_char_card.rb'),
           }
         },
+
+
 
         {
           name: "Combat Actions",
@@ -291,6 +297,16 @@ module AresMUSH
           help: "https://aresmush.com/tutorials/code/hooks/custom-routes.html",
           files: {
             'custom-routes.js' => File.join(web_code_path, 'custom-routes.js')
+          }
+        },
+
+        {
+          name: "Web Portal Sidebar",
+          help: "https://aresmush.com/tutorials/code/hooks/sidebar.html",
+          files: {
+            'sidebar-custom.hbs' => File.join(web_code_path, 'templates', 'components', 'sidebar-custom.hbs'),
+            'sidebar-custom.js' => File.join(web_code_path, 'components', 'sidebar-custom.js'),
+            'custom_web_data.rb' => File.join(plugin_code_path, 'website', 'custom_web_data.rb'),
           }
         },
 

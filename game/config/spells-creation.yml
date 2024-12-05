@@ -394,7 +394,7 @@ spells:
     weapon: Poison Puffs
   Rejuvenate:
     available: true
-    attack_mod: true
+    attack_mod: 2
     casting_time: 1 round
     damage_type: Bypass
     defense_mod: 2
