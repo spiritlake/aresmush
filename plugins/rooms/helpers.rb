@@ -99,6 +99,7 @@ module AresMUSH
       #     B
       # Without, the display will be
       #     A      A-A1  A-A2  A-A1-A11   B
+
       display_sections = Global.read_config("rooms", "area_display_sections")
       if (display_sections)
         # Top level - show just base name
