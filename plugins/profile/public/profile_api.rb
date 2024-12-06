@@ -4,6 +4,10 @@ module AresMUSH
       client = Login.find_client(char)
       case field_type
 
+      when 'lookingforrp'
+        flag = char.looking_for_rp
+        flag ? "%xg+%xn" : ""
+
       when 'bonded'
         char.bonded&.name
 
