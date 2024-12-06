@@ -6,15 +6,24 @@ module AresMUSH
       attr_accessor :duration
 
       def parse_args
-        self.duration = cmd.args == 'off' ? nil : (cmd.args || 1)
+        self.duration = case cmd.args
+            when 'off'
+              nil
+            when nil
+              1
+            else
+              cmd.args.to_i
+            end
       end
 
       def check_errors
-        return
+        puts " Duration #{self.duration} #{!self.duration}"
+        return "Incorrect syntax. See 'qr lookingforrp' for help." if self.duration && !self.duration.integer?
         return "You can't set yourself 'Looking for RP' for longer than 3 hours." if duration.to_i > 3
       end
 
       def handle
+        puts " Duration #{self.duration}"
         if self.duration.nil?
           LookingForRp.expire(enactor)
           client.emit_success t('lookingforrp.expire')
