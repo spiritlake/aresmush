@@ -6,6 +6,7 @@ packer_vars.json
 server.yml
 sites.yml
 
+
 # Logs and errors
 # -----------------------------
 *.log
