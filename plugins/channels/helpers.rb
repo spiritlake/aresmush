@@ -317,6 +317,14 @@ module AresMUSH
         msgs_to_delete.each { |m| m.delete }
       end
     end
+    
+    def self.add_to_default_channels(char, client)
+      channels = Global.read_config("channels", "default_channels")          
+      Channels.add_to_channels(client, char, channels)
+      if (client)
+        client.emit_success t('channels.channel_command_hint')
+      end
+    end
             
     def self.notify_discord_webhook(channel, message, enactor)
       debug_enabled = Global.read_config('channels', 'discord_debug')
@@ -334,7 +342,7 @@ module AresMUSH
       Global.dispatcher.spawn("Sending discord webhook", nil) do
         
         if (debug_enabled)
-          Global.logger.debug "Sending discord webhook to #{url} for #{channel.name}."
+          Global.logger.debug "Sending discord webhook for #{channel.name} from #{enactor.name} to #{url} (KEEP THIS URL PRIVATE)."
         end
         
         formatted_msg = message

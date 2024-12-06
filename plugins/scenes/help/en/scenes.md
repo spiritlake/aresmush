@@ -46,7 +46,7 @@ While you can always do free-form RP on the grid or in the RP room, there are a 
 ## Editing Poses
 
 `scene/replace <text in the form of an emit>` - Replaces your last pose.
-`scene/typo <text in the form of an emit>` - Silent replace for small typos.
+`scene/typo <text in the form of an emit>` - Silent replace of your last pose for small typos.
 `scene/undo` - Removes your last pose.
 `scene/emit <scene num>=<emit>` - Add a pose to a scene that isn't in your room.
 
@@ -80,6 +80,8 @@ While you can always do free-form RP on the grid or in the RP room, there are a 
 `scene/set <desc>` - Sets the scene in the current room.  Leave blank to clear.
 `scene/addchar <#>=<names>` - Adds participants to the scene log. Normally used when someone poses from an alt but you want the other char added too.
 `scene/removechar <#>=<names>` - Removes participants from the scene log. Normally used when someone poses from the wrong char and you need to remove them.
+`scene/addrelated <#>=<#>` - Adds a related scene. Both scenes must be shared.
+`scene/removerelated <#>=<#>` - Removes a related scene.
 
 > **Tip:** Admins and characters with the `manage_scenes` permission can edit other people's scenes that have been shared.  However, they cannot read scenes unless they've been shared first.
 

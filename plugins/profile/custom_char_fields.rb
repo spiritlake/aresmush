@@ -88,16 +88,7 @@ module AresMUSH
         }
       end
 
-      # Saves fields from profile editing.
-      #
-      # @param [Character] char - The character being updated.
-      # @param [Hash] char_data - A hash of character fields and values. Your custom fields
-      #    will be in char_data[:custom]. Multi-line text strings should be formatted for MUSH.
-      #
-      # @return [Array] - A list of error messages. Return an empty array ([]) if there are no errors.
-      # @example
-      #        char.update(goals: Website.format_input_for_mush(char_data[:custom][:goals]))
-      #        return []
+      # Deprecated - use save_fields_from_profile_edit2 instead
       def self.save_fields_from_profile_edit(char, char_data)
         if char.bonded
           ExpandedMounts.save_mount(char, char_data)
