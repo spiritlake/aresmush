@@ -1,8 +1,20 @@
 ---
-toc: 3 - Creating a Character
-summary: Looking for RP
+toc: 4 - Writing the Story
+summary: Finding RP
+aliases:
+- lookingforrp
+- rp_ok
+- findrp
 ---
-# Looking for RP
+---
+# Finding RP
+You can find RP in many ways.
+
+* Ask on the RP Requests channel, or respond to requests from others there. Try to keep responses on the channel rather than paging; this helps reduce confusion, especially if someone is using the Discord plugin.
+* Sign up for an event.
+* Use the Looking for RP flag to set yourself available for RP, or to find others interested in RP.
+
+## Looking for RP
 The 'looking for RP' flag is used to indicate that you are actively seeking a distracted or traditionally paced scene. It is not used for those looking for async scenes.
 
 By default, the 'looking for RP' flag expires after one hour. If you know you will be searching for RP longer, you can set it for 2 or 3 hours, after which point it will be automatically cleared.
