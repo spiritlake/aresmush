@@ -5,7 +5,7 @@ module AresMUSH
     # @param [Character] viewer - The character viewing the sidebar. May be nil if someone is viewing
     #    the web portal without being logged in.
     #
-    # @return [Hash] - A hash containing custom fields and values. 
+    # @return [Hash] - A hash containing custom fields and values.
     #    Ansi or markdown text strings must be formatted for display.
     # @example
     #    return { your_field: your_data }
@@ -13,7 +13,9 @@ module AresMUSH
     #    NOTE!! The sidebar is called A LOT because it's on every page, so be very mindful
     #    about performance. Avoid intensive database queries here.
     def self.custom_sidebar_data(viewer)
-      return {}
+      return {
+        looking_for_rp: LookingForRp.char_names,
+      }
     end
   end
 end

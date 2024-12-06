@@ -38,7 +38,7 @@ You can create a room and optionally specify an outgoing exit (from your current
 `unlink <exit>` - Unlinks an exit from its destination.
 
 `alias <exit name>=<exit alias>` - Sets a **single** alias for the exit.
-`shortdesc <exit name>=<short description>` - Sets the destination description that appears next to the exit name. 
+`shortdesc <exit name>=<short description>` - Sets the destination description that appears next to the exit name.
 
 > **Tip:** Any exit named "O" is automatically aliased to "Out".  Also, if no specific 'out' exit exists, 'out' will simply take you out the first exit it can find.
 

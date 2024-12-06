@@ -3,6 +3,9 @@
 secrets.yml
 real_database.yml
 packer_vars.json
+server.yml
+sites.yml
+
 
 # Logs and errors
 # -----------------------------
@@ -42,7 +45,19 @@ killares
 # -----------------------------
 /game/uploads
 /theme_archive
+game/uploads
 
 # Game directory
 # -----------------------------
-/game/
+.ftpconfig
+
+game/config/server.yml
+game/config/database.yml
+game/config/game.yml
+game/config/sites.yml
+Gemfile.lock
+game/scripts/aresconfig.js
+.byebug_history
+.vscode/settings.json
+engine/aresmush/database.rb
+Gemfile.lock

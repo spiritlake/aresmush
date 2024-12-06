@@ -9,14 +9,14 @@ module AresMUSH
         log = request.args[:log] || ""
         pacing = request.args[:scene_pacing] || Scenes.scene_pacing.first
         scene_type = request.args[:scene_type] || Scenes.scene_types.first
-        
+
         error = Website.check_login(request)
         return error if error
-        
+
         if (!enactor.is_approved?)
           return { error: t('dispatcher.not_allowed') }
         end
-        
+
         if (completed)
           [ :log, :location, :summary, :scene_type, :title, :icdate ].each do |field|
             if (request.args[field].blank?)
@@ -24,7 +24,7 @@ module AresMUSH
             end
           end
         end
-        
+
         scene = Scene.create(
         location: request.args[:location] || "Somewhere Out There",
         summary: Website.format_input_for_mush(request.args[:summary]),
@@ -40,7 +40,7 @@ module AresMUSH
         private_scene: completed ? false : (privacy == "Private"),
         owner: enactor
         )
-          
+
         Global.logger.info "Web scene #{scene.id} created by #{enactor.name}."
 
         plot_ids = request.args[:plots] || []
@@ -51,11 +51,11 @@ module AresMUSH
             plots << plot
           end
         end
-        
+
         plots.each do |p|
           PlotLink.create(plot: p, scene: scene)
         end
-                    
+
         participant_names = request.args[:participants] || []
         participants = []
         participant_names.each do |p|
@@ -65,48 +65,57 @@ module AresMUSH
             participants << participant
           end
         end
-      
+
         related_scene_ids = request.args[:related_scenes] || []
-      
+
         # New additions
         related_scene_ids.each do |s|
           related = Scene[s]
           if (related)
             SceneLink.create(log1: scene, log2: related)
           end
-        end      
-      
+        end
+
         Website.update_tags(scene, request.args[:tags])
-      
+
+        creature_ids = request.args[:creatures] || []
+
+        creature_ids.each do |creature|
+          creature = Creature.find_one_by_name(creature.strip)
+          if (creature)
+            Creatures.add_creature_to_scene(scene, creature)
+          end
+        end
+
         if (!log.blank?)
           Scenes.add_to_scene(scene, log, enactor)
         end
-        
+
         if (completed)
           Scenes.share_scene(enactor, scene)
-          
+
           participants.each do |p|
             split_log = log.split
             split_log = split_log[0..split_log.count/participants.count].join(" ")
             Scenes.handle_word_count_achievements(p, split_log)
             Scenes.handle_scene_participation_achievement(p, scene)
           end
-          
+
         else
           Scenes.create_scene_temproom(scene)
-          
+
           scene.watchers.add enactor
-          
+
           scene_data = Scenes.build_live_scene_web_data(scene, enactor).to_json
           alts = AresCentral.play_screen_alts(enactor)
           Global.client_monitor.notify_web_clients(:joined_scene, scene_data, true) do |c|
             c && alts.include?(c)
           end
-          
-          
+
+
         end
-      
-        
+
+
         { id: scene.id }
       end
     end

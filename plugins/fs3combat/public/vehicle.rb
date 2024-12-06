@@ -4,6 +4,7 @@ module AresMUSH
     include FindByName
     
     attribute :vehicle_type
+    attribute :name
     
     reference :combat, "AresMUSH::Combat"
     

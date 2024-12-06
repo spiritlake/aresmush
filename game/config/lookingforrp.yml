@@ -1,0 +1,8 @@
+---
+lookingforrp:
+  cron:
+    minute:
+    - 00
+    - 15
+    - 30
+    - 45

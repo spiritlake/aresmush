@@ -31,7 +31,7 @@ module AresMUSH
         if (Rooms.has_parent_area(parent, area))
           return { error: t('rooms.circular_area_parentage') }
         end
-        
+
         new_area = Area.find_one_by_name(name)
         if (new_area && (new_area.id != id))
           return { error: t('rooms.area_already_exists', :name => name) }

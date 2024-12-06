@@ -332,12 +332,12 @@ module AresMUSH
       name = enactor.ooc_name
       url = channel.discord_webhook
 
-      if (url.blank?)
-        if (debug_enabled)
-          Global.logger.debug "No discord hook found for #{channel.name}."
-        end
-        return
-      end
+       if (url.blank?)
+         if (debug_enabled)
+           Global.logger.debug "No discord hook found for #{channel.name}."
+         end
+         return
+       end
       
       Global.dispatcher.spawn("Sending discord webhook", nil) do
         

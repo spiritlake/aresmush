@@ -1,0 +1,185 @@
+---
+fs3combat:
+  default_type: Warden
+  allow_vehicles: true
+  allow_mounts: false
+  stances:
+    Aggressive:
+      attack_mod: 2
+      defense_mod: -2
+    Reckless:
+      attack_mod: 4
+      defense_mod: -4
+    Normal:
+      attack_mod: 0
+      defense_mod: 0
+    Defensive:
+      attack_mod: -2
+      defense_mod: 2
+    Evasive:
+      attack_mod: -4
+      defense_mod: 4
+    Cover:
+      attack_mod: 0
+      defense_mod: 0
+    Hidden:
+      attack_mod: 0
+      defense_mod: 0
+  combatant_types:
+    Observer:
+      hitloc: Humanoid
+    Soldier:
+      weapon: Rifle
+      armor: Tactical
+      hitloc: Humanoid
+      defense_skill: Reflexes
+    Unarmed Combatant:
+      weapon: Unarmed
+      armor: None
+      hitloc: Humanoid
+      defense_skill: Reflexes
+    Humanoid:
+      weapon: Unarmed
+      armor: None
+      hitloc: Humanoid
+      defense_skill: Reflexes
+    # Unarmed:
+    #   weapon: Unarmed
+    #   armor: None
+    #   hitloc: Humanoid
+    #   defense_skill: Reflexes
+    Dragon:
+      weapon: Sharp Teeth
+      armor: Dragon
+      hitloc: Dragon
+      defense_skill: Reflexes
+      npc_type: Dragon
+    Griffon:
+      weapon: Sharp Talons
+      armor: Griffon
+      hitloc: Winged Mythic
+      defense_skill: Reflexes
+      npc_type: Griffon
+    Roc:
+      weapon: Sharp Talons
+      armor: Roc
+      hitloc: Bird
+      defense_skill: Reflexes
+      npc_type: Roc
+    Pegasus:
+      weapon: Hard Hooves
+      hitloc: Winged Mythic
+      armor: Pegasus
+      defense_skill: Reflexes
+      npc_type: Pegasus
+    Lupine:
+      weapon: Sharp Claws
+      hitloc: Winged Mythic
+      armor: Lupine
+      defense_skill: Reflexes
+      npc_type: Lupine
+    Pantherine:
+      weapon: Sharp Claws
+      hitloc: Winged Mythic
+      armor: Pantherine
+      defense_skill: Reflexes
+      npc_type: Pantherine
+    Target:
+      hitloc: Target
+      weapon: Unarmed
+    Quadruped:
+      hitloc: Quadruped
+      defense_skill: Reflexes
+      weapon: Claws
+      armor: Tough Hide
+    Winged Cryptid:
+      hitloc: Winged Mythic
+      defense_skill: Reflexes
+      weapon: Claws
+      armor: Tough Hide
+    Warden:
+      hitloc: Humanoid
+      armor: Leather
+      weapon: Bow
+    Multiheaded Cryptid:
+      hitloc: Multiheaded Cryptid
+      defense_skill: Reflexes
+      weapon: Strong Beak
+      armor: Tough Hide
+    Bird:
+      weapon: Talons
+      armor: Bird
+      hitloc: Bird
+      defense_skill: Reflexes
+  shortcuts:
+    combat/skill: combat/summary
+    combat/skills: combat/summary
+    combat/slackers: combat/summary
+    combat/add: combat/join
+    combat/remove: combat/leave
+    combat/hitlocs: combat/hitloc
+    vehicles: vehicle
+    healing: heal/list
+    weapons: weapon
+    newturn: combat/newturn
+    mounts: mount
+
+  achievements:
+    fs3_hero:
+      type: fs3
+      message: Heroed from a knockout.
+    fs3_joined_combat:
+      type: fs3
+      message: Joined %{count} combats.
+      levels:
+      - 1
+      - 10
+      - 20
+      - 50
+      - 100
+      - 200
+      - 500
+      - 1000
+    fs3_wounded:
+      type: fs3
+      message: Wounded %{count} times in combat.
+      levels:
+      - 1
+      - 5
+      - 10
+      - 20
+      - 50
+      - 100
+      - 150
+      - 200
+      - 250
+      - 500
+    fs3_hard_hitter:
+      type: fs3
+      message: Incapacitated an opponent in combat.
+    fs3_explosive_hit:
+      type: fs3
+      message: Did damage with an explosive weapon.
+    fs3_melee_hit:
+      type: fs3
+      message: Did damage with a melee weapon.
+    fs3_ranged_hit:
+      type: fs3
+      message: Did damage with a ranged weapon.
+    fs3_suppressed:
+      type: fs3
+      message: Suppressed a target in combat.
+    fs3_subdued:
+      type: fs3
+      message: Subdued a target in combat.
+    fs3_distracted:
+      type: fs3
+      message: Distracted a target in combat.
+    fs3_rallied:
+      type: fs3
+      message: Rallied someone in combat.
+    fs3_treated:
+      type: fs3
+      message: Treated someone in combat.
+  permissions:
+    manage_combat: Control combats that you didn't organize.

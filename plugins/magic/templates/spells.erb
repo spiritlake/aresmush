@@ -1,0 +1,73 @@
+%lh
+<%= left( t('magic.spells_title', :name => char.name.upcase) , 65 ) -%>
+<%=  spell_count -%>\<%= spell_max %>
+
+<%= t('magic.spells_header') %>
+
+<% if char.major_schools %>
+<% char.major_schools.each do |school| %>
+<%= line_with_text school %>
+<% spells_for_school(school).each do |spell| -%>
+<%= spell_display(spell) %>
+<% end %>
+<%= %>
+<% end %>
+<% end %>
+
+<% if char.minor_schools %>
+<% char.minor_schools.each do |school| %>
+<%= line_with_text school %>
+<% spells_for_school(school).each do |spell| -%>
+<%= spell_display(spell) %>
+<% end %>
+
+<% end %>
+<% end %>
+
+<%= line_with_text "Other Spells" %>
+<% if item_spells -%>
+<% item_spells.each do |spell| %>
+<%= spell_display_w_school(spell) %>
+<% end -%>
+<% end -%>
+<% other_spells.each do |spell| -%>
+<%= spell_display_w_school(spell) %>
+<% end %>
+
+%ld
+<% if spells_still_learning_list  %>
+<%=  t('magic.learning_spells_title', :name => char.name.upcase) -%>
+<%= " (" -%>
+<%= char.xp -%>
+<%= " XP)" %>
+
+<%= t('magic.spells_learning_header') %>
+<% if char.major_schools %>
+<% char.major_schools.each do |school| %>
+<% if !still_learning_spells_for_school(school).empty? %>
+<%= line_with_text school %>
+<% still_learning_spells_for_school(school).each do |spell| -%>
+<%= display_learning(spell) %>
+<% end %>
+<% end %>
+
+<% end %>
+<% end %>
+<% if char.minor_schools %>
+<% char.minor_schools.each do |school| %>
+<% if !still_learning_spells_for_school(school).empty? %>
+<%= line_with_text school %>
+<% still_learning_spells_for_school(school).each do |spell| -%>
+<%= display_learning(spell) %>
+%ld
+<% end %>
+<% end %>
+<% end %>
+<% end %>
+<% end %>
+
+<%= t('magic.magic_energy_header') %>
+<%=  magic_energy -%><%= "    " %><%= magic_energy_percent %><%= "% (" -%><%= spell_fatigue_degree -%><%= ")" %>
+
+<%= spell_fatigue_msg  %>
+%lf

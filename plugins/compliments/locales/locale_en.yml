@@ -1,0 +1,10 @@
+---
+en:
+  compliments:
+    comps_title: "%{name}'S COMPLIMENTS"
+    left_comp: "%xgYou have left a comp for %{name}.%xn"
+    has_left_comp: "%{from} has left you a comp. Type `comps` to see it."
+    invalid_name: "That is not a character."
+    not_scene: "That is not a scene number."
+    comp_scenes_not_enabled: "Your game does not have complimenting all participants of a scenes enabled. Try complimenting the characters instead."
+    cant_comp_self: "You can't leave a compliment for yourself."

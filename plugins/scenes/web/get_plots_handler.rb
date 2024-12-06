@@ -2,11 +2,10 @@ module AresMUSH
   module Scenes
     class PlotsRequestHandler
       def handle(request)
-        
-        archive = (request.args["archive"] || "").to_bool
-        
+
+        # archive = (request.args["archive"] || "").to_bool
+
         plots = Plot.all
-          .select { |p| archive ? p.completed : !p.completed }
           .to_a.map { |p| {
                   id: p.id,
                   title: p.title,
@@ -14,14 +13,16 @@ module AresMUSH
                   start_date: p.start_date || "",
                   end_date: p.end_date || "",
                   completed: p.completed,
+                  featured: p.featured,
+                  background: p.background,
                   content_warning: p.content_warning,
                   tags: p.content_tags,
                   storytellers: get_storytellers(p)
                 }}
-       
+
         plots.sort_by { |p| [ p[:end_date], p[:start_date] ] }.reverse
       end
-      
+
       def get_storytellers(plot)
         storytellers = plot.storytellers.to_a
             .sort_by {|storyteller| storyteller.name }
