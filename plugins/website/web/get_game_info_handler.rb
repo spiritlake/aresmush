@@ -50,6 +50,7 @@ module AresMUSH
           roster_enabled: Idle.roster_enabled?,
           gcse_search_id: search_id,
           story: Website.format_markdown_for_html(story),
+          custom_sidebar: Website.custom_sidebar_data(enactor)
         }
       end
     end
