@@ -5,6 +5,7 @@ aliases:
 - lookingforrp
 - rp_ok
 - findrp
+- rp
 ---
 ---
 # Finding RP
